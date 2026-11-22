@@ -1,0 +1,42 @@
+# Source: humdrum-tools/inventions, sinfo02.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM120 names no source).
+# 12/8: beats_per_quarter 2, a beat is an eighth, 12 per bar.
+# Motive: the upper voice's first two bars, a broken C minor chord in eighths (C-G-Eb-Eb-
+# C-G), the G held and dropped an octave, then a scale up to Ab, a leap down to B and
+# back, falling to D (beats 0-24). The middle voice repeats it an octave lower in bars
+# 3-4; against it the upper voice plays the countermotive (Eb and C held, then eighths
+# rising from B to F, turning around Eb, and a leap up to a held G). The pair returns in G minor in bars 9-11 (the motive in the lower voice,
+# then in the upper voice over the countermotive in the lower voice). Four complete
+# statements of the motive and two of the countermotive; all are marked. Elsewhere only
+# the broken-chord head comes back, varied (bars 5-6, 13-16, 28-30): fragments, not marked.
+id: sinfonia02
+title: Sinfonia 2
+catalogue: BWV 788
+key: C minor
+tempo: 150
+beats_per_bar: 12
+ensemble: harpsichord
+listen_for: "a two-bar motive and its countermotive, swapping voices"
+techniques: [sinfonia, motive, countermotive, imitation, invertible counterpoint]
+book: Sinfonias
+order: 2
+source: {kind: kern, path: inventions/kern/sinfo02.krn, beats_per_quarter: 2}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0, length: 24}   # the motive
+  countersubject: {voice: 0, start: 24, length: 24}   # the countermotive
+  entries:
+    - {voice: 0, start: 0, form: motive}                            # bar 1, upper: C-G-Eb-Eb-C-G-G-G-C-D-Eb-F-G-Ab-B-Ab-G-F-Eb-D
+    - {voice: 1, start: 24, form: motive}                           # bar 3, middle: C-G-Eb-Eb-C-G-G-G-C-D-Eb-F-G-Ab-B-Ab-G-F-Eb-D
+    - {voice: 0, start: 24, form: countermotive}                    # bar 3, upper countermotive: Eb-C-B-C-D-Eb-F-Eb-F-Eb-D-Eb-C-G
+    - {voice: 2, start: 102, form: motive}                          # bar 9, lower: G-D-Bb-Bb-G-D-D-D-G-A-Bb-C-D-Eb-F#-Eb-D-C-Bb-A
+    - {voice: 0, start: 126, form: motive}                          # bar 11, upper: G-D-Bb-Bb-G-D-D-D-G-A-Bb-C-D-Eb-F#-Eb-D-C-Bb-A
+    - {voice: 2, start: 126, form: countermotive}                   # bar 11, lower countermotive: Bb-G-F#-G-A-Bb-C-Bb-C-Bb-A-Bb-G-D
+captions:
+  - {at: 0, text: "☞ The motive in the upper voice: a broken C minor chord, then a scale."}
+  - {at: 24, text: "☞ The middle voice repeats it; above, the countermotive in eighths."}
+  - {at: 102, text: "☞ The motive in the lower voice, in G minor."}
+  - {at: 126, text: "☞ The upper voice takes the motive; the countermotive is now below."}

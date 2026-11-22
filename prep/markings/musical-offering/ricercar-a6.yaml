@@ -1,0 +1,75 @@
+# Source: craigsapp/bach-musical-offering, kern/offering-002.krn (6 voices; no spine
+# splits, no chords; encoded by Craig Stuart Sapp from the Bach-Gesellschaft edition, vol.
+# 31.2, IMSLP10042 pp. 12-19, open score in treble, soprano, alto, two tenor and bass
+# clefs). The kern bars it in 2/1, two whole notes a bar (103 bars); the BGA bars it in ¢,
+# two half notes a bar, so one bar here is two of the plates'. Bar numbers below are the
+# kern's. A beat is a half note (beats_per_quarter: 0.5), four a bar.
+# Tempo: editorial (56 half notes a minute; the file's *MM170 names no source).
+# Subject (checked against the score, p. 12): the royal theme, the alto alone, bars 1-5:
+# c' e♭' g' a♭' b, g' f♯' f' e' e♭'~ d' d♭' c' b g c' f' e♭' d' c', to the c' on the
+# downbeat of bar 5, where the second soprano enters with the answer. The answer is tonal:
+# G B♭ C E♭ F♯ (the theme's G answered by C, not D).
+# A strict six-voice fugue. Exposition, one voice every four or six bars: alto (bar 1, C),
+# second soprano (5, answer), second tenor (9, C), first tenor (13, answer), first
+# soprano (19, C), bass (25, answer). Later statements: second tenor bar 48 (answer, G),
+# alto bar 58 (F minor), first soprano bar 66 (the answer's shape on E♭, its third
+# major: E♭ G A♭ C D; ref: answer), first tenor bar 73 (B♭ minor), second soprano bar 86 (answer,
+# with B♮), bass bar 99 (C, the last: it
+# keeps the theme to the F, taken an octave down, then turns into the final cadence:
+# part: head, head_length 17, tail: free).
+# Bar 86, second soprano: the answer with B♮ for B♭ (G B C E♭ F♯, the natural printed
+# on p. 18), then complete. Its second interval is a semitone where the subject has a
+# major third (3 semitones off, more than find_entry admits), but one off the first
+# answer's whole tone: it is matched against the first answer (ref: answer).
+# None overlap: no stretto. No regular countersubject.
+# Instruments: harpsichord for all six. The score names no instruments (p. 12: six staves
+# in open score); played here as keyboard music. Strings were considered: the upper five
+# voices fit violin, viola and cello, but the bass reaches B♭1 (bar 67), below the cello's
+# and the organ's C2 in INSTRUMENT_RANGES; only the harpsichord (F1-F6) holds all six.
+id: bwv1079-ricercar-a6
+title: Ricercar a 6
+catalogue: BWV 1079/5
+key: C minor
+tempo: 56
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 6 voices; the royal theme passed down and up through all six
+techniques: [fugue, subject, answer, chromaticism]
+order: 6.5
+source: {kind: kern, path: bach-musical-offering/kern/offering-002.krn, beats_per_quarter: 0.5}
+voices:
+  - {name: Soprano I, texture: solid}
+  - {name: Soprano II, texture: hatch}
+  - {name: Alto, texture: stipple}
+  - {name: Tenor I, texture: dashed}
+  - {name: Tenor II, texture: open}
+  - {name: Bass, texture: cross}
+fugue:
+  # the subject: alto, bars 1-5, to the c' on the downbeat of bar 5 (beat 16)
+  subject: {voice: 2, start: 0, length: 16.5}
+  entries:
+    - {voice: 2, start: 0, form: subject}     # bar 1, C minor
+    - {voice: 1, start: 16, form: answer}     # bar 5, on G
+    - {voice: 4, start: 32, form: subject}    # bar 9, C minor
+    - {voice: 3, start: 48, form: answer}     # bar 13, on G
+    - {voice: 0, start: 72, form: subject}    # bar 19, C minor
+    - {voice: 5, start: 96, form: answer}     # bar 25, on G
+    - {voice: 4, start: 188, form: answer}    # bar 48, on G
+    - {voice: 2, start: 228, form: subject}   # bar 58, F minor
+    - {voice: 0, start: 260, form: answer, ref: answer}  # bar 66, on E♭, major third
+    - {voice: 3, start: 288, form: subject}   # bar 73, B♭ minor
+    - {voice: 1, start: 340, form: answer, ref: answer}  # bar 86, on G, with B♮
+    - {voice: 5, start: 392, form: subject, part: head, head_length: 17, tail: free}  # bar 99
+captions:
+  - {at: 0, text: "☞ Dux: the royal theme alone, in the alto, on C."}
+  - {at: 16, text: "☞ The answer in the second soprano, on G; the theme's G is answered by C."}
+  - {at: 32, text: "☞ Third voice: the theme in the second tenor, on C, an octave below the alto."}
+  - {at: 48, text: "☞ Fourth voice: the answer in the first tenor, on G."}
+  - {at: 72, text: "☞ Fifth voice: the theme in the first soprano, on C, an octave above the alto."}
+  - {at: 96, text: "☞ Sixth voice: the answer in the bass, on G; the exposition is complete."}
+  - {at: 188, text: "☞ After a long episode, the answer in the second tenor, on G."}
+  - {at: 228, text: "☞ The theme in the alto, on F, in F minor."}
+  - {at: 260, text: "☞ The answer in the first soprano, on E♭, its third now major."}
+  - {at: 288, text: "☞ The theme in the first tenor, on B♭, in B♭ minor."}
+  - {at: 340, text: "☞ The answer in the second soprano, on G, with B♮ for B♭."}
+  - {at: 392, text: "☞ The last entry: the theme in the bass, on C; it breaks off into the cadence."}

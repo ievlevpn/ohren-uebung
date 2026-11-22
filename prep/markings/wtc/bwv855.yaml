@@ -1,0 +1,49 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f10.krn (2 voices: upper, lower; no spine
+# splits). 3/4, beats are quarter notes.
+# Tempo: editorial (the file's *MM102 names no source).
+# Subject (checked against the score): the upper voice, bars 1-2, a broken E minor chord
+# and a chromatic fall in sixteenths. The answer is real (the lower voice, on B).
+# Countersubject: the upper voice against the answer, bars 3-4 (from its D). Found whole in
+# bars 3 (upper), 13 (upper) and 22 (lower: the parts swapped); in bars 11, 30 and 32 only
+# its first half, so those are not marked. Bar 19 runs in octaves (two octaves apart);
+# from bar 20 the lower voice leads.
+# 8 complete statements, all marked; none overlap. Not marked: the upper voice in bar 39,
+# which breaks off after the head.
+# Statements at neither the subject's nor the answer's pitch level (in another key) carry
+# form_by: opening: their opening interval decides the form (each entry's comment says so).
+id: bwv855
+title: Fugue in E minor
+catalogue: BWV 855
+key: E minor
+tempo: 102
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: 2 voices; subject and countersubject trade places
+techniques: [fugue, subject, answer, countersubject, invertible counterpoint]
+book: Book I
+order: 10
+number: 10
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f10.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0, length: 6}
+  countersubject: {voice: 0, start: 6, length: 6}
+  entries:
+    - {voice: 0, start: 0, form: subject}
+    - {voice: 1, start: 6, form: answer}
+    - {voice: 0, start: 6, form: countersubject}
+    - {voice: 0, start: 30, form: subject, form_by: opening}  # neither level (notes 3..n a minor third up from the dux); opens with a major third up, the subject's
+    - {voice: 1, start: 36, form: subject, form_by: opening}  # neither level (notes 3..n a step down from the dux); opens with a major third up, the subject's
+    - {voice: 0, start: 36, form: countersubject}
+    - {voice: 1, start: 57, form: subject, form_by: opening}  # neither level (notes 3..n a fourth up from the dux); opens with a minor third up, the subject's
+    - {voice: 0, start: 63, form: subject}
+    - {voice: 1, start: 63, form: countersubject}
+    - {voice: 1, start: 87, form: subject, form_by: opening}  # neither level (notes 3..n a step down from the dux); opens with a minor third up, the subject's
+    - {voice: 0, start: 93, form: subject, form_by: opening}  # neither level (notes 3..n a fourth up from the dux); opens with a minor third up, the subject's
+captions:
+  - {at: 0, text: "☞ Dux: the subject alone, a broken chord, then a chromatic fall."}
+  - {at: 6, text: "☞ The answer in the lower voice, on B; above it the countersubject."}
+  - {at: 57, text: "☞ After a bar in octaves, the lower voice leads off, on A."}
+  - {at: 63, text: "☞ The parts swap: the subject above, the countersubject below."}

@@ -1,0 +1,49 @@
+# Source: humdrum-tools/inventions, inven03.krn (2 voices: upper, lower; no spine splits).
+# 3/8: beats_per_quarter 2, a beat is an eighth, 3 per bar. The score opens with a
+# one-eighth upbeat (the sixteenths D-E) before bar 1: pickup 1, so Bach's bar n starts
+# at beat 1 + 3(n-1). Every statement starts on the last eighth of a bar (an upbeat into
+# the next); the bar numbers below are the bars they start in.
+# Motive: the eight turning sixteenths D-E-F#-E-G-F#-E-D (beats 0-4). In bars 1-2 the
+# phrase runs on for two bars, but only these eight notes come back every time (the
+# continuation varies: a leap of a fifth, a fourth, a sixth or a step). 15 statements,
+# all marked; the bass's sequence in bars 38-40 restates the figure on F#.
+id: invention03
+title: Invention 3
+catalogue: BWV 774
+key: D major
+tempo: 144
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: "the motive passed between the voices, two bars apart"
+techniques: [invention, motive, imitation]
+book: Inventions
+order: 3
+pickup: 1   # the upbeat before bar 1, in beats
+source: {kind: kern, path: inventions/kern/inven03.krn, beats_per_quarter: 2}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0, length: 4}   # the motive
+  entries:
+    - {voice: 0, start: 0, form: motive}                              # upbeat, upper: D-E-F#-E-G-F#-E-D
+    - {voice: 1, start: 6, form: motive}                              # bar 2, lower: D-E-F#-E-G-F#-E-D
+    - {voice: 1, start: 36, form: motive}                             # bar 12, lower: A-B-C#-B-D-C#-B-A
+    - {voice: 0, start: 42, form: motive}                             # bar 14, upper: E-F#-G-F#-A-G-F#-E
+    - {voice: 1, start: 48, form: motive}                             # bar 16, lower: B-C#-D-C#-E-D-C#-B
+    - {voice: 0, start: 54, form: motive}                             # bar 18, upper: D-E-F#-E-G-F#-E-D
+    - {voice: 0, start: 72, form: motive}                             # bar 24, upper: B-C#-D-C#-E-D-C#-B
+    - {voice: 1, start: 78, form: motive}                             # bar 26, lower: E-F#-G-F#-A-G-F#-E
+    - {voice: 0, start: 84, form: motive}                             # bar 28, upper: A-B-C#-B-D-C#-B-A
+    - {voice: 1, start: 90, form: motive}                             # bar 30, lower: D-E-F#-E-G-F#-E-D
+    - {voice: 0, start: 102, form: motive}                            # bar 34, upper: A-B-C#-B-D-C#-B-A
+    - {voice: 1, start: 114, form: motive}                            # bar 38, lower: F#-G-A-G-B-A-G-F#
+    - {voice: 1, start: 132, form: motive}                            # bar 44, lower: D-E-F#-E-G-F#-E-D
+    - {voice: 0, start: 150, form: motive}                            # bar 50, upper: D-E-F#-E-G-F#-E-D
+    - {voice: 0, start: 165, form: motive}                            # bar 55, upper: D-E-F#-E-G-F#-E-D
+captions:
+  - {at: 0, text: "☞ The motive in the upper voice: a turning figure in sixteenths."}
+  - {at: 6, text: "☞ The lower voice imitates it an octave lower, two bars later."}
+  - {at: 36, text: "☞ In A major the lower voice leads with the motive."}
+  - {at: 72, text: "☞ The motive in B minor, in the upper voice."}
+  - {at: 132, text: "☞ Back in D major: the lower voice has the motive again."}

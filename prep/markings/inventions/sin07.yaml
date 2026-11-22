@@ -1,0 +1,48 @@
+# Source: humdrum-tools/inventions, sinfo07.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM52 names no source).
+# Motive (checked against the score): the upper voice's upbeat B, the leap of a fourth to
+# E, then F#-G (held), F#-A-G-F#-E (beats 0.5-6). The sixteenth turn that follows leads
+# into a sequence of the motive, a step lower, not a new statement. The middle voice
+# answers on F# (bar 3), the lower voice on B (bar 7).
+# 13 complete statements, all marked; four of them change one interval (bar 5 upper and
+# bars 31 and 33 middle: the held note falls a third, not a step; bar 35 lower: a fourth
+# up to A, not a third). Not marked: the sequences in bar 3 (upper) and bar 5
+# (middle), which begin inside a sixteenth figure with a third, not a fourth.
+id: sinfonia07
+title: Sinfonia 7
+catalogue: BWV 793
+key: E minor
+tempo: 52
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: "a motive in eighths, passed between three voices"
+techniques: [sinfonia, motive, imitation]
+book: Sinfonias
+order: 7
+source: {kind: kern, path: inventions/kern/sinfo07.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 5.5}   # the motive
+  entries:
+    - {voice: 0, start: 0.5, form: motive}                          # bar 1, upper: B-E-F#-G-F#-A-G-F#-E
+    - {voice: 1, start: 6.5, form: motive}                          # bar 3, middle: F#-B-C#-D-C#-E-D-C#-B
+    - {voice: 0, start: 12.5, form: motive}                         # bar 5, upper: C#-F#-G-A-F#-A-G-F#-E
+    - {voice: 2, start: 18.5, form: motive}                         # bar 7, lower: B-E-F#-G-F#-A-G-F#-E
+    - {voice: 1, start: 39.5, form: motive}                         # bar 14, middle: B-E-F#-G-F#-A-G-F#-E
+    - {voice: 0, start: 45.5, form: motive}                         # bar 16, upper: F#-B-C#-D-C#-E-D-C#-B
+    - {voice: 0, start: 72.5, form: motive}                         # bar 25, upper: A-D-E-F#-E-G-F#-E-D
+    - {voice: 2, start: 78.5, form: motive}                         # bar 27, lower: A-D-E-F#-E-G-F#-E-D
+    - {voice: 2, start: 84.5, form: motive}                         # bar 29, lower: F#-B-C#-D-C#-E-D-C#-B
+    - {voice: 1, start: 90.5, form: motive}                         # bar 31, middle: F#-B-C#-D-B-D-C-B-A
+    - {voice: 1, start: 96.5, form: motive}                         # bar 33, middle: E-A-B-C-A-C-B-A-G
+    - {voice: 2, start: 102.5, form: motive}                        # bar 35, lower: A-D-E-F#-E-A-G-F#-E
+    - {voice: 0, start: 108.5, form: motive}                        # bar 37, upper: B-E-F#-G-F#-A-G-F#-E
+captions:
+  - {at: 0.5, text: "☞ The motive in the upper voice: a leap of a fourth, a rise, a fall."}
+  - {at: 6.5, text: "☞ The middle voice takes up the motive, on F♯."}
+  - {at: 18.5, text: "☞ The lower voice enters with the motive."}
+  - {at: 72.5, text: "☞ The motive in D major, in the upper voice, then below."}
+  - {at: 108.5, text: "☞ The last statement: the motive in the upper voice, in E minor."}

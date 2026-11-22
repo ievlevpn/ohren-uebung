@@ -1,0 +1,47 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f09.krn (3 voices: soprano, alto, bass; no
+# spine splits).
+# Tempo: editorial (the file's *MM104 names no source).
+# Subject (checked against the score): the alto from beat 2.5 of bar 1, E F# B C# D#, then
+# the sixteenths E D# E F# G# A B G# (to beat 2.75 of bar 2; the soprano's answer has
+# entered on beat 2.5). No regular countersubject. The answer
+# is real (on B); the statements on B are marked answer. Exposition: alto, soprano, bass;
+# the soprano and alto again in bars 6-7.
+# 9 complete statements, all marked; none overlap. Not marked: the bass in bar 9 (its
+# sixteenths turn away from the subject's) and bar 28 (it breaks off before the end).
+# Statements at neither the subject's nor the answer's pitch level (in another key) carry
+# form_by: opening: their opening interval decides the form (each entry's comment says so).
+id: bwv854
+title: Fugue in E major
+catalogue: BWV 854
+key: E major
+tempo: 104
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 3 voices; a brisk subject that runs on in sixteenths
+techniques: [fugue, subject, answer]
+book: Book I
+order: 9
+number: 9
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f09.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Bass, texture: stipple}
+fugue:
+  subject: {voice: 1, start: 1.5, length: 4.5}
+  entries:
+    - {voice: 1, start: 1.5, form: subject}
+    - {voice: 0, start: 5.5, form: answer}
+    - {voice: 2, start: 11.5, form: subject}
+    - {voice: 0, start: 23.5, form: subject}
+    - {voice: 1, start: 27.5, form: answer}
+    - {voice: 1, start: 61.5, form: subject, form_by: opening}  # neither level (notes 3..n a minor third down from the dux); opens with a step up, the subject's
+    - {voice: 2, start: 73.5, form: subject}
+    - {voice: 1, start: 81.5, form: subject}
+    - {voice: 0, start: 97.5, form: subject}
+captions:
+  - {at: 1.5, text: "☞ Dux: the subject in the alto, a short motto, then running sixteenths."}
+  - {at: 5.5, text: "☞ The answer in the soprano, on B."}
+  - {at: 11.5, text: "☞ The bass enters with the subject, on E."}
+  - {at: 61.5, text: "☞ The subject in the alto, on C♯, in the minor."}
+  - {at: 97.5, text: "☞ The last entry, in the soprano."}

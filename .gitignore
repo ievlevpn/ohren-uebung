@@ -1,0 +1,13 @@
+.superpowers/
+node_modules/
+dist/
+.DS_Store
+web/node_modules
+web/dist
+prep/.venv
+prep/sources/
+__pycache__/
+.pytest_cache/
+/screens/
+prep/sources
+docs/superpowers/

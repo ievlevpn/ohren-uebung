@@ -1,0 +1,55 @@
+# Source: humdrum-tools/inventions, sinfo06.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM180 names no source).
+# 9/8: beats_per_quarter 2, a beat is an eighth, 9 per bar.
+# Motive (checked against the score): the middle voice's first bar, nine eighths E-F#-G#-A-
+# B-C#, B-C#-A (beats 0-9). The upper voice answers on B (bar 2), the lower voice on B
+# (bar 3). The inversion falls and turns back (C#-B-A-G#-F#-E, F#-E-G#, bar 23). In bar
+# 35 the motive (middle voice) and its inversion (upper voice) sound together.
+# 12 upright and 5 inverted complete statements, all marked; the one in bar 36 (lower
+# voice, A#-C#-D#-E-F#-G-F#-G-E) opens with a third instead of a step. Not marked: the
+# statements in bars 30 (middle), 31 (upper), 32 (middle), 33 (upper), 37 (middle) and
+# 39 (upper) that begin after a held note or a rest (eight notes, without the motive's
+# first); and the upper voice's B-A#-G#-F#-E-D#-E-C#-D# in bar 17, whose turn differs
+# from the inversion's.
+id: sinfonia06
+title: Sinfonia 6
+catalogue: BWV 792
+key: E major
+tempo: 180
+beats_per_bar: 9
+ensemble: harpsichord
+listen_for: "a rising motive and its inversion, sung together near the end"
+techniques: [sinfonia, motive, imitation, inversion]
+book: Sinfonias
+order: 6
+source: {kind: kern, path: inventions/kern/sinfo06.krn, beats_per_quarter: 2}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 1, start: 0, length: 9}   # the motive
+  entries:
+    - {voice: 1, start: 0, form: motive}                            # bar 1, middle: E-F#-G#-A-B-C#-B-C#-A
+    - {voice: 0, start: 9, form: motive}                            # bar 2, upper: B-C#-D#-E-F#-G#-F#-G#-E
+    - {voice: 2, start: 18, form: motive}                           # bar 3, lower: B-C#-D#-E-F#-G#-F#-G#-E
+    - {voice: 2, start: 54, form: motive}                           # bar 7, lower: E-F#-G#-A-B-C#-B-C#-A
+    - {voice: 2, start: 153, form: motive}                          # bar 18, lower: B-C#-D#-E-F#-G#-F#-G#-E
+    - {voice: 1, start: 162, form: motive}                          # bar 19, middle: B-C#-D#-E-F#-G#-F#-G#-E
+    - {voice: 0, start: 171, form: motive}                          # bar 20, upper: F#-G#-A-B-C#-D-C#-D-B
+    - {voice: 0, start: 180, form: motive}                          # bar 21, upper: A-B-C#-D-E-F#-E-F#-D
+    - {voice: 0, start: 189, form: motive}                          # bar 22, upper: C#-D#-E-F#-G#-A-G#-A-F#
+    - {voice: 1, start: 198, form: motive, transform: inverted}     # bar 23, middle inverted: C#-B-A-G#-F#-E-F#-E-G#
+    - {voice: 2, start: 216, form: motive, transform: inverted}     # bar 25, lower inverted: B-A-G#-F#-E-D#-E-D#-F#
+    - {voice: 2, start: 252, form: motive, transform: inverted}     # bar 29, lower inverted: E-D#-C#-B-A-G#-A-G#-B
+    - {voice: 1, start: 306, form: motive}                          # bar 35, middle: E-F#-G#-A-B-C#-B-C#-A
+    - {voice: 0, start: 306, form: motive, transform: inverted}     # bar 35, upper inverted: E-D#-C#-B-A-G#-A-G#-B
+    - {voice: 2, start: 315, form: motive}                          # bar 36, lower: A#-C#-D#-E-F#-G-F#-G-E
+    - {voice: 0, start: 324, form: motive, transform: inverted}     # bar 37, upper inverted: B-A-G#-F#-E-D#-E-D#-F#
+    - {voice: 1, start: 342, form: motive}                          # bar 39, middle: C#-D#-E-F#-G#-A-G#-A-F#
+captions:
+  - {at: 0, text: "☞ The motive in the middle voice: a rising line in eighths."}
+  - {at: 9, text: "☞ The upper voice answers it, on B."}
+  - {at: 18, text: "☞ The lower voice enters with the motive."}
+  - {at: 198, text: "☞ The motive inverted in the middle voice: it now falls."}
+  - {at: 306, text: "☞ The motive and its inversion together: middle voice up, upper voice down."}

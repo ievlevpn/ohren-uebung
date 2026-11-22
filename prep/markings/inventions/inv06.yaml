@@ -1,0 +1,44 @@
+# Source: humdrum-tools/inventions, inven06.krn (2 voices: upper, lower; no spine splits).
+# 3/8: beats_per_quarter 2, a beat is an eighth, 3 per bar. Repeats not unfolded.
+# Motive: the upper voice's syncopated line falling from E (E-D#-D-C#-B-A-G#-F#, each
+# tied over the beat) and its sixteenth-note close, bars 1-4. Countermotive: the
+# bass's scale rising an octave (E-F#-G#-A-B-C#-D#-E-D#-C#-B-E, beats 0-10). The two
+# swap voices every four bars (invertible counterpoint): bars 1, 5, 21, 25, 43, 47.
+id: invention06
+title: Invention 6
+catalogue: BWV 777
+key: E major
+tempo: 112
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: "two lines that swap voices: a falling syncopated line, a rising scale"
+techniques: [invention, motive, countermotive, invertible counterpoint]
+book: Inventions
+order: 6
+source: {kind: kern, path: inventions/kern/inven06.krn, beats_per_quarter: 2}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 11.5}   # the motive
+  countersubject: {voice: 1, start: 0, length: 10}   # the countermotive
+  entries:
+    - {voice: 1, start: 0, form: countermotive}                       # bar 1, lower countermotive: E-F#-G#-A-B-C#-D#-E
+    - {voice: 0, start: 0.5, form: motive}                            # bar 1, upper: E-D#-D-C#-B-A-G#-F#
+    - {voice: 0, start: 12, form: countermotive}                      # bar 5, upper countermotive: E-F#-G#-A-B-C#-D#-E
+    - {voice: 1, start: 12.5, form: motive}                           # bar 5, lower: E-D#-D-C#-B-A-G#-F#
+    - {voice: 0, start: 60, form: countermotive}                      # bar 21, upper countermotive: B-C#-D#-E-F#-G#-A#-B
+    - {voice: 1, start: 60.5, form: motive}                           # bar 21, lower: B-A#-A-G#-F#-E-D#-C#
+    - {voice: 1, start: 72, form: countermotive}                      # bar 25, lower countermotive: B-C#-D#-E-F#-G#-A#-B
+    - {voice: 0, start: 72.5, form: motive}                           # bar 25, upper: B-A#-A-G#-F#-E-D#-C#
+    - {voice: 0, start: 126, form: countermotive}                     # bar 43, upper countermotive: E-F#-G#-A-B-C#-D#-E
+    - {voice: 1, start: 126.5, form: motive}                          # bar 43, lower: E-D#-D-C#-B-A-G#-F#
+    - {voice: 1, start: 138, form: countermotive}                     # bar 47, lower countermotive: E-F#-G#-A-B-C#-D#-E
+    - {voice: 0, start: 138.5, form: motive}                          # bar 47, upper: E-D#-D-C#-B-A-G#-F#
+captions:
+  - {at: 0, text: "☞ The lower voice climbs a scale, the countermotive."}
+  - {at: 0.5, text: "☞ Against it the motive: a syncopated line falling step by step."}
+  - {at: 12.5, text: "☞ The voices swap: the falling line below, the rising scale above."}
+  - {at: 60.5, text: "☞ Second half, in B major: the falling line in the lower voice."}
+  - {at: 72.5, text: "☞ Swapped again: the falling line above, the scale below."}
+  - {at: 126.5, text: "☞ Back in E major: the falling line below, the scale above."}

@@ -1,0 +1,55 @@
+# Source: humdrum-tools/inventions, sinfo09.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM48 names no source).
+# Motive (checked against the score): the middle voice from beat 0.5, the sighs F-Ab-G,
+# G-Bb-A, Bb-E-F, then Eb-Db-C-Bb (beats 0.5-8). Countermotive: the lower voice's
+# chromatic descent F-E-Eb-D-Db-C in quarters (beats 1-7), which starts half a beat after
+# every statement of the motive, in another voice; the two swap places throughout.
+# 10 statements of each, all complete and all marked. Not marked: the motive's head
+# alone (F-Ab-G, G-Bb-A) in the sequences of bars 15-17 and 28-30.
+id: sinfonia09
+title: Sinfonia 9
+catalogue: BWV 795
+key: F minor
+tempo: 48
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "a sighing motive over a falling chromatic line"
+techniques: [sinfonia, motive, countermotive, chromaticism, invertible counterpoint]
+book: Sinfonias
+order: 9
+source: {kind: kern, path: inventions/kern/sinfo09.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 1, start: 0.5, length: 7.5}   # the motive
+  countersubject: {voice: 2, start: 1, length: 5.5}   # the countermotive
+  entries:
+    - {voice: 1, start: 0.5, form: motive}                          # bar 1, middle: F-Ab-G-G-Bb-A-Bb-E-F-Eb-Db-C-Bb
+    - {voice: 2, start: 1, form: countermotive}                     # bar 1, lower countermotive: F-E-Eb-D-Db-C
+    - {voice: 0, start: 8.5, form: motive}                          # bar 3, upper: C-Eb-D-D-F-E-F-B-C-Bb-Ab-G-F
+    - {voice: 1, start: 9, form: countermotive}                     # bar 3, middle countermotive: C-B-Bb-A-Ab-G
+    - {voice: 2, start: 24.5, form: motive}                         # bar 7, lower: F-Ab-G-G-Bb-A-Bb-E-F-Eb-Db-C-Bb
+    - {voice: 0, start: 25, form: countermotive}                    # bar 7, upper countermotive: F-E-Eb-D-Db-C
+    - {voice: 1, start: 40.5, form: motive}                         # bar 11, middle: Ab-C-Bb-Bb-Db-C-Db-G-Ab-G-F-Eb-Db
+    - {voice: 2, start: 41, form: countermotive}                    # bar 11, lower countermotive: Ab-G-Gb-F-Fb-Eb
+    - {voice: 0, start: 48.5, form: motive}                         # bar 13, upper: Eb-Gb-F-F-Ab-G-Ab-D-Eb-D-C-Bb-Ab
+    - {voice: 1, start: 49, form: countermotive}                    # bar 13, middle countermotive: Eb-D-Db-C-Cb-Bb
+    - {voice: 1, start: 68.5, form: motive}                         # bar 18, middle: C-Eb-D-D-F-E-F-B-C-Bb-Ab-G-F
+    - {voice: 0, start: 69, form: countermotive}                    # bar 18, upper countermotive: C-B-Bb-A-Ab-G
+    - {voice: 2, start: 92.5, form: motive}                         # bar 24, lower: Db-F-Eb-Eb-Gb-F-Gb-C-Db-C-Bb-Ab-Gb
+    - {voice: 0, start: 93, form: countermotive}                    # bar 24, upper countermotive: Db-C-Cb-Bb-Bbb-Ab
+    - {voice: 0, start: 100.5, form: motive}                        # bar 26, upper: Ab-Cb-Bb-Bb-Db-C-Db-G-Ab-G-F-Eb-Db
+    - {voice: 1, start: 101, form: countermotive}                   # bar 26, middle countermotive: Ab-G-Gb-F-Fb-Eb
+    - {voice: 0, start: 120.5, form: motive}                        # bar 31, upper: F-Ab-G-G-Bb-A-Bb-E-F-Eb-Db-C-Bb
+    - {voice: 1, start: 121, form: countermotive}                   # bar 31, middle countermotive: F-E-Eb-D-Db-C
+    - {voice: 1, start: 128.5, form: motive}                        # bar 33, middle: F-Ab-G-G-Bb-A-Bb-E-F-Eb-Db-C-Bb
+    - {voice: 2, start: 129, form: countermotive}                   # bar 33, lower countermotive: F-E-Eb-D-Db-C
+captions:
+  - {at: 0.5, text: "☞ The motive in the middle voice; below, the chromatic countermotive."}
+  - {at: 8.5, text: "☞ The upper voice takes the motive, in C minor, over the chromatic line."}
+  - {at: 24.5, text: "☞ The lower voice has the motive; the upper voice falls chromatically."}
+  - {at: 40.5, text: "☞ The motive in A♭ major, in the middle voice."}
+  - {at: 120.5, text: "☞ The motive in F minor, in the upper voice."}
+  - {at: 128.5, text: "☞ The last statement: the middle voice, over the chromatic bass."}

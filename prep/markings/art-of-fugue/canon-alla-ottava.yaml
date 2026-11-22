@@ -1,0 +1,45 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-012.krn ("Canon alla Ottava"; two
+# spines, one per staff; encoded from the Bach-Gesellschaft edition, vol. 47, 1926, p.
+# 70; no splits; 15 grace notes, kept as secondary notes). 9/16: the beat is a dotted
+# eighth (beat_unit: 0.75), 3 per bar. The file marks a repeat of bars 5-80; it is not
+# played (repeats are not unfolded): each bar sounds once (103 bars).
+# Tempo: editorial (the file's *MM92 names no source).
+# The canon, read from the score and matched against the rule: the lower voice follows the
+# upper an octave lower (counted on the D minor scale) four bars later, from bar 5 to the
+# end; four notes (bars 22, 40, 47) are answered off the rule, within min_match. The
+# lower voice answers to the last bar (its bars 101-102 are the upper's 97-98, ending on
+# D3). Free: the upper voice's last bars (from bar 99), which would be answered after the
+# end. The upper voice falls to D2 in the closing bars, under the lower.
+# Instruments: harpsichord. The upper voice spans D2 to B♭5, wider than any string
+# instrument in INSTRUMENT_RANGES; the four canons were printed on two staves as keyboard
+# music and are all played on the harpsichord here.
+id: canon-alla-ottava
+title: Canon alla Ottava
+catalogue: BWV 1080, 15
+key: D minor
+tempo: 66
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: canon at the octave, four bars apart, in 9/16; the repeat is not played
+techniques: [canon, canon at the octave]
+order: 15
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-012.krn, beat_unit: 0.75}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+canon:
+  leader: 0
+  followers:
+    - voice: 1
+      rule:
+        delay: 12
+        interval: -7        # an octave down
+        diatonic: true
+        key: d
+        pitch_tolerance: 1
+        # free: the upper voice's close (bars 99-103), past the lower voice's last answer
+        free: [[295.66, 310]]
+captions:
+  - {bar: 1, text: "☞ Dux: the upper voice alone, in running sixteenths."}
+  - {at: 12, text: "☞ Comes: the lower voice, the same line an octave lower, four bars later."}
+  - {bar: 99, text: "☞ The upper voice's last bars are free; the lower voice answers to the end."}

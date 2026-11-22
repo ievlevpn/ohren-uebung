@@ -1,0 +1,54 @@
+# Source: humdrum-tools/inventions, sinfo01.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM92 names no source).
+# Motive (checked against the score): the upper voice's sixteenths after the opening rest,
+# a rising octave scale G-A-B-C-D-E-F-G and the turn F-G-A (beats 0.25-3). The bar's last
+# four sixteenths (F-A-G-F) vary from statement to statement (in the inversion a step
+# replaces the third), so they are not part of the marked motive. The inversion falls an
+# octave and turns back up (lower voice, bar 4: F-E-D-C-B-A-G-F, G-F-E).
+# The scan with find_entry over every onset found 11 upright and 6 inverted statements, all
+# complete (every interval the motive's size in scale steps, rhythm exact); all are marked.
+# Not marked: the lower voice's falling scales in bars 7, 17 and 18, which leap up a ninth
+# after the run instead of turning by step (sequences, not statements).
+id: sinfonia01
+title: Sinfonia 1
+catalogue: BWV 787
+key: C major
+tempo: 80
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "the scale motive, rising and falling, in all three voices"
+techniques: [sinfonia, motive, imitation, inversion]
+book: Sinfonias
+order: 1
+source: {kind: kern, path: inventions/kern/sinfo01.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0.25, length: 2.75}   # the motive
+  entries:
+    - {voice: 0, start: 0.25, form: motive}                         # bar 1, upper: G-A-B-C-D-E-F-G-F-G-A
+    - {voice: 1, start: 4.25, form: motive}                         # bar 2, middle: C-D-E-F-G-A-B-C-B-C-D
+    - {voice: 2, start: 8.25, form: motive}                         # bar 3, lower: G-A-B-C-D-E-F-G-F-G-A
+    - {voice: 2, start: 12.25, form: motive, transform: inverted}   # bar 4, lower inverted: F-E-D-C-B-A-G-F-G-F-E
+    - {voice: 2, start: 16.25, form: motive}                        # bar 5, lower: G-A-B-C-D-E-F-G-F-G-A
+    - {voice: 1, start: 20.25, form: motive, transform: inverted}   # bar 6, middle inverted: F-E-D-C-B-A-G-F-G-F-E
+    - {voice: 2, start: 30.25, form: motive}                        # bar 8, lower: D-E-F#-G-A-B-C-D-C-D-E
+    - {voice: 1, start: 34.25, form: motive, transform: inverted}   # bar 9, middle inverted: C-B-A-G-F#-E-D-C-D-C-B
+    - {voice: 0, start: 38.25, form: motive, transform: inverted}   # bar 10, upper inverted: A-G-F#-E-D-C-B-A-B-A-G
+    - {voice: 2, start: 40.25, form: motive, transform: inverted}   # bar 11, lower inverted: G-F#-E-D-C-B-A-G-A-G-F
+    - {voice: 0, start: 44.25, form: motive}                        # bar 12, upper: E-F-G-A-B-C#-D-E-D-E-F
+    - {voice: 1, start: 48.25, form: motive}                        # bar 13, middle: D-E-F-G-A-B-C#-D-C#-D-E
+    - {voice: 2, start: 52.25, form: motive}                        # bar 14, lower: C-D-E-F-G-A-Bb-C-Bb-C-D
+    - {voice: 2, start: 56.25, form: motive}                        # bar 15, lower: G-A-B-C-D-E-F-G-F-G-A
+    - {voice: 1, start: 60.25, form: motive}                        # bar 16, middle: F-G-A-B-C-D-E-F-E-F-G
+    - {voice: 2, start: 62.25, form: motive, transform: inverted}   # bar 16, lower inverted: C-B-A-G-F-E-D-C-D-C-Bb
+    - {voice: 2, start: 72.25, form: motive}                        # bar 19, lower: G-A-B-C-D-E-F-G-F-G-A
+captions:
+  - {at: 0.25, text: "☞ The motive in the upper voice: a scale up an octave, then a turn."}
+  - {at: 4.25, text: "☞ The middle voice answers it, starting on C."}
+  - {at: 8.25, text: "☞ The lower voice brings the motive, now on G."}
+  - {at: 12.25, text: "☞ The lower voice turns the motive upside down: a scale falling an octave."}
+  - {at: 38.25, text: "☞ The upper voice falls with the inverted motive."}
+  - {at: 72.25, text: "☞ Near the end, the lower voice has the motive once more, on G."}

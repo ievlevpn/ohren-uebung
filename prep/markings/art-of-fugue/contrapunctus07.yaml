@@ -1,0 +1,76 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-007.krn ("Contrapunctus 7, a 4. per
+# Augment et Diminut"; BGA vol. 25.1, p. 27). C (4/4): beats are quarter notes, 4 per bar.
+# One spine split (the soprano, bars 56-61) is kept as 41 secondary notes, nothing dropped.
+# Tempo: editorial (the file's *MM92 names no source).
+# The subject, as in Contrapunctus 6, is D A G F E D C♯ D E F in the dotted French
+# rhythm. Bach never states it at plain length right way up until bar 36, so that
+# statement (tenor, D A G F E D C♯ D E F, bars 36-39) is the reference: the others are
+# matched against it inverted, in diminution (note values halved) and in augmentation
+# (doubled). The piece opens with the subject in diminution (tenor).
+# Entries: every place find_entry finds the subject in any form (scan of all voices and
+# onsets, then checked by hand). Forms as in Contrapunctus 6: a statement whose first
+# leap is a fourth (counted upside down when inverted) is the tonal answer, one whose
+# first leap is a fifth the subject. Statements that vary after their opening are marked
+# to where they leave the subject (part: head): bars 6, 20 and 55 (seven notes, tenor),
+# bar 20 (six, bass) and bar 38 (eight, soprano). A statement whose first note is cut
+# short or held over has head: free. Stretto groups: entries that begin at least a beat
+# before the previous entry's last note.
+# Instruments: the tenor goes down to B2, below the viola: cello.
+id: contrapunctus07
+title: Contrapunctus VII
+catalogue: BWV 1080, 7
+key: D minor
+tempo: 50
+beats_per_bar: 4
+ensemble: strings
+listen_for: the subject at three speeds at once, halved and doubled
+techniques: [fugue, subject, answer, inversion, augmentation, diminution, stretto]
+order: 7
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-007.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple, instrument: cello}   # down to B2
+  - {name: Bass, texture: dashed}
+fugue:
+  # the subject at plain length: tenor, D A G F E D C♯ D E F, bars 36-39
+  subject: {voice: 2, start: 142, length: 12.5}
+  entries:
+    - {voice: 2, start: 0, form: subject, transform: diminished, stretto: 1}  # bar 1, D
+    - {voice: 0, start: 4, form: subject, transform: inverted, stretto: 1}  # bar 2, A
+    - {voice: 1, start: 8, form: answer, transform: inverted diminished, stretto: 1}  # bar 3, D
+    - {voice: 3, start: 16, form: answer, transform: inverted augmented, stretto: 2}  # bar 5, D
+    - {voice: 2, start: 20, form: answer, transform: diminished, part: head, head_length: 7, stretto: 2}  # bar 6, E
+    - {voice: 1, start: 24, form: subject, transform: diminished, stretto: 2}  # bar 7, A
+    - {voice: 2, start: 32, form: subject, transform: inverted diminished, stretto: 2}  # bar 9, A
+    - {voice: 0, start: 50, form: answer, transform: diminished}  # bar 13, A
+    - {voice: 2, start: 64, form: subject, transform: diminished}  # bar 17, B♭
+    - {voice: 2, start: 76, form: answer, transform: diminished, part: head, head_length: 7, stretto: 3}  # bar 20, C
+    - {voice: 3, start: 78, form: subject, transform: inverted diminished, part: head, head_length: 6, stretto: 3}  # bar 20, F
+    - {voice: 1, start: 88, form: subject, transform: diminished, stretto: 4}  # bar 23, F
+    - {voice: 2, start: 89, form: subject, transform: augmented, head: free, stretto: 4}  # bar 23, F
+    - {voice: 0, start: 94, form: subject, transform: inverted diminished, stretto: 4}  # bar 24, C
+    - {voice: 3, start: 108, form: subject, transform: diminished, stretto: 4}  # bar 28, D
+    - {voice: 1, start: 114, form: subject, transform: diminished}  # bar 29, D
+    - {voice: 1, start: 136, form: subject, transform: inverted augmented, stretto: 5}  # bar 35, A
+    - {voice: 2, start: 142, form: subject, stretto: 5}  # bar 36, D
+    - {voice: 0, start: 149, form: subject, part: head, head_length: 8, head: free, stretto: 5}  # bar 38, D
+    - {voice: 0, start: 166.5, form: subject, transform: inverted diminished, head: free, stretto: 6}  # bar 42, A
+    - {voice: 1, start: 168, form: subject, transform: inverted diminished, stretto: 6}  # bar 43, A
+    - {voice: 1, start: 176, form: answer, transform: diminished, stretto: 7}  # bar 45, A
+    - {voice: 2, start: 181, form: subject, transform: inverted diminished, stretto: 7}  # bar 46, D
+    - {voice: 3, start: 187.5, form: answer, transform: diminished, head: free}  # bar 47, G
+    - {voice: 0, start: 196, form: subject, transform: augmented, stretto: 8}  # bar 50, D
+    - {voice: 1, start: 200.5, form: subject, transform: inverted diminished, head: free, stretto: 8}  # bar 51, E
+    - {voice: 1, start: 215, form: answer, transform: diminished, stretto: 8}  # bar 54, E
+    - {voice: 2, start: 216, form: answer, transform: diminished, part: head, head_length: 7, stretto: 8}  # bar 55, A
+captions:
+  - {at: 0, text: "☞ Dux: the subject in diminution, its notes halved, in the tenor."}
+  - {at: 4, text: "☞ The soprano: the subject inverted, at its plain length."}
+  - {at: 8, text: "☞ The alto: the answer inverted and in diminution."}
+  - {at: 16, text: "☞ The bass: the answer inverted and in augmentation, notes doubled."}
+  - {at: 89, text: "☞ The tenor: the subject in augmentation, under quicker statements."}
+  - {at: 136, text: "☞ The alto: the subject inverted and in augmentation."}
+  - {at: 142, text: "☞ The tenor: the subject right way up at its plain length, at last."}
+  - {at: 196, text: "☞ The soprano: the subject in augmentation, over its own diminutions."}
+  - {at: 216, text: "☞ The last entry: the answer in diminution in the tenor."}

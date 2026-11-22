@@ -1,0 +1,51 @@
+# Source: humdrum-tools/inventions, sinfo15.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM63 names no source).
+# 9/16: beat_unit 0.75, a beat is a dotted eighth, 3 per bar (onsets in sixteenths are
+# thirds of a beat: the countermotive starts at 4/3). The final chord is
+# notated longer than the last bar.
+# Motive (checked against the score): the upper voice's first bar, B and the repeated F#
+# around G: B-F#-F#-G-F#-F#-B-F#-F# (beats 0-3). The bar repeats on C# (bar 2), then a
+# bar of broken chords follows. Countermotive: the lower voice under it, from the fifth
+# sixteenth, B-C#-D-C#-B, A# held, B-C#-B-C#-A# (beats 4/3-6). The lower voice takes the
+# motive in bar 4 with the countermotive above it; the middle voice enters in bar 7.
+# Seven complete statements of the motive and three of the countermotive, all marked.
+# Not marked: the upper voice's statements in bars 8 and 10, which hold their first note
+# over from the bar before (eight notes, without the motive's first); and the upper
+# voice's bar 2, C#-F#-F#-G-F#-F#-C#-F#-F#, where the leaps from and to C# are fifths, not
+# fourths (three intervals change size).
+id: sinfonia15
+title: Sinfonia 15
+catalogue: BWV 801
+key: B minor
+tempo: 64
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: "a motive around a repeated note, over a rocking countermotive"
+techniques: [sinfonia, motive, countermotive, imitation]
+book: Sinfonias
+order: 15
+source: {kind: kern, path: inventions/kern/sinfo15.krn, beat_unit: 0.75}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0, length: 3}   # the motive
+  countersubject: {voice: 2, start: 1.3333333, length: 4.6666667}   # the countermotive
+  entries:
+    - {voice: 0, start: 0, form: motive}                          # bar 1, upper: B-F#-F#-G-F#-F#-B-F#-F#
+    - {voice: 2, start: 1.3333333, form: countermotive}           # bar 1, lower countermotive: B-C#-D-C#-B-A#-B-C#-B-C#-A#
+    - {voice: 2, start: 9, form: motive}                          # bar 4, lower: B-F#-F#-G-F#-F#-B-F#-F#
+    - {voice: 0, start: 10.333333, form: countermotive}           # bar 4, upper countermotive: B-C#-D-C#-B-A#-B-C#-B-C#-A#
+    - {voice: 1, start: 18, form: motive}                         # bar 7, middle: B-F#-F#-G-F#-F#-B-F#-F#
+    - {voice: 1, start: 24, form: motive}                         # bar 9, middle: A-E-E-F#-E-E-A-E-E
+    - {voice: 1, start: 39, form: motive}                         # bar 14, middle: D-A-A-B-A-A-D-A-A
+    - {voice: 0, start: 48, form: motive}                         # bar 17, upper: A-E-E-F#-E-E-A-E-E
+    - {voice: 1, start: 49.333333, form: countermotive}           # bar 17, middle countermotive: A-B-C#-B-A-G#-A-B-A-B-G#
+    - {voice: 1, start: 57, form: motive}                         # bar 20, middle: E-B-B-C-B-B-E-B-B
+captions:
+  - {at: 0, text: "☞ The motive in the upper voice: B, then a repeated F♯ around G."}
+  - {at: 1.3333333, text: "☞ Below it, the countermotive rocks up and down."}
+  - {at: 9, text: "☞ The lower voice takes the motive; the countermotive is now above."}
+  - {at: 18, text: "☞ The middle voice enters with the motive."}
+  - {at: 48, text: "☞ The motive in the upper voice, in A major."}

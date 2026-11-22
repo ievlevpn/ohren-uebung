@@ -1,0 +1,58 @@
+# Source: transcriptions/bwv1079-canone-perpetuo.yaml (every voice: the BGA prints this
+# canon in score, IMSLP10042 (BGA 31.2) pages 36-37), so the violin is matched against
+# the printed notes (score: true). The violin answers the flute by exact contrary motion
+# (every interval exact) two bars later: about the pitch sum 151 (c'' is answered by g'')
+# until the flute's note in bar 18 beat 4 (beat 71); from that note, which the violin
+# answers in bar 20 (beat 79), to the repeat a minor seventh lower (sum 141). One note
+# there, the violin's b♭' at beat 99.5, is a semitone off the mirror (an adjusted thread). The flute's and violin's tied notes, which Reccmo strikes again,
+# are tied as printed. Two bars, the 30-bar repeat twice, and a third time to the fermata
+# (the BGA's (Fine)) at beat 296; the flute's last bars before it are not imitated.
+# Title as the BGA heads it (p. 36). Tempo editorial.
+id: bwv1079-canone-perpetuo
+title: Canone perpetuo
+catalogue: BWV 1079/9
+key: C minor
+tempo: 112
+beats_per_bar: 4
+ensemble: chamber
+listen_for: canon by contrary motion at exact intervals
+techniques: [canon, inversion, perpetual canon]
+order: 9
+source: {kind: transcription, path: transcriptions/bwv1079-canone-perpetuo.yaml, score: true}
+voices:
+  - {name: Flute, texture: solid, instrument: flute}         # "Flauto traverso" (p. 36)
+  - {name: Violin, texture: hatch, instrument: violin}       # "Violino"
+  - {name: Continuo, texture: stipple, instrument: cello}  # "Continuo"
+canon:
+  - span: [0, 71]
+    leader: 0
+    followers:
+      - {voice: 1, min_match: 1, rule: {delay: 8, invert_about: 72, interval: 7}}
+  - span: [71, 121]
+    leader: 0
+    followers:
+      - {voice: 1, min_match: 1, rule: {delay: 8, invert_about: 72, interval: -3, pitch_tolerance: 1}}
+  - span: [121, 191]
+    leader: 0
+    followers:
+      - {voice: 1, min_match: 1, rule: {delay: 8, invert_about: 72, interval: 7}}
+  - span: [191, 241]
+    leader: 0
+    followers:
+      - {voice: 1, min_match: 1, rule: {delay: 8, invert_about: 72, interval: -3, pitch_tolerance: 1}}
+  - span: [241, 288.5]
+    leader: 0
+    followers:
+      # free: the flute's last bars before the fermata (beat 296) are not imitated
+      # (the range lies outside this section's span, so the build already leaves those
+      # notes out; it is there for the glossary, which lists the piece under Free passage)
+      - {voice: 1, min_match: 1, rule: {delay: 8, invert_about: 72, interval: 7, free: [[288.5, 296]]}}
+captions:
+  - {bar: 1, text: "☞ The flute begins; the violin will answer it upside down."}
+  - {at: 9, text: "☞ Violin: the flute's line by exact contrary motion, two bars later."}
+  - {at: 79, text: "☞ The violin's mirror drops a seventh: the same intervals, a new axis."}
+  - {at: 128, text: "☞ The repeat: the canon goes round again on its first axis."}
+  - {at: 296, text: "☞ The third time round it stops at the fermata, the edition's Fine."}
+# "In this piece" on a definition card; tests/test_glossary_notes.py checks each claim
+glossary_notes:
+  inversion: "Exact contrary motion: the flute's c'' is answered by the violin's g'', two bars later; in bars 20–32, and again in bars 50–62, the mirror lies a seventh lower."

@@ -1,0 +1,50 @@
+# Source: transcriptions/bwv1079-augmentationem.yaml (Thema and dux written, IMSLP10042 (BGA 31.2)
+# page 9; resolution page 42). The comes is computed: the dux mirrored diatonically about
+# e♭' and in notes of double length, entering 1¾ beats after it. The dux's 8 bars take
+# the comes 16, so the dux plays twice to each round of the comes (written out in the
+# transcription). Two full rounds of the comes (to beat 130.5) and 3⅜ bars of a third,
+# then Reccmo's closing chord at beat 144 (end/coda): the comes's b'-c'' there is the
+# nearest cadence; ending at 130.5 would cut every voice mid-phrase.
+id: bwv1079-augmentationem
+title: Canon a 2 per augmentationem, contrario motu
+catalogue: BWV 1079, Canon 4
+key: C minor
+tempo: 56
+beats_per_bar: 4
+ensemble: chamber
+listen_for: augmentation and contrary motion at once
+techniques: [canon, augmentation, inversion, perpetual canon]
+order: 4
+source: {kind: transcription, path: transcriptions/bwv1079-augmentationem.yaml}
+voices:
+  - {name: Comes, texture: solid, instrument: violin}   # 59-79: below the flute
+  - {name: Thema, texture: hatch}
+  - {name: Dux, texture: stipple}
+canon:
+  leader: 2
+  followers:
+    - voice: 0
+      rule:
+        delay: 1.75
+        diatonic: true
+        key: c
+        invert_about: 63    # e♭'
+        stretch: 2          # augmentation: every note twice as long
+        pitch_tolerance: 1
+        # exceptions: degrees the comes inflects the other way from the strict mirror
+        # (raised or natural 6th and 7th, e♮ or e♭); the resolution's notes (IMSLP10042, page 42),
+        # one semitone from the rule each, drawn as adjusted threads. Indices into the
+        # comes, from scripts/musical_offering.py.
+        exceptions: {9: 69, 10: 71, 15: 75, 17: 71, 19: 64, 23: 70, 24: 68, 26: 68, 28: 70, 29: 68, 33: 69, 34: 71, 36: 71, 41: 75, 44: 71, 46: 76, 49: 70, 50: 68, 56: 59, 59: 63, 61: 68, 71: 71, 84: 69, 85: 71, 90: 75, 92: 71, 94: 64, 98: 70, 99: 68, 101: 68, 103: 70, 104: 68, 108: 69, 109: 71, 111: 71, 116: 75, 119: 71, 121: 76, 124: 70, 125: 68, 131: 59, 134: 63, 136: 68, 146: 71, 159: 69, 160: 71, 165: 75}
+marks:
+  - {kind: mirror-axis, start: 0, end: 144, pitch: 63, label: e♭'}
+  - {kind: stretch, start: 2.5, end: 144, voice: 0, label: "×2"}
+captions:
+  - {bar: 1, text: "☞ The royal theme, ornamented, over the dux in the bass."}
+  - {at: 2.5, text: "☞ Comes: by contrary motion and in notes twice as long, above."}
+  - {bar: 9, text: "☞ The dux begins again; the slow comes is only halfway through."}
+  - {bar: 17, text: "☞ The comes begins its second round, the dux its third."}
+# "In this piece" on a definition card; tests/test_glossary_notes.py checks each claim
+glossary_notes:
+  augmentation: "Every note of the comes lasts twice as long as the dux note it answers: the bracket marked ×2."
+  inversion: "The comes is upside down as well: the dux mirrored about E♭, along the dashed line."

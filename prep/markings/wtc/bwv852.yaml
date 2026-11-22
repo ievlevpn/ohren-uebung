@@ -1,0 +1,49 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f07.krn (3 voices: soprano, alto, bass).
+# Tempo: editorial (the file's *MM84 names no source).
+# Spine split: the last bar (37) splits the soprano; the second line (Db, C, Cb, Bb) is kept
+# as secondary notes.
+# Subject (checked against the score): the soprano, Bb G F G Eb Ab G Ab C Bb, A F Eb' D C,
+# the C trilled and resolving to the Bb on beat 3 of bar 2 (16 notes; every statement
+# goes on by that step at that moment). The answer is tonal: Eb falls a step where the
+# subject fell a third. Forms follow the pitch level of notes 3..n (the subject's or the
+# answer's); in other keys, the opening step (answer) or third (subject).
+# head: free — four statements open on a note tied over the barline, which replaces the
+# first sixteenth (bars 10-11 soprano, 25-26 bass, 28-29 soprano, whose held note is Ab,
+# 33-34 alto); each is placed on its downbeat, and its mark begins with the tied note.
+# 9 complete statements marked; none overlap. Not marked: the soprano's head sequence in
+# bars 22-23, which breaks off.
+id: bwv852
+title: Fugue in E♭ major
+catalogue: BWV 852
+key: E♭ major
+tempo: 84
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 3 voices; a cheerful subject in running sixteenths
+techniques: [fugue, subject, answer]
+book: Book I
+order: 7
+number: 7
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f07.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Bass, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0, length: 6.25}
+  entries:
+    - {voice: 0, start: 0, form: subject}
+    - {voice: 1, start: 8, form: answer}
+    - {voice: 2, start: 20, form: subject}
+    - {voice: 1, start: 66, form: answer}
+    - {voice: 2, start: 78, form: subject}
+    - {voice: 0, start: 40, form: answer, head: free}
+    - {voice: 2, start: 100, form: answer, head: free}
+    - {voice: 0, start: 112, form: subject, head: free}
+    - {voice: 1, start: 132, form: answer, head: free}
+captions:
+  - {at: 0, text: "☞ Dux: the subject in the soprano, falling from B♭ in sixteenths."}
+  - {at: 8, text: "☞ The answer in the alto: E♭ falls a step, where the subject fell a third."}
+  - {at: 20, text: "☞ The bass enters with the subject, on B♭."}
+  - {at: 66, text: "☞ The answer in the alto, now in C minor."}
+  - {at: 78, text: "☞ The subject in the bass, on G."}

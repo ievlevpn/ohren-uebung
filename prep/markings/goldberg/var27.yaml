@@ -1,0 +1,50 @@
+# Source: Mutopia BachJS/BWV988/bwv-988-v27 (6/8). beats_per_quarter: 2, so a beat is an
+# eighth note and a bar has 6. Two voices only, no bass. Voices from the MIDI, top first:
+# 0 = upper, 1 = lower. Repeats are not unfolded: 32 bars, 192 beats. The roles swap at
+# the double bar (checked bar by bar): in the first half the lower voice leads and the
+# upper answers a ninth higher, one bar later (g -> a'); in the second half the upper
+# voice leads and the lower answers a ninth below (a'' -> g').
+id: goldberg-var27
+title: Variatio 27
+catalogue: BWV 988, 27
+key: G major
+tempo: 160
+beats_per_bar: 6
+ensemble: harpsichord
+listen_for: canon at the ninth, two voices and no bass
+techniques: [canon, canon at the ninth]
+order: 27
+source: {kind: mutopia, path: BachJS/BWV988/bwv-988-v27, beats_per_quarter: 2}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+canon:
+  - span: [0, 96]       # first half: the lower voice leads
+    leader: 1
+    followers:
+      - voice: 0
+        rule:
+          delay: 6
+          interval: 8         # eight scale steps up: g answered by a'
+          diatonic: true
+          key: G
+          pitch_tolerance: 1  # Bach's chromatic adjustments (b answered by c#'', not c'')
+          # free: from beat 89.5 (bar 15) the upper voice cadences instead of imitating.
+          free: [[89.5, 96]]
+  - span: [96, 192]     # second half: the upper voice leads
+    leader: 0
+    followers:
+      - voice: 1
+        rule:
+          delay: 6
+          interval: -8        # eight scale steps down: a'' answered by g'
+          diatonic: true
+          key: G
+          pitch_tolerance: 1
+          # free: the last bar (from beat 186), whose images would fall past the end.
+          free: [[186, 192]]
+captions:
+  - {bar: 1, text: "☞ Dux: the lower voice leads. Only two voices here, no bass."}
+  - {bar: 2, text: "☞ Comes: the dux a ninth higher, one bar later."}
+  - {bar: 17, text: "☞ Second half: the roles swap, and the upper voice leads."}
+  - {bar: 18, text: "☞ The lower voice answers it a ninth below, one bar later."}

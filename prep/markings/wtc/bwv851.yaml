@@ -1,0 +1,61 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f06.krn (3 voices: soprano, alto, bass). 3/4.
+# Tempo: editorial (the file's *MM78 names no source).
+# Spine split: bars 43-44 split the soprano; the second line (six chords in sixths, then
+# A/F#) is kept as secondary notes. The alto's chords there keep every tone too.
+# Subject (checked against the score): the soprano from the second eighth of bar 1, D E F G
+# E F D C# D Bb G, the G trilled, resolving to the A on the downbeat of bar 3 (12 notes);
+# every exposition voice enters the eighth after that A. The answer is real (on A); the
+# statements on A are marked answer. Where the cadence turns elsewhere or the A comes
+# late (a suspension), the entry has tail: free (bars 21, 22, 23, 27, 29).
+# The inversion's head is first heard in the alto in bar 12 (A G F E G, then it turns
+# away); the first complete inversion is the alto's in bar 14. 16 complete statements
+# marked (5 inverted); stretto groups are entries that begin at least a beat before the
+# previous entry's last note.
+# Not marked (rhythm or intervals varied, or only the head): the soprano in bar 8, the
+# alto in bar 12 (inverted), the bass in bars 14 and 19, alto and bass inverted in bars
+# 25-26, the alto in bar 33, soprano and alto (inverted) in bar 35, the parallel
+# inversions of alto and bass in bars 36-38, the bass in bar 41 and the alto in bar 43.
+id: bwv851
+title: Fugue in D minor
+catalogue: BWV 851
+key: D minor
+tempo: 78
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: 3 voices; the subject upright and inverted, in stretto
+techniques: [fugue, subject, answer, inversion, stretto]
+book: Book I
+order: 6
+number: 6
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f06.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Bass, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 6}
+  entries:
+    - {voice: 0, start: 0.5, form: subject}
+    - {voice: 1, start: 6.5, form: answer}
+    - {voice: 2, start: 15.5, form: subject}
+    - {voice: 0, start: 36.5, form: answer, stretto: s1}
+    - {voice: 1, start: 39.5, form: subject, transform: inverted, stretto: s1}
+    - {voice: 2, start: 48.5, form: answer, stretto: s2}
+    - {voice: 1, start: 51.5, form: answer, stretto: s2}
+    - {voice: 2, start: 60.5, form: answer, stretto: s3, tail: free}
+    - {voice: 0, start: 63.5, form: subject, transform: inverted, stretto: s3, tail: free}
+    - {voice: 2, start: 66.5, form: subject, transform: inverted, stretto: s3, tail: free}
+    - {voice: 0, start: 78.5, form: subject, transform: inverted, stretto: s4, tail: free}
+    - {voice: 1, start: 81.5, form: subject, stretto: s4}
+    - {voice: 2, start: 84.5, form: subject, transform: inverted, stretto: s4, tail: free}
+    - {voice: 2, start: 99.5, form: subject}
+    - {voice: 2, start: 114.5, form: subject, stretto: s5}
+    - {voice: 1, start: 117.5, form: subject, stretto: s5}
+captions:
+  - {at: 0.5, text: "☞ Dux: the subject in the soprano, rising from D."}
+  - {at: 6.5, text: "☞ The answer in the alto, on A."}
+  - {at: 15.5, text: "☞ The bass enters with the subject, on D."}
+  - {at: 36.5, text: "☞ Stretto: a bar after the soprano, the alto enters with the inversion."}
+  - {at: 60.5, text: "☞ Stretto: bass, soprano inverted, then bass inverted, a bar apart."}
+  - {at: 78.5, text: "☞ Three voices in stretto: soprano inverted, alto, bass inverted."}
+  - {at: 114.5, text: "☞ The last stretto: the bass, then the alto a bar later."}

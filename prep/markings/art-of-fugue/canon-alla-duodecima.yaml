@@ -1,0 +1,40 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-013.krn ("Canon alla Duodecima in
+# Contrapunto alla Quinta"; two spines, one per staff; BGA vol. 47, p. 73; no splits, no
+# chords). ¢ (2/2): beats are quarter notes, 4 per bar.
+# Tempo: editorial (the file's *MM112 names no source).
+# The canon, read from the score and matched against the rule (two sections; the voices
+# swap roles, the counterpoint inverted at the twelfth):
+#   bars 1-25: the bass leads, the soprano follows a twelfth higher (11 steps of D minor)
+#   eight bars later (32 beats);
+#   bars 34-58: the soprano leads, the bass follows two octaves lower, eight bars later.
+# The rest is free: the bass's bars 26-33 (while the soprano finishes), the soprano's
+# from bar 59, and the closing bars.
+# Instruments: harpsichord, like the other canons (two staves, keyboard music).
+id: canon-alla-duodecima
+title: Canon alla Duodecima
+catalogue: BWV 1080, 17
+key: D minor
+tempo: 92
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: canon at the twelfth, eight bars apart; then the parts change places
+techniques: [canon, canon at the twelfth, invertible counterpoint]
+order: 17
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-013.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+canon:
+  - span: [0, 100]      # bars 1-25: the bass leads
+    leader: 1
+    followers:
+      - {voice: 0, rule: {delay: 32, interval: 11, diatonic: true, key: d, pitch_tolerance: 1}}
+  - span: [132, 232]    # bars 34-58: the soprano leads
+    leader: 0
+    followers:
+      - {voice: 1, rule: {delay: 32, interval: -14, diatonic: true, key: d, pitch_tolerance: 1}}
+captions:
+  - {bar: 1, text: "☞ Dux: the lower voice leads, alone."}
+  - {at: 32, text: "☞ Comes: the upper voice, a twelfth higher, eight bars later."}
+  - {bar: 34, text: "☞ The roles change: now the upper voice leads."}
+  - {at: 164, text: "☞ The lower voice follows two octaves down, eight bars later."}

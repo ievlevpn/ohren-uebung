@@ -1,0 +1,70 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f08.krn (3 voices: soprano, alto, bass; no
+# spine splits). The prelude is in E-flat minor, the fugue in D-sharp minor.
+# Tempo: editorial (the file's *MM74 names no source).
+# Subject (checked against the score): the alto, D# A# B A# G# F# G# A# D# G# F# E# D#,
+# bars 1-3 (to the D# on beat 3 of bar 3, where the answer enters). The answer is tonal:
+# A# rises a fourth to D#, then a third to F# (A# D# F# E# D#...), where the subject rose a
+# fifth and a step. Forms follow the notes from note 2 on: only the bar-3 statement has
+# the answer's third (the soprano's inversion in bar 64 apart, below); every later statement keeps the subject's step (B after A#), even
+# where it opens with a fourth (bars 27, 30, 36, 62, 67, 77) or with C double-sharp-E#
+# eighths for the first quarter (bars 57 and 61), so they are marked subject.
+# The inversion appears from bar 30, the augmentation (notes twice as long) in bars 62
+# (bass), 67 (alto) and 77 (soprano). The soprano in bar 24 turns its last note away
+# (tail: free).
+# The soprano in bar 64 (beat 3, over the bass's augmentation) inverts the answer, not the
+# subject: A♯ D♯ B, a fifth then a third down (the answer's fourth-and-third, mirrored and
+# its first leap widened); its second interval is 3 semitones off the inverted subject's,
+# 1 off the inverted answer's, so it is matched against the answer (ref: answer).
+# 17 complete statements marked; stretto groups are entries that begin at least a beat
+# before the previous entry's last note. Not marked (rhythm varied, not found even with a
+# free head or tail): the stretto of bars 19-20 (alto, soprano: the tenth note comes half a
+# beat late), the bass in bar 24 (intervals changed), the three-voice stretto of bar 52
+# and the inverted one of bar 54 (both change their rhythm before the end), and the bass in
+# bar 39, the inverted answer without its first note (the opening fifth E♯-A♯ replaced by
+# a run D♯ C♯ B to the A♯).
+id: bwv853
+title: Fugue in D♯ minor
+catalogue: BWV 853
+key: D♯ minor
+tempo: 74
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 3 voices; inversion, stretto and augmentation
+techniques: [fugue, subject, answer, inversion, augmentation, stretto]
+book: Book I
+order: 8
+number: 8
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f08.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Bass, texture: stipple}
+fugue:
+  subject: {voice: 1, start: 0, length: 10.25}
+  entries:
+    - {voice: 1, start: 0, form: subject}
+    - {voice: 0, start: 10, form: answer}
+    - {voice: 2, start: 28, form: subject}
+    - {voice: 0, start: 92, form: subject, tail: free}
+    - {voice: 1, start: 106, form: subject}
+    - {voice: 0, start: 116, form: subject, transform: inverted}
+    - {voice: 1, start: 140, form: subject, transform: inverted}
+    - {voice: 2, start: 174, form: subject, transform: inverted, stretto: s1}
+    - {voice: 0, start: 176, form: subject, transform: inverted, stretto: s1}
+    - {voice: 1, start: 186, form: subject, transform: inverted}
+    - {voice: 0, start: 226, form: subject}
+    - {voice: 1, start: 242, form: subject, stretto: s2}
+    - {voice: 2, start: 244, form: subject, transform: augmented, stretto: s2}
+    - {voice: 0, start: 254, form: answer, transform: inverted, ref: answer, stretto: s2}  # bar 64
+    - {voice: 2, start: 264, form: subject, stretto: s3}
+    - {voice: 1, start: 266, form: subject, transform: augmented, stretto: s3}
+    - {voice: 0, start: 306, form: subject, transform: augmented}
+captions:
+  - {at: 0, text: "☞ Dux: the subject in the alto, leaping a fifth up from D♯."}
+  - {at: 10, text: "☞ The answer in the soprano: A♯ up a fourth to D♯, for the fifth."}
+  - {at: 28, text: "☞ The bass enters with the subject, on D♯."}
+  - {at: 116, text: "☞ The inversion, in the soprano: the opening leap now falls."}
+  - {at: 174, text: "☞ Stretto of the inversion: bass, then soprano two beats later."}
+  - {at: 244, text: "☞ Augmentation: the bass sings the theme in notes twice as long."}
+  - {at: 266, text: "☞ Now the alto in augmentation, two beats after the bass's entry."}
+  - {at: 306, text: "☞ The last augmentation, in the soprano."}

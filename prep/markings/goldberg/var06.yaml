@@ -1,0 +1,39 @@
+# Source: Mutopia BachJS/BWV988/bwv-988-v06 (3/8). beats_per_quarter: 2, so a beat is an
+# eighth note and a bar has 3. Voices from the MIDI, top first: 0 = comes (upper, from
+# bar 2), 1 = dux (from beat 0), 2 = bass. Repeats are not unfolded and only the second
+# ending of each half sounds (lily.patch_source drops first endings), so the piece is its
+# 32 bars, 96 beats; the second half starts at beat 48 with the dux's tied a''.
+id: goldberg-var06
+title: Variatio 6
+catalogue: BWV 988, 6
+key: G major
+tempo: 132
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: canon at the second, one bar apart
+techniques: [canon, canon at the second]
+order: 6
+source: {kind: mutopia, path: BachJS/BWV988/bwv-988-v06, beats_per_quarter: 2}
+voices:
+  - {name: Comes, texture: solid}
+  - {name: Dux, texture: hatch}
+  - {name: Bass, texture: stipple}
+canon:
+  leader: 1
+  followers:
+    - voice: 0
+      rule:
+        delay: 3
+        interval: 1        # one scale step up
+        diatonic: true
+        key: G
+        pitch_tolerance: 1  # Bach's chromatic adjustments (C♯ answered by D, E♭ by E)
+        # free: the comes cadences at the end of each half instead of imitating. First
+        # half: the leader's notes from beat 42.5 (bar 15, after its first eighth) to the
+        # double bar at 48 — their image would fall on the cadence bar 16. Second half:
+        # the leader's last two bars (31-32, beats 90-96), whose image falls on the final
+        # cadence or past the end.
+        free: [[42.5, 48], [90, 96]]
+captions:
+  - {bar: 1, text: "☞ Dux: falling scales in the middle voice, over the bass."}
+  - {bar: 2, text: "☞ Comes: the dux one step higher, a canon at the second, a bar later."}

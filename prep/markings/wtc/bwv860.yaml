@@ -1,0 +1,54 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f15.krn (3 voices: soprano, alto, bass). 6/8:
+# beats_per_quarter 2, a beat is an eighth, 6 per bar.
+# Tempo: editorial (the file's *MM102 names no source; 102 quarters = 204 eighths).
+# Spine split: the last two bars (84-85) split the soprano and the bass; the second lines
+# are kept as secondary notes (7 notes).
+# Subject (checked against the score): the soprano, the turn G A G F# G A, B A G A, then B
+# A G D C', B A G F# E', to the D on the downbeat of bar 4, a half cadence (21 notes). The
+# sixteenths of bar 4 are a link to the answer, varied in later statements. The answer is
+# real (the subject a fifth up, on D); forms follow the pitch level of notes 3..n.
+# Inversion: from bar 20 the subject turns upside down (alto bar 20, soprano 24, bass 28,
+# alto 43, bass 69, this one from the fourth eighth of the bar).
+# 9 complete statements marked; none overlap. Not marked (the head and the first half,
+# then changed): soprano bars 51 and 79, bass 52, alto 60 (upright); alto 77 and bass 78-79
+# (inverted).
+# Statements at neither the subject's nor the answer's pitch level (in another key) carry
+# form_by: opening: their opening interval decides the form (each entry's comment says so).
+id: bwv860
+title: Fugue in G major
+catalogue: BWV 860
+key: G major
+tempo: 204
+beats_per_bar: 6
+ensemble: harpsichord
+listen_for: 3 voices; a lively gigue, its subject soon turned upside down
+techniques: [fugue, subject, answer, inversion]
+book: Book I
+order: 15
+number: 15
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f15.krn, beats_per_quarter: 2}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Bass, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0, length: 18.5}
+  entries:
+    - {voice: 0, start: 0, form: subject}
+    - {voice: 1, start: 24, form: answer}
+    - {voice: 2, start: 60, form: subject}
+    - {voice: 1, start: 114, form: subject, transform: inverted}
+    - {voice: 0, start: 138, form: subject, transform: inverted}
+    - {voice: 2, start: 162, form: subject, transform: inverted}
+    - {voice: 0, start: 222, form: subject, form_by: opening}  # neither level (notes 3..n a minor third down from the dux); opens with a step up, the subject's
+    - {voice: 1, start: 252, form: subject, transform: inverted}
+    - {voice: 2, start: 411, form: subject, transform: inverted}
+captions:
+  - {at: 0, text: "☞ Dux: the subject in the soprano, a turn, then leaps to a half cadence."}
+  - {at: 24, text: "☞ The answer in the alto, on D."}
+  - {at: 60, text: "☞ The bass enters with the subject, on G."}
+  - {at: 114, text: "☞ The subject turned upside down, in the alto."}
+  - {at: 138, text: "☞ The inversion in the soprano, from A."}
+  - {at: 162, text: "☞ The inversion in the bass, from D."}
+  - {at: 222, text: "☞ The subject upright again, in the soprano, in E minor."}
+  - {at: 411, text: "☞ The last inversion, in the bass, from the middle of the bar."}

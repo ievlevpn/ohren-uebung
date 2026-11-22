@@ -1,0 +1,44 @@
+# Source: humdrum-tools/inventions, inven04.krn (2 voices: upper, lower; no spine splits).
+# 3/8: beats_per_quarter 2, a beat is an eighth, 3 per bar.
+# Motive: bars 1-2 of the upper voice, D-E-F-G-A-Bb up the scale, the leap down to C#
+# and up again to Bb, then A-G-F-E down (12 sixteenths). 11 upright statements and one
+# inverted (bars 24-25, falling from Bb). Not marked: bar 32 (E-F#-G#-A-B-C with the
+# leap a tritone, C-F#: beyond find_entry's two-semitone limit) and bar 40 (starts
+# Bb-G, not on the scale step).
+id: invention04
+title: Invention 4
+catalogue: BWV 775
+key: D minor
+tempo: 208
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: "the motive in both voices, and once upside down"
+techniques: [invention, motive, imitation, inversion]
+book: Inventions
+order: 4
+source: {kind: kern, path: inventions/kern/inven04.krn, beats_per_quarter: 2}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0, length: 6}   # the motive
+  entries:
+    - {voice: 0, start: 0, form: motive}                              # bar 1, upper: D-E-F-G-A-Bb-C#-Bb
+    - {voice: 1, start: 6, form: motive}                              # bar 3, lower: D-E-F-G-A-Bb-C#-Bb
+    - {voice: 0, start: 12, form: motive}                             # bar 5, upper: D-E-F-G-A-Bb-C#-Bb
+    - {voice: 1, start: 51, form: motive}                             # bar 18, lower: F-G-A-Bb-C-D-E-D
+    - {voice: 1, start: 57, form: motive}                             # bar 20, lower: A-Bb-C-D-E-F-G-F
+    - {voice: 0, start: 69, form: motive, transform: inverted}        # bar 24, upper inverted: Bb-A-G-F-E-D-Bb-C
+    - {voice: 0, start: 75, form: motive}                             # bar 26, upper: A-B-C-D-E-F-G#-F
+    - {voice: 0, start: 87, form: motive}                             # bar 30, upper: C-D-E-F#-G#-A-D-C
+    - {voice: 0, start: 99, form: motive}                             # bar 34, upper: G#-A-B-C-D-E-A-F
+    - {voice: 1, start: 123, form: motive}                            # bar 42, lower: F-G-A-B-C#-D-E-D
+    - {voice: 0, start: 129, form: motive}                            # bar 44, upper: D-E-F-G-A-Bb-C#-Bb
+    - {voice: 1, start: 135, form: motive}                            # bar 46, lower: D-E-F-G-A-Bb-C#-Bb
+captions:
+  - {at: 0, text: "☞ The motive: up to B♭, a plunge to C♯ and back up, then down the scale."}
+  - {at: 6, text: "☞ The lower voice answers with the motive an octave lower."}
+  - {at: 12, text: "☞ The upper voice again, an octave higher than before."}
+  - {at: 51, text: "☞ The motive in F major, in the lower voice."}
+  - {at: 69, text: "☞ The motive upside down: a scale falling from B♭."}
+  - {at: 129, text: "☞ The motive returns in D minor in the upper voice."}

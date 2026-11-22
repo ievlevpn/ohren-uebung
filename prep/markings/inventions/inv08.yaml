@@ -1,0 +1,48 @@
+# Source: humdrum-tools/inventions, inven08.krn (2 voices: upper, lower; no spine splits).
+# Canon at the octave, one bar (3 beats) apart, in three passages, checked note by note:
+#   bars 1-6: the upper voice leads (from beat 0.5), the lower voice answers an octave
+#   lower one bar later (bars 2-7), every note;
+#   bars 12-13: the lower voice leads in C major (from beat 33.5), the upper voice answers
+#   two octaves higher one bar later (bars 13-14);
+#   bars 26-28: the upper voice leads again, the lower voice answers an octave lower one
+#   bar later (bars 27-29), as in bars 4-6.
+# Between them the voices work the motive freely (in bars 16-18 the arpeggio and the scale
+# are exchanged for a bar or two, too short to call a canon).
+id: invention08
+title: Invention 8
+catalogue: BWV 779
+key: F major
+tempo: 116
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: canon at the octave, one bar apart
+techniques: [invention, canon, canon at the octave]
+book: Inventions
+order: 8
+source: {kind: kern, path: inventions/kern/inven08.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+canon:
+  - span: [0, 18]       # bars 1-6: the upper voice leads
+    leader: 0
+    followers:
+      - voice: 1
+        rule: {delay: 3, interval: -12}
+  - span: [33, 39]      # bars 12-13: the lower voice leads, in C major
+    leader: 1
+    followers:
+      - voice: 0
+        rule: {delay: 3, interval: 24}
+  - span: [75, 84]      # bars 26-28: the upper voice leads
+    leader: 0
+    followers:
+      - voice: 1
+        rule: {delay: 3, interval: -12}
+captions:
+  - {at: 0.5, text: "☞ Canon: the upper voice leads with a leaping F major chord."}
+  - {at: 3.5, text: "☞ The lower voice follows an octave lower, one bar behind."}
+  - {at: 33.5, text: "☞ In C major the roles swap: the lower voice leads the canon."}
+  - {at: 36.5, text: "☞ The upper voice follows two octaves higher."}
+  - {at: 75, text: "☞ The canon returns: the upper voice leads again."}
+  - {at: 78, text: "☞ The lower voice follows an octave lower, one bar behind."}

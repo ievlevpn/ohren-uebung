@@ -1,0 +1,87 @@
+# Source: Mutopia BachJS/BWV988/bwv-988-v24 (9/8). beats_per_quarter: 2, so a beat is an
+# eighth note and a bar has 9. Voices from the MIDI, top first: 0 = upper, 1 = middle,
+# 2 = bass. Repeats are not unfolded: 32 bars, 288 beats. The comes follows two bars
+# (18 eighths) behind, and the roles swap every eight bars (checked bar by bar; the
+# upper voice rests in bars 9-10 and 17-18 while the middle voice leads):
+#   bars 1-8 the upper voice leads, the middle answers an octave lower;
+#   bars 9-16 and 17-24 the middle voice leads, the upper answers an octave higher;
+#   bars 25-32 the upper voice leads again.
+id: goldberg-var24
+title: Variatio 24
+catalogue: BWV 988, 24
+key: G major
+tempo: 144
+beats_per_bar: 9
+ensemble: harpsichord
+listen_for: canon at the octave, two bars apart
+techniques: [canon, canon at the octave]
+order: 24
+source: {kind: mutopia, path: BachJS/BWV988/bwv-988-v24, beats_per_quarter: 2}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Bass, texture: stipple}
+canon:
+  - span: [0, 72]       # bars 1-8: the upper voice leads
+    leader: 0
+    followers:
+      - voice: 1
+        rule:
+          delay: 18
+          interval: -7        # an octave down
+          diatonic: true
+          key: G
+          pitch_tolerance: 1
+          # free: the leader's cadence in bars 7-8 (from beat 60), which the middle voice
+          # does not answer: from bar 9 it leads.
+          free: [[60, 72]]
+          not_imitation:
+            - 66  # c'': at its image (beat 84) the middle voice is leading section B; its
+                  # c#' there is a semitone off by chance
+  - span: [72, 144]     # bars 9-16: the middle voice leads
+    leader: 1
+    followers:
+      - voice: 0
+        rule:
+          delay: 18
+          interval: 7         # an octave up
+          diatonic: true
+          key: G
+          pitch_tolerance: 1  # g#' answered by g'' in bar 14
+          not_imitation:
+            - 72  # d' on the downbeat of bar 9 still answers the upper voice (section A);
+                  # the upper voice rests at its image, the lead starts after it
+          # free: from beat 124 (bar 14, last third) the images fall on the cadence of
+          # bars 15-16 or past the double bar.
+          free: [[124, 144]]
+  - span: [144, 216]    # bars 17-24: the middle voice leads
+    leader: 1
+    followers:
+      - voice: 0
+        rule:
+          delay: 18
+          interval: 7
+          diatonic: true
+          key: G
+          pitch_tolerance: 1
+  - span: [216, 288]    # bars 25-32: the upper voice leads
+    leader: 0
+    followers:
+      - voice: 1
+        rule:
+          delay: 18
+          interval: -7
+          diatonic: true
+          key: G
+          pitch_tolerance: 1
+          # free: from beat 268 (bar 30) the images would fall past the end.
+          free: [[268, 288]]
+captions:
+  - {bar: 1, text: "☞ Dux: the upper voice leads, over the bass."}
+  - {bar: 3, text: "☞ Comes: the same tune an octave lower, two bars later."}
+  - {bar: 9, text: "☞ The roles swap: now the middle voice leads."}
+  - {at: 91, text: "☞ The upper voice follows it an octave higher, two bars later."}
+  - {bar: 17, text: "☞ Second half: the middle voice leads again."}
+  - {bar: 19, text: "☞ The upper voice answers an octave higher."}
+  - {bar: 25, text: "☞ The roles swap back: the upper voice leads."}
+  - {bar: 27, text: "☞ The middle voice answers an octave lower, two bars later."}

@@ -1,0 +1,72 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f24.krn (4 voices: soprano, alto, tenor, bass;
+# no chords).
+# Tempo: editorial (the file's *MM58 names no source).
+# Spine split: the last two bars (75-76) split the bass for a fifth voice (10 notes), kept as
+# secondary notes of the bass.
+# Subject (checked against the score): the alto from the second eighth of bar 1, in sighing
+# pairs of eighths through all twelve notes, F# D B G F# B A# E D# C B F# E# D C# B# C# A
+# F# G#, to the F# on the downbeat of bar 4; the answer enters half a beat later (21 notes). The answer
+# is tonal: B falls a step to A where the subject fell a third. Forms follow the pitch
+# level of notes 3..n: the soprano in bar 13 (B A, a step) and the bass in bar 38 (E D)
+# open like the answer but go on at another level, so they are marked subject. Free tails: the last note comes early or turns away (soprano bar 13,
+# alto 21, tenor 44, 53 and 60, bass 70).
+# Countersubject: the alto against the answer, from beat 4 of bar 4, a falling line of
+# quarters (F# E D C#, B) and a sixteenth run, to the D on the downbeat of bar 7 (15
+# notes); whole again in bars 9 (tenor), 13 (bass), 21, 48 (its A held two beats: head
+# free), 54 and 58 (soprano); several reach their last note early or turn it (tail: free).
+# Not marked: bar 71 (soprano), which leaves out its first note.
+# The bass in bar 47 (from its second eighth, on D: D C♯ A F♯ D G F♯ C B A G♯ ...) opens with
+# the answer's step (a semitone, where the subject falls a third: 3 semitones off) and
+# keeps the answer's shape, a few intervals a semitone wider; it is matched against the
+# answer (ref: answer). The soprano's countersubject from bar 48 sounds against it.
+# 13 complete statements marked; none overlap. Not marked (the first nine notes, then
+# broken off): bars 34-35 (alto, soprano), 41-43 (soprano, alto, bass), 69 (tenor) and 74
+# (alto).
+id: bwv869
+title: Fugue in B minor
+catalogue: BWV 869
+key: B minor
+tempo: 58
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 4 voices; a slow chromatic subject that uses all twelve notes
+techniques: [fugue, subject, answer, countersubject]
+book: Book I
+order: 24
+number: 24
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f24.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  subject: {voice: 1, start: 0.5, length: 12}
+  countersubject: {voice: 1, start: 15, length: 9.25}
+  entries:
+    - {voice: 1, start: 0.5, form: subject}
+    - {voice: 2, start: 12.5, form: answer}
+    - {voice: 1, start: 15, form: countersubject}
+    - {voice: 3, start: 32.5, form: subject}
+    - {voice: 2, start: 35, form: countersubject, tail: free}
+    - {voice: 0, start: 48.5, form: subject, tail: free}
+    - {voice: 3, start: 51, form: countersubject}
+    - {voice: 1, start: 80.5, form: subject, tail: free}
+    - {voice: 0, start: 83, form: countersubject, tail: free}
+    - {voice: 2, start: 116.5, form: subject}
+    - {voice: 3, start: 148.5, form: subject}
+    - {voice: 2, start: 172.5, form: subject, tail: free}
+    - {voice: 3, start: 186.5, form: answer, ref: answer}  # bar 47, on D
+    - {voice: 0, start: 188, form: countersubject, head: free, tail: free}
+    - {voice: 2, start: 210.5, form: subject, tail: free}
+    - {voice: 0, start: 213, form: countersubject}
+    - {voice: 3, start: 226.5, form: subject}
+    - {voice: 0, start: 229, form: countersubject}
+    - {voice: 2, start: 238.5, form: subject, tail: free}
+    - {voice: 3, start: 276.5, form: subject, tail: free}
+captions:
+  - {at: 0.5, text: "☞ Dux: the subject in the alto, sighing pairs through all twelve notes."}
+  - {at: 12.5, text: "☞ The answer in the tenor; above it, the alto's countersubject."}
+  - {at: 32.5, text: "☞ The bass enters with the subject, on F♯."}
+  - {at: 48.5, text: "☞ The soprano enters last, on B."}
+  - {at: 276.5, text: "☞ The last entry, in the bass."}

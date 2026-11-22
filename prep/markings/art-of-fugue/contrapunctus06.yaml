@@ -1,0 +1,63 @@
+# Source: Mutopia BachJS/BWV1080/contrapunctusVI (2/2, beats are quarter notes, 4 per
+# bar). Voices from the MIDI, top first. "in Stylo Francese": the subject in dotted
+# rhythm, against itself inverted and in diminution (half the note values).
+# Entries: every place the subject's head (its first ten notes, to the F of bar 4) sounds,
+# found by scanning all voices in every form (fugue.find_entry). Bach varies the tail
+# from entry to entry, so the head is the reference. An entry whose first leap is a
+# fourth is the tonal answer. Stretto groups: entries that overlap in time.
+id: contrapunctus06
+title: Contrapunctus VI
+catalogue: BWV 1080, 6
+key: D minor
+tempo: 60
+beats_per_bar: 4
+ensemble: strings
+listen_for: inversion and diminution, in stretto
+techniques: [fugue, subject, answer, inversion, diminution, stretto]
+order: 6
+source: {kind: mutopia, path: BachJS/BWV1080/contrapunctusVI}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}    # 53-79: below the violin
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  # the subject's head: bass, D A G F E D C♯ D E F, bars 1-4
+  subject: {voice: 3, start: 0, length: 12.5}
+  entries:
+    - {voice: 3, start: 0, form: subject, stretto: 1}                                # bar 1
+    - {voice: 0, start: 4, form: subject, transform: inverted diminished, stretto: 1}  # bar 2
+    - {voice: 1, start: 10, form: subject, transform: diminished, stretto: 1}          # bar 3
+    - {voice: 2, start: 24, form: answer, transform: inverted diminished, stretto: 2}  # bar 7
+    - {voice: 1, start: 28, form: subject, stretto: 2}                               # bar 8, on A
+    - {voice: 0, start: 38, form: subject, transform: diminished, stretto: 2}          # bar 10
+    - {voice: 3, start: 56, form: subject, transform: inverted diminished, stretto: 3} # bar 15
+    - {voice: 2, start: 60, form: subject, stretto: 3}                               # bar 16
+    - {voice: 0, start: 62, form: subject, transform: inverted diminished, stretto: 3} # bar 16
+    - {voice: 2, start: 78, form: subject, transform: inverted}                      # bar 20
+    - {voice: 2, start: 100, form: subject, transform: inverted diminished}          # bar 26
+    - {voice: 2, start: 120, form: subject, stretto: 4}                              # bar 31
+    - {voice: 1, start: 124, form: subject, transform: inverted diminished, stretto: 4} # bar 32
+    - {voice: 0, start: 136, form: subject, transform: inverted, stretto: 5}           # bar 35
+    - {voice: 3, start: 140, form: subject, transform: diminished, stretto: 5}         # bar 36
+    - {voice: 2, start: 146, form: subject, transform: inverted diminished, stretto: 5} # bar 37
+    - {voice: 1, start: 164, form: subject, transform: inverted diminished}          # bar 42
+    - {voice: 3, start: 184, form: subject, transform: inverted, stretto: 6}           # bar 47
+    - {voice: 2, start: 188, form: subject, transform: diminished, stretto: 6}         # bar 48
+    - {voice: 0, start: 224, form: answer, transform: diminished, stretto: 7}          # bar 57
+    - {voice: 1, start: 228, form: subject, transform: inverted, stretto: 7}           # bar 58
+    - {voice: 2, start: 230, form: subject, transform: diminished, stretto: 7}         # bar 58
+    - {voice: 0, start: 254, form: subject, transform: inverted, stretto: 8}           # bar 64
+    - {voice: 1, start: 258, form: subject, transform: diminished, stretto: 8}         # bar 65
+    - {voice: 2, start: 294, form: answer, transform: diminished}                    # bar 74
+    - {voice: 1, start: 302, form: subject, transform: diminished}                   # bar 76
+captions:
+  - {at: 0, text: "☞ Dux: the subject in the bass, in the dotted French style."}
+  - {at: 4, text: "☞ Soprano: the subject inverted and in diminution, notes halved."}
+  - {at: 10, text: "☞ Alto: the subject in diminution, a stretto of three forms."}
+  - {at: 24, text: "☞ Tenor: the answer, inverted and diminished."}
+  - {at: 28, text: "☞ Alto: the subject at full length, on A."}
+  - {at: 78, text: "☞ Tenor: the subject inverted, at full length."}
+  - {at: 136, text: "☞ Stretto: inverted, diminished, then both at once."}
+  - {at: 224, text: "☞ Stretto: two diminutions around the inversion in the alto."}
+  - {at: 302, text: "☞ The last entry: the subject in diminution, in the alto."}

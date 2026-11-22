@@ -1,0 +1,53 @@
+# Source: humdrum-tools/inventions, sinfo08.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM92 names no source).
+# Motive (checked against the score): the middle voice after the opening eighth rest,
+# sixteenths C-A, eighths D-C-Bb, sixteenths A-G-C-D-Bb-C (beats 0.5-4). The voices enter
+# as in a fugue: middle (from C), upper (bar 2, from F), lower (bar 3, from C). In bars 7 and 8 the
+# lower voice follows the upper one beat behind (stretto). In bar 17 the upper and middle
+# voices play the motive together, a thirteenth (an octave and a sixth) apart.
+# 17 complete statements, all marked; the upper voice's in bar 2 opens with a step
+# (F-E) where the motive has a third. Not marked: the middle voice in bar 11 and the lower
+# voice in bar 12, sequences that change several intervals.
+id: sinfonia08
+title: Sinfonia 8
+catalogue: BWV 794
+key: F major
+tempo: 84
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "a lively motive in three voices, in stretto in bars 7 and 8"
+techniques: [sinfonia, motive, imitation, stretto]
+book: Sinfonias
+order: 8
+source: {kind: kern, path: inventions/kern/sinfo08.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 1, start: 0.5, length: 3.5}   # the motive
+  entries:
+    - {voice: 1, start: 0.5, form: motive}                          # bar 1, middle: C-A-D-C-Bb-A-G-C-D-Bb-C
+    - {voice: 0, start: 4.5, form: motive}                          # bar 2, upper: F-E-A-G-F-E-D-G-A-F-G
+    - {voice: 2, start: 8.5, form: motive}                          # bar 3, lower: C-A-D-C-Bb-A-G-C-D-Bb-C
+    - {voice: 2, start: 18.5, form: motive}                         # bar 5, lower: G-E-A-G-F-E-D-G-A-F-G
+    - {voice: 1, start: 22.5, form: motive}                         # bar 6, middle: G-E-A-G-F-E-D-G-A-F-G
+    - {voice: 0, start: 26.5, form: motive, stretto: s1}            # bar 7, upper: G-E-A-G-F-E-D-G-A-F-G
+    - {voice: 2, start: 27.5, form: motive, stretto: s1}            # bar 7, lower: C-A-D-C-B-A-G-C-D-Bb-C
+    - {voice: 0, start: 30.5, form: motive, stretto: s2}            # bar 8, upper: E-C-F-E-D-C#-B-E-F-D-E
+    - {voice: 2, start: 31.5, form: motive, stretto: s2}            # bar 8, lower: A-F-Bb-A-G-F-E-A-Bb-G-A
+    - {voice: 0, start: 34.5, form: motive}                         # bar 9, upper: A-F-Bb-A-G-F-E-A-Bb-G-A
+    - {voice: 1, start: 38.5, form: motive}                         # bar 10, middle: D-Bb-Eb-D-C-Bb-A-D-Eb-C-D
+    - {voice: 2, start: 42.5, form: motive}                         # bar 11, lower: D-Bb-Eb-D-C-Bb-A-D-Eb-C-D
+    - {voice: 0, start: 50.5, form: motive}                         # bar 13, upper: A-F-Bb-A-G-F-E-A-Bb-G-A
+    - {voice: 0, start: 66.5, form: motive}                         # bar 17, upper: D-Bb-Eb-D-C-Bb-A-D-Eb-C-D
+    - {voice: 1, start: 66.5, form: motive}                         # bar 17, middle: F-D-G-F-Eb-D-C-F-G-Eb-F
+    - {voice: 2, start: 80.5, form: motive}                         # bar 21, lower: C-A-D-C-Bb-A-G-C-D-Bb-C
+    - {voice: 0, start: 84.5, form: motive}                         # bar 22, upper: C-A-D-C-Bb-A-G-C-D-Bb-C
+captions:
+  - {at: 0.5, text: "☞ The motive in the middle voice, in F major."}
+  - {at: 4.5, text: "☞ The upper voice answers with the motive."}
+  - {at: 8.5, text: "☞ The lower voice enters with the motive, on C."}
+  - {at: 26.5, text: "☞ Stretto: the lower voice takes up the motive one beat behind."}
+  - {at: 66.5, text: "☞ Bar 17: the upper and middle voices play the motive together, in parallel."}
+  - {at: 84.5, text: "☞ Home in F major: the motive in the upper voice."}

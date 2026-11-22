@@ -1,0 +1,47 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f02.krn (3 voices: soprano, alto, bass).
+# Entries checked against the score: the subject sounds 8 times (bars 1, 3, 7, 11, 15,
+# 20, 26, 29); bars 3 and 15 are the tonal answer (G–F♯–G–C, a fourth for the fifth).
+# Countersubject: the alto against the answer, bar 3 (from the answer's first note: the
+# semiquaver scale down from B, then the quavers E♭–D–C–B♭–A…). find_entry finds it whole
+# in bars 3 (alto), 7 (soprano, over the bass's subject) and 20 (alto); in bars 11, 15
+# and 26 Bach keeps only a fragment of it, so those are not marked.
+id: bwv847
+title: Fugue in C minor
+catalogue: BWV 847
+key: C minor
+tempo: 72
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 3 voices; the subject eight times
+techniques: [fugue, subject, answer, countersubject]
+book: Book I
+order: 2
+number: 2
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f02.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Bass, texture: stipple}
+fugue:
+  # the subject: alto, from the semiquaver after the opening rest to the E♭ of bar 3
+  subject: {voice: 1, start: 0.5, length: 7.75}
+  countersubject: {voice: 1, start: 8.5, length: 7.75}
+  entries:
+    - {voice: 1, start: 0.5, form: subject}     # bar 1, C minor
+    - {voice: 0, start: 8.5, form: answer}      # bar 3, G minor
+    - {voice: 1, start: 8.5, form: countersubject}   # bar 3, alto, against the answer
+    - {voice: 2, start: 24.5, form: subject}    # bar 7, C minor
+    - {voice: 0, start: 24.5, form: countersubject}  # bar 7, soprano
+    - {voice: 0, start: 40.5, form: subject}    # bar 11, E♭ major
+    - {voice: 1, start: 56.5, form: answer}     # bar 15, G minor
+    - {voice: 0, start: 76.5, form: subject}    # bar 20, C minor
+    - {voice: 1, start: 76.5, form: countersubject}  # bar 20, alto
+    - {voice: 2, start: 102.5, form: subject}   # bar 26, C minor
+    - {voice: 0, start: 114.5, form: subject}   # bar 29, C minor, over the tonic pedal
+captions:
+  - {at: 0.5, text: "☞ Dux: the subject alone, in the alto."}
+  - {at: 8.5, text: "☞ The answer in the soprano; beneath it the alto's countersubject."}
+  - {at: 24.5, text: "☞ The subject in the bass."}
+  - {at: 40.5, text: "☞ The subject in the soprano, in E♭ major."}
+  - {at: 56.5, text: "☞ The answer in the alto, in G minor."}
+  - {at: 114.5, text: "☞ The last entry: the subject in the soprano, over the tonic pedal."}

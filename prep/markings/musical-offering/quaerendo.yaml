@@ -1,0 +1,39 @@
+# Source: transcriptions/bwv1079-quaerendo.yaml (the dux written: Bach's riddle, one line
+# with the words "Quaerendo invenietis", IMSLP10042 (BGA 31.2) page 20). Bach gives no
+# answer; the BGA prints four. This is its solution A (IMSLP10042 page 49, after the
+# Allgemeine Musikalische Zeitung VIII, p. 287), the one Reccmo plays first: the comes
+# answers by exact contrary motion about g (c' answered by d, e♭' by b), 2½ bars later.
+# The comes is computed. In solution B the cello leads and the viola answers the same way.
+# Two passes of the 15-bar loop and most of a third, then a closing chord at beat 160
+# (end/coda, Reccmo's, editorial). Tempo editorial.
+id: bwv1079-quaerendo
+title: Canon a 2 quaerendo invenietis
+catalogue: BWV 1079/6
+key: C minor
+tempo: 100
+beats_per_bar: 4
+ensemble: chamber
+listen_for: a riddle canon, answered by contrary motion
+techniques: [canon, inversion, perpetual canon]
+order: 7
+source: {kind: transcription, path: transcriptions/bwv1079-quaerendo.yaml}
+voices:
+  - {name: Dux, texture: solid, instrument: viola}
+  - {name: Comes, texture: hatch, instrument: cello}
+canon:
+  leader: 0
+  followers:
+    - voice: 1
+      rule:
+        delay: 10
+        invert_about: 55    # g: exact (chromatic) mirror
+        repeats: 3          # three passes of the perpetual canon, cut at beat 160
+marks:
+  - {kind: mirror-axis, start: 0, end: 160, pitch: 55, label: g}
+captions:
+  - {bar: 1, text: "☞ The dux. Bach wrote only this line and \"seek and you will find\"."}
+  - {at: 13, text: "☞ Comes: the dux upside down about g, two and a half bars later."}
+  - {at: 63, text: "☞ The canon is perpetual: the dux begins again."}
+# "In this piece" on a definition card; tests/test_glossary_notes.py checks each claim
+glossary_notes:
+  inversion: "An exact mirror about g: the dux's c' is answered by d, its e♭' by b."

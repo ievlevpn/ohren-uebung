@@ -1,0 +1,62 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f21.krn (3 voices: soprano, alto, bass; no
+# chords, no spine splits).
+# Tempo: editorial (the file's *MM100 names no source).
+# Subject (checked against the score): the soprano from the second eighth of bar 1, F G F
+# Bb D, C A G Bb A G F C' Eb, D, then two bars of the same sixteenth figure (Bb C A Bb C D
+# Eb D C Eb, twice), to the D on the downbeat of bar 5; the answer enters half a beat later (38 notes;
+# every statement keeps the sixteenths). The answer is tonal: Bb rises a third to D where
+# the subject rose a step, and its fifth answers the subject's fourth. Forms follow the
+# notes: the alto in bar 41 (Eb G Eb Bb D) has the answer's shape and is marked answer;
+# the bass in bar 26 (G Bb G C Eb) has one interval of each and stands in another key, so
+# its opening third, the answer's, decides: marked answer.
+# Countersubject: the soprano against the answer, from the C after the downbeat of bar 5 to
+# the C on the downbeat of bar 9 (27 notes, its repeated eighths ending each bar); whole
+# again in bars 9 (alto), 13 (bass, its last note a leap: tail: free), 22 and 41
+# (soprano). A second countersubject (the soprano from beat 3 of bar 9, sixteenths after
+# rests) recurs in bars 13 (alto) and 26 (soprano); markings hold one countersubject, so it
+# is not marked.
+# 8 complete statements marked; none overlap.
+# Statements at neither the subject's nor the answer's pitch level (in another key) carry
+# form_by: opening: their opening interval decides the form (each entry's comment says so).
+id: bwv866
+title: Fugue in B♭ major
+catalogue: BWV 866
+key: B♭ major
+tempo: 100
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: 3 voices; a long subject ending in running sixteenths
+techniques: [fugue, subject, answer, countersubject]
+book: Book I
+order: 21
+number: 21
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f21.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Bass, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 12}
+  countersubject: {voice: 0, start: 12.75, length: 11.5}
+  entries:
+    - {voice: 0, start: 0.5, form: subject}
+    - {voice: 1, start: 12.5, form: answer}
+    - {voice: 0, start: 12.75, form: countersubject}
+    - {voice: 2, start: 24.5, form: subject}
+    - {voice: 1, start: 24.75, form: countersubject}
+    - {voice: 0, start: 36.5, form: answer}
+    - {voice: 2, start: 36.75, form: countersubject, tail: free}
+    - {voice: 1, start: 63.5, form: subject}
+    - {voice: 0, start: 63.75, form: countersubject}
+    - {voice: 2, start: 75.5, form: answer, form_by: opening}  # neither level (notes 3..n a step up from the dux); opens with a minor third up, the answer's
+    - {voice: 0, start: 108.5, form: subject}
+    - {voice: 1, start: 120.5, form: answer}
+    - {voice: 0, start: 120.75, form: countersubject}
+captions:
+  - {at: 0.5, text: "☞ Dux: the subject in the soprano, ending in running sixteenths."}
+  - {at: 12.5, text: "☞ The answer in the alto: B♭ up a third; above, the countersubject."}
+  - {at: 24.5, text: "☞ The bass enters with the subject; the alto takes the countersubject."}
+  - {at: 36.5, text: "☞ The answer in the soprano; the countersubject is now in the bass."}
+  - {at: 63.5, text: "☞ The subject in the alto, in G minor."}
+  - {at: 108.5, text: "☞ The subject in the soprano, in E♭ major."}
+  - {at: 120.5, text: "☞ The last entry, in the alto, with the countersubject above it."}

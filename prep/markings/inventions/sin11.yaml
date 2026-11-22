@@ -1,0 +1,48 @@
+# Source: humdrum-tools/inventions, sinfo11.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM80 names no source).
+# 3/8: beats_per_quarter 2, a beat is an eighth, 3 per bar.
+# Motive (checked against the score): the upper voice's opening, a G minor chord falling in
+# sixteenths (D-Bb-G) and the leap of an octave up to G (beats 0.5-3). The long notes that
+# follow differ in each voice, so the marked motive is this head. The middle voice answers
+# on A (bar 2), the lower voice on D (bar 4).
+# 14 statements with the octave leap, all marked. Not marked: those that leap a seventh or
+# a sixth instead (e.g. bar 11 upper D-B-G-F, bar 12 middle, bar 18 upper G-Eb-C-Bb),
+# where the leap's size differs.
+id: sinfonia11
+title: Sinfonia 11
+catalogue: BWV 797
+key: G minor
+tempo: 150
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: "a falling chord and a leap: the motive's head, again and again"
+techniques: [sinfonia, motive, imitation]
+book: Sinfonias
+order: 11
+source: {kind: kern, path: inventions/kern/sinfo11.krn, beats_per_quarter: 2}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 2.5}   # the motive
+  entries:
+    - {voice: 0, start: 0.5, form: motive}                          # bar 1, upper: D-Bb-G-G
+    - {voice: 1, start: 3.5, form: motive}                          # bar 2, middle: A-F-D-D
+    - {voice: 2, start: 9.5, form: motive}                          # bar 4, lower: D-Bb-G-G
+    - {voice: 2, start: 21.5, form: motive}                         # bar 8, lower: D-Bb-G-G
+    - {voice: 1, start: 24.5, form: motive}                         # bar 9, middle: D-B-G-G
+    - {voice: 2, start: 27.5, form: motive}                         # bar 10, lower: G-Eb-C-C
+    - {voice: 0, start: 39.5, form: motive}                         # bar 14, upper: F-D-Bb-Bb
+    - {voice: 0, start: 57.5, form: motive}                         # bar 20, upper: F-D-Bb-Bb
+    - {voice: 1, start: 87.5, form: motive}                         # bar 30, middle: A-F-D-D
+    - {voice: 2, start: 93.5, form: motive}                         # bar 32, lower: D-Bb-G-G
+    - {voice: 2, start: 147.5, form: motive}                        # bar 50, lower: C-A-F-F
+    - {voice: 0, start: 192.5, form: motive}                        # bar 65, upper: D-Bb-G-G
+    - {voice: 1, start: 195.5, form: motive}                        # bar 66, middle: A-F-D-D
+    - {voice: 2, start: 201.5, form: motive}                        # bar 68, lower: D-Bb-G-G
+captions:
+  - {at: 0.5, text: "☞ The motive in the upper voice: a falling chord, then a leap up."}
+  - {at: 3.5, text: "☞ The middle voice answers it, on A."}
+  - {at: 9.5, text: "☞ The lower voice enters with the motive."}
+  - {at: 192.5, text: "☞ Back in G minor: the motive in the upper voice, then below."}

@@ -1,0 +1,40 @@
+# Source: humdrum-tools/inventions, sinfo05.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM60 names no source).
+# Motive (checked against the score): the upper voice's sixteenth Bb leading to Eb-F
+# (dotted), D held over the barline, C-Db-Eb, C held (beats 1.75-6.25): a dotted figure
+# that sinks a step.
+# The middle voice imitates it a bar later on F; the upper voice repeats it a step higher
+# (bar 3), so the two upper voices overlap like a duet. The lower voice never takes the
+# motive: it walks in broken chords, one each bar. The opening returns in bars 30-32, with
+# the middle voice leading. Six complete statements, all marked; the sequences of the
+# middle section (bars 14-28) vary the motive's intervals and are not marked.
+id: sinfonia05
+title: Sinfonia 5
+catalogue: BWV 791
+key: E♭ major
+tempo: 60
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: "an ornamented duet in two upper voices over a walking bass"
+techniques: [sinfonia, motive, imitation]
+book: Sinfonias
+order: 5
+source: {kind: kern, path: inventions/kern/sinfo05.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 1.75, length: 4.5}   # the motive
+  entries:
+    - {voice: 0, start: 1.75, form: motive}                         # bar 1, upper: Bb-Eb-F-D-C-Db-Eb-C
+    - {voice: 1, start: 4.75, form: motive}                         # bar 2, middle: F-Bb-C-Ab-G-Ab-Bb-G
+    - {voice: 0, start: 7.75, form: motive}                         # bar 3, upper: C-F-G-Eb-D-Eb-F-D
+    - {voice: 1, start: 88.75, form: motive}                        # bar 30, middle: Bb-Eb-F-D-C-Db-Eb-C
+    - {voice: 0, start: 91.75, form: motive}                        # bar 31, upper: F-Bb-C-Ab-G-Ab-Bb-G
+    - {voice: 1, start: 94.75, form: motive}                        # bar 32, middle: C-F-G-Eb-D-Eb-F-D
+captions:
+  - {at: 1.75, text: "☞ The motive in the upper voice: a dotted figure, falling a step."}
+  - {at: 4.75, text: "☞ The middle voice imitates it a bar later, a fourth lower."}
+  - {at: 7.75, text: "☞ The upper voice repeats the motive a step higher."}
+  - {at: 88.75, text: "☞ The opening returns, now led by the middle voice."}

@@ -1,0 +1,39 @@
+# Source: humdrum-tools/inventions, sinfo03.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM92 names no source).
+# Motive (checked against the score): the upper voice from beat 0.5, three times two
+# sixteenths and a few eighths: F#-G A-C-B, E-F# G-B-A, D-E F#-A (beats 0.5-6). The run
+# that follows varies, so it is not part of the motive. The voices enter as in a fugue:
+# upper (from F#), middle (bar 3, from C#), lower (bar 6, from F#). Seven complete statements, all
+# marked; the one in bar 19 (lower voice) starts on B, with C and F natural.
+id: sinfonia03
+title: Sinfonia 3
+catalogue: BWV 789
+key: D major
+tempo: 72
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "a motive in eighths, entering voice by voice as in a fugue"
+techniques: [sinfonia, motive, imitation]
+book: Sinfonias
+order: 3
+source: {kind: kern, path: inventions/kern/sinfo03.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 5.5}   # the motive
+  entries:
+    - {voice: 0, start: 0.5, form: motive}                          # bar 1, upper: F#-G-A-C-B-E-F#-G-B-A-D-E-F#-A
+    - {voice: 1, start: 10.5, form: motive}                         # bar 3, middle: C#-D-E-G-F#-B-C#-D-F#-E-A-B-C#-E
+    - {voice: 2, start: 20.5, form: motive}                         # bar 6, lower: F#-G-A-C-B-E-F#-G-B-A-D-E-F#-A
+    - {voice: 0, start: 36.5, form: motive}                         # bar 10, upper: D-E-F#-A-G#-C#-D-E-G-F#-B-C#-D-F#
+    - {voice: 2, start: 72.5, form: motive}                         # bar 19, lower: B-C-D-F-E-A-B-C-E-D-G-A-B-D
+    - {voice: 1, start: 82.5, form: motive}                         # bar 21, middle: F#-G-A-C-B-E-F#-G-B-A-D-E-F#-A
+    - {voice: 0, start: 90.5, form: motive}                         # bar 23, upper: F#-G-A-C-B-E-F#-G-B-A-D-E-F#-A
+captions:
+  - {at: 0.5, text: "☞ The motive in the upper voice, in D major."}
+  - {at: 10.5, text: "☞ The middle voice enters with the motive, a fourth lower."}
+  - {at: 20.5, text: "☞ The lower voice takes the motive, on the opening notes."}
+  - {at: 72.5, text: "☞ The motive in the lower voice, starting on B."}
+  - {at: 90.5, text: "☞ The upper voice brings the motive home in D major."}

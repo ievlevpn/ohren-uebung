@@ -1,0 +1,54 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f13.krn (3 voices: soprano, alto, bass; no
+# chords, no spine splits).
+# Tempo: editorial (the file's *MM72 names no source).
+# Subject (checked against the score): the soprano from the second eighth of bar 1, C# F# F
+# F# F Eb C#, B C# Eb, C# B A# G# C#, to the A# on the downbeat of bar 3; the answer enters
+# half a beat later (16 notes). The answer is tonal: F# rises a fifth to C# where the subject rose a
+# fourth. Forms follow the pitch level of notes 3..n: the alto in bar 15 (G# C#, in C#
+# major) stands at the answer's level and is marked answer. The bass ends its statements of
+# bars 5 and 20 by a leap, not the step (tail: free).
+# Countersubject: the soprano against the answer, bar 3 to the C# on the downbeat of bar 5
+# (sixteenth figures); whole again in the alto against the bass in bar 5, later only in
+# fragments.
+# 7 complete statements, all marked; none overlap. Not marked: the soprano's head in bars
+# 8-9, 11-12 and 18-19 (the opening figure in longer notes, then broken off).
+# Statements at neither the subject's nor the answer's pitch level (in another key) carry
+# form_by: opening: their opening interval decides the form (each entry's comment says so).
+id: bwv858
+title: Fugue in F♯ major
+catalogue: BWV 858
+key: F♯ major
+tempo: 72
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 3 voices; a graceful subject and its countersubject in sixteenths
+techniques: [fugue, subject, answer, countersubject]
+book: Book I
+order: 13
+number: 13
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f13.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Bass, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 8}
+  countersubject: {voice: 0, start: 8.5, length: 8}
+  entries:
+    - {voice: 0, start: 0.5, form: subject}
+    - {voice: 1, start: 8.5, form: answer}
+    - {voice: 0, start: 8.5, form: countersubject}
+    - {voice: 2, start: 16.5, form: subject, tail: free}
+    - {voice: 1, start: 16.5, form: countersubject}
+    - {voice: 1, start: 56.5, form: answer}
+    - {voice: 2, start: 76.5, form: subject, tail: free, form_by: opening}  # neither level (notes 3..n a minor third down from the dux); opens with a fourth up, the subject's
+    - {voice: 1, start: 108.5, form: subject, form_by: opening}  # neither level (notes 3..n a fourth up from the dux); opens with a fourth up, the subject's
+    - {voice: 0, start: 122.5, form: subject}
+captions:
+  - {at: 0.5, text: "☞ Dux: the subject in the soprano, from C♯ up a fourth to F♯."}
+  - {at: 8.5, text: "☞ The answer in the alto, F♯ up a fifth; above it, the countersubject."}
+  - {at: 16.5, text: "☞ The bass enters with the subject; the alto takes the countersubject."}
+  - {at: 56.5, text: "☞ The answer in the alto, in C♯ major."}
+  - {at: 76.5, text: "☞ The subject in the bass, in D♯ minor."}
+  - {at: 108.5, text: "☞ The subject in the alto, in B major."}
+  - {at: 122.5, text: "☞ The last entry, in the soprano, back in F♯ major."}

@@ -1,0 +1,41 @@
+# Source: Mutopia BachJS/BWV988/bwv-988-v15 (2/4, beats are quarter notes, 2 per bar).
+# Voices from the MIDI, top first: 0 = comes (upper, from bar 2), 1 = dux (from the
+# semiquaver after beat 0), 2 = bass. Repeats are not unfolded.
+id: goldberg-var15
+title: Variatio 15
+catalogue: BWV 988, 15
+key: G minor
+tempo: 50
+beats_per_bar: 2
+ensemble: harpsichord
+listen_for: canon at the fifth, by contrary motion
+techniques: [canon, canon at the fifth, inversion]
+order: 15
+source: {kind: mutopia, path: BachJS/BWV988/bwv-988-v15}
+voices:
+  - {name: Comes, texture: solid}
+  - {name: Dux, texture: hatch}
+  - {name: Bass, texture: stipple}
+canon:
+  leader: 1
+  followers:
+    - voice: 0
+      rule:
+        delay: 2
+        interval: 4         # four scale steps up after the mirror: g' answered by d''
+        diatonic: true
+        key: g
+        invert_about: 67    # the mirror is taken about g'
+        pitch_tolerance: 1  # Bach's raised 6th and 7th answered a semitone off
+        # free: the last bar of each half (beats 30-32, 62-64); its image would fall
+        # past the double bar.
+        free: [[30, 32], [62, 64]]
+marks:
+  # the visual mirror line between dux and comes: g' <-> d'' meet about b♭'
+  - {kind: mirror-axis, start: 0, end: 63, pitch: 70, label: axis}
+captions:
+  - {bar: 1, text: "☞ Dux: the lower voice of the pair, in G minor."}
+  - {bar: 2, text: "☞ Comes: by contrary motion, at the fifth above, after one bar."}
+# "In this piece" on a definition card; tests/test_glossary_notes.py checks each claim
+glossary_notes:
+  inversion: "Where the dux rises the comes falls, step for step: the dashed line is the axis between them."

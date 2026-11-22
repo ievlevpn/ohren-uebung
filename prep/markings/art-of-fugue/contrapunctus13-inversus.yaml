@@ -1,0 +1,51 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-016b.krn ("Contrapunctus 16 (XIII), a 3.
+# (inversus)"; BGA vol. 25.1, p. 61; no splits, no chords). ¢ (2/2): beats are quarter
+# notes, 4 per bar, after a quarter upbeat (pickup: 1).
+# Tempo: editorial, as the rectus.
+# The mirror of contrapunctus13-rectus: every voice upside down (a diatonic mirror in D
+# minor, a few raised or lowered notes a semitone off) and the voices exchanged: the
+# rectus alto is now the soprano, the rectus bass the alto, the rectus soprano the bass,
+# each placed in its own octave (tests/test_pieces.py checks it note against note).
+# The subject: the soprano alone, bars 1-4: the rectus subject upside down, D A A (G F
+# ...). Entries: exactly the rectus's, mirrored, found by find_entry (scan, checked by
+# hand); forms follow the notes (wtc_form). Before bar 27 (bass), as in the rectus: head: free,
+# part: head. No stretto.
+# Instruments: the bass goes down to B2, below the viola: cello (the default); the
+# alto a viola, the soprano a violin.
+id: contrapunctus13-inversus
+title: Contrapunctus XIII (inversus)
+catalogue: BWV 1080, 13
+key: D minor
+tempo: 66
+beats_per_bar: 4
+pickup: 1           # a quarter upbeat before bar 1 (the kern's first line)
+ensemble: strings
+listen_for: the rectus upside down, its alto now on top
+techniques: [fugue, subject, answer, inversion, mirror fugue]
+order: 13.5
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-016b.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Bass, texture: stipple}
+fugue:
+  # the subject: soprano, D A A (G F ...), bars 1-4
+  subject: {voice: 0, start: 0, length: 13.5}
+  entries:
+    - {voice: 0, start: 0, form: subject}  # upbeat to bar 1, D
+    - {voice: 1, start: 16, form: subject, transform: inverted}  # upbeat to bar 5, A
+    - {voice: 2, start: 32, form: answer}  # upbeat to bar 9, A
+    - {voice: 0, start: 76, form: subject, transform: inverted}  # upbeat to bar 20, A
+    - {voice: 2, start: 104.667, form: subject, transform: inverted, part: head, head_length: 18, head: free}  # upbeat to bar 27, D
+    - {voice: 1, start: 112, form: subject}  # upbeat to bar 29, F
+    - {voice: 2, start: 128, form: subject, transform: inverted}  # upbeat to bar 33, C
+    - {voice: 0, start: 144, form: subject}  # upbeat to bar 37, A
+    - {voice: 0, start: 188, form: subject, transform: inverted}  # upbeat to bar 48, G
+    - {voice: 1, start: 244, form: subject}  # upbeat to bar 62, E
+    - {voice: 2, start: 260, form: subject, transform: inverted}  # upbeat to bar 66, A
+captions:
+  - {at: 0, text: "☞ The subject in the soprano: the rectus's alto, upside down."}
+  - {at: 16, text: "☞ The subject inverted in the alto: the rectus's bass, upside down."}
+  - {at: 32, text: "☞ The answer in the bass: all three voices are in."}
+  - {at: 112, text: "☞ The subject in the alto, on F."}
+  - {at: 260, text: "☞ The last entry: the subject inverted in the bass."}

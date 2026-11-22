@@ -1,0 +1,103 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-019.krn ("Contrapunctus XIX: Quadruple
+# Fugue on the name B-A-C-H", "Unfinished"; no splits, no chords; BGA vol. 25.1, p. 93,
+# the "Fuga a 3 Soggetti"). C (4/4): beats are quarter notes, 4 per bar.
+# Tempo: editorial (the file's *MM208 names no source).
+# Unfinished: the file, like the edition, stops where Bach's manuscript breaks off, in bar
+# 239, the tenor alone in the middle of a phrase. Nothing is added: the piece ends there.
+# Three subjects, each with its own section, then combined (a fourth, the work's main
+# subject, is thought to have been meant to join them; it is not in the notes):
+#   I (bass, bars 1-6): D A G F G A D, in long notes;
+#   II (alto, bar 115): a running line in eighths, D A D E F E D F E A E F G F E F G;
+#   III (tenor, bar 193): B♭ A C B♮, Bach's name in German note names (B = B♭, H = B♮),
+#     then C♯ D C♯ B C♯.
+# Entries: every place find_entry finds a subject (scans of all voices, checked by hand;
+# statements of I with a free head and a free tail, which a seven-note subject in long
+# notes fits by chance, are left out). Forms: subject I as in the WTC (wtc_form); II and
+# III are labelled subject throughout. Bars 213 and 222 bring B-A-C-H inverted, bar 218
+# with its D held long, each marked to its sixth note (part: head). Stretto groups:
+# statements of one subject beginning at least a half note before the previous one's last
+# note. From bar 234 all three subjects sound together.
+# Instruments: strings; the tenor stays above C3, within the viola.
+id: contrapunctus14
+title: Contrapunctus XIV (unfinished)
+catalogue: BWV 1080, 19
+key: D minor
+tempo: 72
+beats_per_bar: 4
+ensemble: strings
+listen_for: three subjects, the third spelling B-A-C-H; it breaks off unfinished
+techniques: [fugue, subject, answer, triple fugue, inversion, stretto, chromaticism]
+order: 19
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-019.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  # subject I: bass, bars 1-6; II: alto, bars 115-116; III (B-A-C-H): tenor, bars 193-196
+  subjects:
+    - {id: I, voice: 3, start: 2, length: 20}
+    - {id: II, voice: 1, start: 456, length: 8}
+    - {id: III, voice: 2, start: 770, length: 12.5}
+  entries:
+    - {voice: 3, start: 2, form: subject, subject: I}  # bar 1, D
+    - {voice: 2, start: 22, form: answer, subject: I, head: free}  # bar 6, A
+    - {voice: 1, start: 42, form: subject, subject: I}  # bar 11, D
+    - {voice: 0, start: 62, form: answer, subject: I, head: free}  # bar 16, A
+    - {voice: 3, start: 82, form: subject, subject: I, transform: inverted, head: free, stretto: 1}  # bar 21, D
+    - {voice: 2, start: 94, form: subject, subject: I, stretto: 1}  # bar 24, D
+    - {voice: 1, start: 118, form: subject, subject: I, transform: inverted}  # bar 30, A
+    - {voice: 0, start: 146, form: answer, subject: I, head: free, stretto: 2}  # bar 37, A
+    - {voice: 1, start: 150, form: subject, subject: I, stretto: 2}  # bar 38, D
+    - {voice: 3, start: 170, form: subject, subject: I}  # bar 43, G
+    - {voice: 2, start: 218, form: subject, subject: I, transform: inverted}  # bar 55, D
+    - {voice: 3, start: 242, form: subject, subject: I, stretto: 3}  # bar 61, D
+    - {voice: 0, start: 246, form: subject, subject: I, stretto: 3}  # bar 62, A
+    - {voice: 1, start: 280, form: subject, subject: I, transform: inverted, head: free, stretto: 4}  # bar 71, F
+    - {voice: 2, start: 286, form: subject, subject: I, transform: inverted, stretto: 4}  # bar 72, Bb
+    - {voice: 0, start: 314, form: subject, subject: I, transform: inverted, stretto: 5}  # bar 79, A
+    - {voice: 1, start: 322, form: subject, subject: I, stretto: 5}  # bar 81, D
+    - {voice: 3, start: 354, form: subject, subject: I, stretto: 6}  # bar 89, Bb
+    - {voice: 1, start: 366, form: subject, subject: I, stretto: 6}  # bar 92, G
+    - {voice: 2, start: 386, form: subject, subject: I, stretto: 7}  # bar 97, A
+    - {voice: 0, start: 389, form: subject, subject: I, transform: inverted, head: free, stretto: 7}  # bar 98, A
+    - {voice: 1, start: 394, form: subject, subject: I, stretto: 7}  # bar 99, D
+    - {voice: 3, start: 419, form: subject, subject: I, head: free}  # bar 105, D
+    - {voice: 1, start: 456, form: subject, subject: II}  # bar 115, D
+    - {voice: 0, start: 484, form: subject, subject: II}  # bar 122, A
+    - {voice: 3, start: 512, form: subject, subject: II}  # bar 129, D
+    - {voice: 2, start: 540, form: subject, subject: II}  # bar 136, A
+    - {voice: 0, start: 588, form: subject, subject: II}  # bar 148, D
+    - {voice: 3, start: 590, form: subject, subject: I}  # bar 148, D
+    - {voice: 1, start: 624, form: subject, subject: II}  # bar 157, A
+    - {voice: 2, start: 668, form: subject, subject: II}  # bar 168, F
+    - {voice: 0, start: 674, form: subject, subject: I}  # bar 169, F
+    - {voice: 3, start: 720, form: subject, subject: II}  # bar 181, G
+    - {voice: 1, start: 726, form: subject, subject: I, stretto: 8}  # bar 182, G
+    - {voice: 0, start: 730, form: subject, subject: I, stretto: 8}  # bar 183, D
+    - {voice: 2, start: 770, form: subject, subject: III, stretto: 9}  # bar 193, Bb
+    - {voice: 1, start: 778, form: subject, subject: III, stretto: 9}  # bar 195, F
+    - {voice: 0, start: 802, form: subject, subject: III, stretto: 10}  # bar 201, Bb
+    - {voice: 3, start: 810, form: subject, subject: III, stretto: 10}  # bar 203, F
+    - {voice: 2, start: 838, form: subject, subject: III}  # bar 210, Bb
+    - {voice: 1, start: 850, form: subject, subject: III, transform: inverted, part: head, head_length: 6}  # bar 213, E
+    - {voice: 0, start: 866, form: subject, subject: III, stretto: 11}  # bar 217, Bb
+    - {voice: 3, start: 868, form: subject, subject: III, part: head, head_length: 6, stretto: 11}  # bar 218, F
+    - {voice: 3, start: 886, form: subject, subject: III, transform: inverted, part: head, head_length: 6}  # bar 222, A
+    - {voice: 2, start: 899, form: subject, subject: III, stretto: 12}  # bar 225, F
+    - {voice: 1, start: 902, form: subject, subject: III, stretto: 12}  # bar 226, Bb
+    - {voice: 1, start: 932, form: subject, subject: II}  # bar 234, D
+    - {voice: 3, start: 934, form: subject, subject: I}  # bar 234, D
+    - {voice: 2, start: 938, form: subject, subject: III}  # bar 235, Bb
+captions:
+  - {at: 2, text: "☞ Subject I alone, in the bass, in long notes."}
+  - {at: 22, text: "☞ The answer in the tenor, on A."}
+  - {at: 82, text: "☞ Stretto: subject I inverted in the bass, then upright above it."}
+  - {at: 456, text: "☞ Subject II in the alto: a new running line, in eighths."}
+  - {at: 588, text: "☞ Subject II in the soprano, now with subject I in the bass."}
+  - {at: 770, text: "☞ Subject III in the tenor: B♭ A C B♮, in German B-A-C-H, Bach's name."}
+  - {at: 778, text: "☞ Stretto: B-A-C-H in the alto, on F, while the tenor goes on."}
+  - {at: 850, text: "☞ Subject III inverted in the alto."}
+  - {at: 932, text: "☞ All three subjects together: II in the alto, I in the bass, then III."}
+  - {at: 938, text: "☞ B-A-C-H in the tenor; soon after, the manuscript breaks off."}

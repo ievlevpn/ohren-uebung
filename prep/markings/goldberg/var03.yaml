@@ -1,0 +1,30 @@
+# Source: Mutopia BachJS/BWV988/bwv-988-v03 (12/8, beats are quarter notes, 6 per bar).
+# Voices from the MIDI, top first: 0 = dux (upper, from beat 0), 1 = comes (from bar 2),
+# 2 = bass. Repeats are not unfolded.
+id: goldberg-var03
+title: Variatio 3
+catalogue: BWV 988, 3
+key: G major
+tempo: 84
+beats_per_bar: 6
+ensemble: harpsichord
+listen_for: canon at the unison, one bar apart
+techniques: [canon, canon at the unison]
+order: 3
+source: {kind: mutopia, path: BachJS/BWV988/bwv-988-v03}
+voices:
+  - {name: Dux, texture: solid}
+  - {name: Comes, texture: hatch}
+  - {name: Bass, texture: stipple}
+canon:
+  leader: 0
+  followers:
+    - voice: 1
+      rule:
+        delay: 6
+        # free: the last bar of each half (beats 42-48, 90-96); its image would fall past
+        # the double bar, so the comes cadences instead of imitating.
+        free: [[42, 48], [90, 96]]
+captions:
+  - {bar: 1, text: "☞ Dux: the tune in the upper voice, over a walking bass."}
+  - {bar: 2, text: "☞ Comes: the same tune at the unison, one bar later."}

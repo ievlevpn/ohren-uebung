@@ -1,0 +1,30 @@
+# Source: transcriptions/bwv1079-cancrizans.yaml (the written voice: IMSLP10042, page 8; resolution page 41).
+# Bach wrote one line; played against itself read backwards it is a two-voice canon.
+id: bwv1079-cancrizans
+title: Canon a 2 cancrizans
+catalogue: BWV 1079, Canon 1
+key: C minor
+tempo: 84
+beats_per_bar: 4
+ensemble: chamber
+listen_for: crab canon, one line against itself backwards
+techniques: [canon, retrograde]
+order: 1
+source: {kind: transcription, path: transcriptions/bwv1079-cancrizans.yaml}
+voices:
+  - {name: Dux, texture: solid, instrument: violin}     # 55-77: below the flute
+  - {name: Comes, texture: hatch}
+canon:
+  leader: 0
+  followers:
+    - {voice: 1, rule: {delay: 0, retrograde: true}}
+marks:
+  # the vertical mirror: the middle of the 18 bars (beat 36 of 72)
+  - {kind: crab-axis, start: 36, end: 36, label: cancrizans}
+captions:
+  - {bar: 1, text: "☞ Dux forwards and comes backwards, from the first beat, together."}
+  - {bar: 2, text: "☞ One line: the royal theme, then running quavers, read from both ends."}
+  - {bar: 10, text: "☞ The middle: now each voice plays, backwards, what the other played."}
+# "In this piece" on a definition card; tests/test_glossary_notes.py checks each claim
+glossary_notes:
+  retrograde: "The comes is the dux read backwards: it begins with the dux's last note and ends with its first."

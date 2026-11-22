@@ -1,0 +1,42 @@
+# Source: humdrum-tools/inventions, inven05.krn (2 voices: upper, lower; no spine splits).
+# Motive: the upper voice's first three bars (Eb-D-Eb-F-G-Ab, the same a step higher,
+# then the falling bar 3), beats 0.5-12. Its countermotive: the bass's sixteenth-note
+# line from beat 2.25 to the end of bar 3. The pair comes five times, the voices
+# swapping (bars 1, 5, 12, 16, 27); every statement is marked. Bars 9-11 and 20-26 use
+# only the motive's one-bar head in sequences (fragments, not marked).
+id: invention05
+title: Invention 5
+catalogue: BWV 776
+key: E♭ major
+tempo: 88
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "a motive and its running countermotive, trading places"
+techniques: [invention, motive, countermotive, invertible counterpoint]
+book: Inventions
+order: 5
+source: {kind: kern, path: inventions/kern/inven05.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 11.5}   # the motive
+  countersubject: {voice: 1, start: 2.25, length: 9.75}   # the countermotive
+  entries:
+    - {voice: 0, start: 0.5, form: motive}                            # bar 1, upper: Eb-D-Eb-F-G-Ab-F-Eb
+    - {voice: 1, start: 2.25, form: countermotive}                    # bar 1, lower countermotive: Eb-D-Eb-C-D-Bb-C-Ab
+    - {voice: 1, start: 16.5, form: motive}                           # bar 5, lower: Bb-A-Bb-C-D-Eb-C-Bb
+    - {voice: 0, start: 18.25, form: countermotive}                   # bar 5, upper countermotive: Bb-A-Bb-G-A-F-G-Eb
+    - {voice: 1, start: 44.5, form: motive}                           # bar 12, lower: C-B-C-D-Eb-F-D-C
+    - {voice: 0, start: 46.25, form: countermotive}                   # bar 12, upper countermotive: C-Bb-C-Ab-Bb-G-Ab-F
+    - {voice: 0, start: 60.5, form: motive}                           # bar 16, upper: F-E-F-G-Ab-Bb-G-F
+    - {voice: 1, start: 62.25, form: countermotive}                   # bar 16, lower countermotive: F-Eb-F-Db-Eb-C-Db-Bb
+    - {voice: 0, start: 104.5, form: motive}                          # bar 27, upper: Eb-D-Eb-F-G-Ab-F-Eb
+    - {voice: 1, start: 106.25, form: countermotive}                  # bar 27, lower countermotive: Eb-D-Eb-C-D-Bb-C-Ab
+captions:
+  - {at: 0.5, text: "☞ The motive in the upper voice, climbing in sequence."}
+  - {at: 2.25, text: "☞ Below it, the countermotive: a running line in sixteenths."}
+  - {at: 16.5, text: "☞ The voices swap: the motive in the lower voice, in B♭ major."}
+  - {at: 44.5, text: "☞ The motive in the lower voice, in C minor."}
+  - {at: 60.5, text: "☞ The motive in the upper voice, in F minor."}
+  - {at: 104.5, text: "☞ Home in E♭ major: the motive in the upper voice once more."}

@@ -1,0 +1,34 @@
+# Source: transcriptions/bwv1079-thema-regium.yaml (flute and thema written: Bach's riddle
+# IMSLP10042 (BGA 31.2) page 8; resolution after Kirnberger, Die Kunst des reinen Satzes
+# II.3, p. 45, IMSLP10042 page 41). The bass is computed: the flute's line two octaves
+# lower, one bar later, exactly. The 5-bar loop plays four times; the fourth is cut at
+# beat 76 by a closing C chord (end/coda, Reccmo's, editorial; Bach's canon has no end):
+# Reccmo holds the bass's C from beat 75; here the cut stops it at 76 and the chord
+# strikes it again. Tempo editorial.
+id: bwv1079-thema-regium
+title: Canon perpetuus super thema regium
+catalogue: BWV 1079/2
+key: C minor
+tempo: 72
+beats_per_bar: 4
+ensemble: chamber
+listen_for: canon two octaves apart around the royal theme
+techniques: [canon, canon at the octave, perpetual canon]
+order: 0
+source: {kind: transcription, path: transcriptions/bwv1079-thema-regium.yaml}
+voices:
+  - {name: Dux, texture: solid, instrument: flute}
+  - {name: Thema, texture: hatch, instrument: violin}
+  - {name: Comes, texture: stipple, instrument: cello}
+canon:
+  leader: 0
+  followers:
+    - voice: 2
+      rule: {delay: 4, interval: -24, repeats: 4}
+captions:
+  - {bar: 1, text: "☞ The royal theme in the middle; the flute begins the canon above."}
+  - {at: 4, text: "☞ Comes: the flute's line two octaves lower, one bar later."}
+  - {bar: 6, text: "☞ Perpetual: theme and canon begin again, nearly four times round."}
+# "In this piece" on a definition card; tests/test_glossary_notes.py checks each claim
+glossary_notes:
+  canon: "The royal theme in the middle takes no part in the canon: only the flute and the cello imitate."

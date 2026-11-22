@@ -1,0 +1,37 @@
+# Source: humdrum-tools/inventions, inven12.krn (2 voices: upper, lower; no spine splits).
+# 12/8: beats are quarter notes, 6 per bar (a quarter-note beat is two eighths).
+# Motive: four repeated A's, a held B, then the first half of bar 2's sixteenths
+# (A-G#-A-B-C#-D-C#-D-F#-E-D-C#), beats 0-9. Five statements (bars 1, 3, 9, 11, 18), all
+# marked. In bar 9 the upper voice breaks the repeated notes into eighths with leaps
+# (F#-F#'-F#-F#-C#-F#): the motive's notes sit at their beats, the others ornament them.
+# The repeated notes alone recur in bars 5-6 and 14-15 without the run: not
+# marked. The bass's sixteenths in bar 1 are not repeated as a fixed countermotive.
+id: invention12
+title: Invention 12
+catalogue: BWV 783
+key: A major
+tempo: 108
+beats_per_bar: 6
+ensemble: harpsichord
+listen_for: "a motive of repeated notes and a running answer"
+techniques: [invention, motive, imitation]
+book: Inventions
+order: 12
+source: {kind: kern, path: inventions/kern/inven12.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0, length: 9}   # the motive
+  entries:
+    - {voice: 0, start: 0, form: motive}                              # bar 1, upper: A-A-A-A-B-A-G#-A
+    - {voice: 1, start: 12, form: motive}                             # bar 3, lower: E-E-E-E-F#-E-D#-E
+    - {voice: 0, start: 48, form: motive}                             # bar 9, upper: F#-F#-F#-F#-G#-F#-E#-F#
+    - {voice: 1, start: 60, form: motive}                             # bar 11, lower: C#-C#-C#-C#-D#-C#-B#-C#
+    - {voice: 1, start: 102, form: motive}                            # bar 18, lower: A-A-A-A-B-A-G#-A
+captions:
+  - {at: 0, text: "☞ The motive: four repeated A's, a held B, then a run in sixteenths."}
+  - {at: 12, text: "☞ The lower voice answers with the motive on E."}
+  - {at: 48, text: "☞ The motive in F♯ minor, in the upper voice."}
+  - {at: 60, text: "☞ The lower voice answers it on C♯."}
+  - {at: 102, text: "☞ Back in A major: the motive in the lower voice."}

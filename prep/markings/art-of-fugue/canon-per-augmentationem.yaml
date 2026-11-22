@@ -1,0 +1,44 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-015.krn ("Canon in Augmentation in
+# Inversion"; two spines, one per staff; BGA vol. 47, p. 79; no splits; 6 grace notes
+# kept as secondary notes). ¢ (2/2): beats are quarter notes, 4 per bar.
+# Tempo: editorial (the file's *MM80 names no source).
+# The canon, read from the score and matched against the rule (two sections):
+#   bars 1-24: the upper voice leads; the lower follows from bar 5 upside down and at
+#   double length (stretch 2), mirrored about the pitch sum 119 (D4 answered by A3),
+#   so its answer lasts to bar 52;
+#   bars 53-76: the roles swap: the lower voice leads, the upper follows from bar 57
+#   inverted and doubled, about the pitch sum 131, to bar 104.
+# The mirror is chromatic (invert_about with interval 1: p -> 119 - p); a semitone off it
+# here and there (a raised or lowered note), within pitch_tolerance 1. The lower voice
+# leads from its own first note (beat 16), so the second section's delay is measured
+# from there: the upper voice's answer to the bass note at beat s comes at
+# 2s - 192 = 16 + delay + 2(s - 16), delay -176. Free: the closing bars (105-109).
+# Instruments: harpsichord: the lower voice goes down to B1, below the cello.
+id: canon-per-augmentationem
+title: Canon per Augmentationem in Contrario Motu
+catalogue: BWV 1080, 14
+key: D minor
+tempo: 66
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: canon upside down and at double length; then the parts change places
+techniques: [canon, inversion, augmentation]
+order: 14
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-015.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+canon:
+  - span: [0, 96]       # bars 1-24: the upper voice leads
+    leader: 0
+    followers:
+      - {voice: 1, rule: {delay: 16, invert_about: 59, interval: 1, stretch: 2, pitch_tolerance: 1}}
+  - span: [208, 304]    # bars 53-76: the lower voice leads
+    leader: 1
+    followers:
+      - {voice: 0, rule: {delay: -176, invert_about: 65, interval: 1, stretch: 2, pitch_tolerance: 1}}
+captions:
+  - {bar: 1, text: "☞ Dux: the upper voice leads, alone."}
+  - {at: 16, text: "☞ Comes: the lower voice, upside down and twice as slow."}
+  - {bar: 53, text: "☞ The roles change: the lower voice leads."}
+  - {at: 224, text: "☞ The upper voice follows, inverted and at double length."}

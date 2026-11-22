@@ -1,0 +1,36 @@
+# The library's collections, in reading order. Pieces live in markings/<id>/*.yaml.
+# books: optional list of book names; a piece names its book with `book:` when there are
+# several. A collection without books shows its pieces as one unnamed book.
+collections:
+  - id: rounds
+    numeral: I
+    name: Rounds
+    catalogue: ""
+    note: Songs that chase themselves at the unison; the simplest canon.
+  - id: musical-offering
+    numeral: II
+    name: The Musical Offering
+    catalogue: BWV 1079
+    note: Two ricercars on the royal theme, and canons Bach printed as riddles, one written voice and a rule for the rest.
+  - id: goldberg
+    numeral: III
+    name: Goldberg Variations — the canons
+    catalogue: BWV 988
+    note: Every third variation is a canon, at the unison, the second, and on up to the ninth.
+  - id: art-of-fugue
+    numeral: IV
+    name: The Art of Fugue
+    catalogue: BWV 1080
+    note: One subject worked through every kind of fugue and canon.
+  - id: wtc
+    numeral: V
+    name: The Well-Tempered Clavier
+    catalogue: BWV 846–893
+    note: A prelude and fugue in every major and minor key.
+    books: [Book I]
+  - id: inventions
+    numeral: VI
+    name: Inventions and Sinfonias
+    catalogue: BWV 772–801
+    note: Bach's lessons in playing two and three parts; each piece grows from one short motive.
+    books: [Inventions, Sinfonias]

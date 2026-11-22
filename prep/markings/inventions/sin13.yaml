@@ -1,0 +1,41 @@
+# Source: humdrum-tools/inventions, sinfo13.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM60 names no source).
+# 3/8: beats_per_quarter 2, a beat is an eighth, 3 per bar.
+# Motive (checked against the score): the upper voice's first three bars, A-B, C-D, C-B in
+# quarters and eighths (beats 0-9). The sixteenths that follow vary, so the marked motive
+# is the slow line. The middle voice answers on E (bar 5), the lower voice on A (bar 13).
+# In bar 53 the upper and lower voices play it together, two octaves and a third apart.
+# Seven complete statements, all marked. Not marked: the upper voice in bar 60, whose
+# first quarter becomes two eighths (G#-A, B, C-D, ...).
+id: sinfonia13
+title: Sinfonia 13
+catalogue: BWV 799
+key: A minor
+tempo: 168
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: "a slow motive in long notes against running sixteenths"
+techniques: [sinfonia, motive, imitation]
+book: Sinfonias
+order: 13
+source: {kind: kern, path: inventions/kern/sinfo13.krn, beats_per_quarter: 2}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0, length: 9}   # the motive
+  entries:
+    - {voice: 0, start: 0, form: motive}                            # bar 1, upper: A-B-C-D-C-B
+    - {voice: 1, start: 12, form: motive}                           # bar 5, middle: E-F#-G-A-G-F#
+    - {voice: 2, start: 36, form: motive}                           # bar 13, lower: A-B-C-D-C-B
+    - {voice: 0, start: 72, form: motive}                           # bar 25, upper: E-F-G-A-G-F
+    - {voice: 0, start: 96, form: motive}                           # bar 33, upper: F-G-A-Bb-A-G
+    - {voice: 0, start: 156, form: motive}                          # bar 53, upper: C-D-E-F-E-D
+    - {voice: 2, start: 156, form: motive}                          # bar 53, lower: A-B-C-D-C-B
+captions:
+  - {at: 0, text: "☞ The motive in the upper voice: a slow rise and fall, in A minor."}
+  - {at: 12, text: "☞ The middle voice answers it, on E."}
+  - {at: 36, text: "☞ The lower voice enters with the motive."}
+  - {at: 72, text: "☞ The motive in the upper voice, starting on E."}
+  - {at: 156, text: "☞ The upper and lower voices sing the motive together, in parallel."}

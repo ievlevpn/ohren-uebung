@@ -1,0 +1,15 @@
+# Canon a 2 quaerendo invenietis, BWV 1079 — the written voice: the dux (viola), one pass
+# of the 15-bar perpetual canon from its upbeat (C minor, 4/4). The comes (cello) answers
+# by exact contrary motion about g, 2½ bars later (computed): BGA's solution A. Two
+# passes and most of a third, then Reccmo's closing chord at beat 160 (end/coda,
+# editorial).
+source: "Reccmo's MIDI on IMSLP (BWV 1079 page), notes checked against the edition (#221470, the first of its two solutions)"
+edition: "Bach-Gesellschaft Ausgabe vol. 31.2 (ed. Alfred Dörffel, Breitkopf & Härtel 1885), IMSLP #10042"
+pages: "IMSLP10042, page 20 (riddle); solution A IMSLP10042, page 49 (after Allg. Mus. Zeitung VIII, p. 287)"
+voices:
+  - [[60, 3, 0.5], [62, 3.5, 0.5], [63, 4, 1], [64, 5, 1], [65, 6, 1], [66, 7, 1], [67, 8, 2], [68, 10, 2], [59, 12, 2], [67, 15, 1], [66, 16, 1], [65, 17, 2], [64, 19, 1], [63, 20, 1], [62, 21, 2], [60, 23, 1], [59, 24, 1], [55, 25, 1], [60, 26, 1], [65, 27, 1], [63, 28, 2], [62, 30, 1], [60, 31, 0.5], [62, 31.5, 0.5], [60, 32, 0.5], [72, 32.5, 0.5], [70, 33, 0.5], [68, 33.5, 0.5], [67, 34, 0.5], [65, 34.5, 0.5], [63, 35, 0.5], [67, 35.5, 0.5], [65, 36, 0.5], [67, 36.5, 0.5], [65, 37, 0.5], [63, 37.5, 0.5], [62, 38, 0.5], [63, 38.5, 0.5], [65, 39, 0.5], [62, 39.5, 0.5], [63, 40, 0.5], [60, 40.5, 0.5], [57, 41, 0.5], [60, 41.5, 0.5], [54, 42, 1], [55, 43, 0.5], [57, 43.5, 0.5], [59, 44, 0.5], [60, 44.5, 0.5], [62, 45, 0.5], [63, 45.5, 0.5], [65, 46, 1], [63, 47, 0.5], [62, 47.5, 0.5], [63, 48, 0.5], [62, 48.5, 0.5], [60, 49, 0.5], [63, 49.5, 0.5], [62, 50, 1], [60, 51, 0.5], [59, 51.5, 0.5], [60, 52, 1], [62, 53, 1], [55, 54, 2], [54, 56, 2], [51, 58.5, 0.5], [54, 59, 0.5], [55, 59.5, 0.5], [57, 60.5, 0.5], [59, 61, 0.5], [60, 61.5, 0.5], [59, 62.5, 0.5]]
+end: 160
+editorial: true  # the end and coda are the recording's (Reccmo), not Bach's
+coda:
+  - [[63, 160, 2]]
+  - [[48, 160, 2]]

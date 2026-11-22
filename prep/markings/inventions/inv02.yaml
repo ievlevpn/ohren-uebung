@@ -1,0 +1,44 @@
+# Source: humdrum-tools/inventions, inven02.krn (2 voices: upper, lower; no spine splits).
+# A strict canon at the octave, two bars (8 beats) apart, checked note by note:
+#   bars 1-8: the upper voice leads (from beat 0.5); the lower voice plays every note an
+#   octave lower, two bars later (bars 3-10), with no exception;
+#   bars 11-18: the roles swap; the lower voice leads (from beat 40.5) and the upper voice
+#   answers an octave higher, two bars later (bars 13-20).
+# Bars 9-10 (upper) and from bar 19 on the voices are free. Not canon notes: the lower
+# voice opens its lead with Eb-F (beats 40.5-40.75), where the upper voice answers with
+# the motive's own head G-F# (bar 13); marked free.
+id: invention02
+title: Invention 2
+catalogue: BWV 773
+key: C minor
+tempo: 56
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: canon at the octave, two bars apart; the voices swap roles
+techniques: [invention, canon, canon at the octave]
+book: Inventions
+order: 2
+source: {kind: kern, path: inventions/kern/inven02.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+canon:
+  - span: [0, 32]       # bars 1-8: the upper voice leads
+    leader: 0
+    followers:
+      - voice: 1
+        rule: {delay: 8, interval: -12}
+  - span: [40.5, 72]    # bars 11-18: the lower voice leads (its G on the downbeat answers bar 9)
+    leader: 1
+    followers:
+      - voice: 0
+        rule:
+          delay: 8
+          interval: 12
+          # free: Eb-F, the lower voice's own start; the upper voice answers G-F#
+          free: [[40.5, 41]]
+captions:
+  - {at: 0.5, text: "☞ Canon: the upper voice leads, in C minor."}
+  - {at: 8.5, text: "☞ The lower voice plays the same line an octave lower, two bars behind."}
+  - {at: 40.5, text: "☞ The roles swap: now the lower voice leads, in G minor."}
+  - {at: 48.5, text: "☞ The upper voice follows it an octave higher, two bars later."}

@@ -1,0 +1,102 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-011.krn ("Contrapunctus 11, a 4."; BGA
+# vol. 25.1, p. 48; the file notes "three subjects of Contrapunctus 8 in inversion").
+# ¢ (2/2): beats are quarter notes, 4 per bar. One spine split and a few chord tones
+# (bars 6, 56, 183) are kept as secondary notes (6); nothing is dropped.
+# Tempo: editorial (the file's *MM120 names no source).
+# A triple fugue on Contrapunctus 8's subjects turned upside down, numbered here in the
+# order they enter:
+#   I (alto, bars 1-4): D A G . F E D . C♯ D E . F G F E D, Contrapunctus 8's third
+#     subject inverted, i.e. the work's main subject broken by rests;
+#   II (alto, bars 27-31): A B♭ F C C♯ D A E F E D E D A, Contrapunctus 8's first
+#     subject inverted;
+#   III (tenor, bar 89): E♭, then rising chromatic steps in repeated eighths (E♭ D F F F
+#     E G G G F♯ A A A A♭ B B B), Contrapunctus 8's second subject turned over.
+# Entries: every place find_entry finds a subject in either direction (scans of all
+# voices, checked by hand; "inverted" here is relative to this piece's subject, so
+# subject II inverted is Contrapunctus 8's first subject the right way up). Subject III's
+# figure runs on in long sequences; only statements beginning with its long note (or,
+# head: free, a long note tied in) are marked, bar 122 to where it turns (part: head); bar
+# 145 (alto, at its own pitch, the E♭ cut to an eighth, head: free) is where all three
+# subjects sound together.
+# Forms: subject I as in the WTC (wtc_form); II and III are labelled subject throughout.
+# Bars 158 and 164: subject I and its inversion start together (a mirror pair, not
+# stretto). Stretto groups: statements of one subject beginning at least a half note
+# before the previous one's last note.
+# Instruments: strings; the tenor stays above C3, within the viola.
+id: contrapunctus11
+title: Contrapunctus XI
+catalogue: BWV 1080, 11
+key: D minor
+tempo: 76
+beats_per_bar: 4
+ensemble: strings
+listen_for: the three subjects of VIII upside down, with a chromatic rising line
+techniques: [fugue, subject, answer, triple fugue, inversion, chromaticism, stretto]
+order: 11
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-011.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  # subject I: alto, bars 1-4; II: alto, bars 27-31; III: tenor, bars 89-91
+  subjects:
+    - {id: I, voice: 1, start: 1, length: 16}
+    - {id: II, voice: 1, start: 106, length: 15}
+    - {id: III, voice: 2, start: 355, length: 9.5}
+  entries:
+    - {voice: 1, start: 1, form: subject, subject: I}  # bar 1, D
+    - {voice: 0, start: 17, form: answer, subject: I}  # bar 5, A
+    - {voice: 3, start: 33, form: subject, subject: I}  # bar 9, D
+    - {voice: 2, start: 49, form: answer, subject: I}  # bar 13, A
+    - {voice: 0, start: 85, form: subject, subject: I}  # bar 22, E
+    - {voice: 1, start: 106, form: subject, subject: II}  # bar 27, A
+    - {voice: 2, start: 134, form: subject, subject: II}  # bar 34, E
+    - {voice: 3, start: 171, form: subject, subject: II, head: free}  # bar 43, A
+    - {voice: 0, start: 222, form: subject, subject: II, transform: inverted}  # bar 56, D
+    - {voice: 3, start: 267, form: subject, subject: II, transform: inverted, head: free}  # bar 67, A
+    - {voice: 2, start: 281, form: subject, subject: I, transform: inverted}  # bar 71, E
+    - {voice: 0, start: 301, form: subject, subject: I, transform: inverted}  # bar 76, A
+    - {voice: 3, start: 317, form: subject, subject: I, transform: inverted}  # bar 80, D
+    - {voice: 1, start: 333, form: subject, subject: I, transform: inverted}  # bar 84, A
+    - {voice: 3, start: 354, form: subject, subject: II}  # bar 89, A
+    - {voice: 2, start: 355, form: subject, subject: III}  # bar 89, Eb
+    - {voice: 1, start: 370, form: subject, subject: II}  # bar 93, D
+    - {voice: 0, start: 371, form: subject, subject: III}  # bar 93, Bb
+    - {voice: 1, start: 401, form: subject, subject: I}  # bar 101, D
+    - {voice: 2, start: 418, form: subject, subject: II, transform: inverted}  # bar 105, D
+    - {voice: 0, start: 451, form: subject, subject: II, head: free}  # bar 113, A
+    - {voice: 1, start: 451.5, form: subject, subject: III, head: free}  # bar 113, Eb
+    - {voice: 1, start: 478, form: subject, subject: III, head: free, stretto: 1}  # bar 120, F#
+    - {voice: 0, start: 485, form: subject, subject: III, part: head, head_length: 14, stretto: 1}  # bar 122, D
+    - {voice: 3, start: 525, form: subject, subject: I}  # bar 132, D
+    - {voice: 1, start: 543, form: subject, subject: III, stretto: 2}  # bar 136, Eb
+    - {voice: 2, start: 543, form: subject, subject: II, head: free}  # bar 136, A
+    - {voice: 0, start: 545, form: subject, subject: III, stretto: 2}  # bar 137, A
+    - {voice: 1, start: 578, form: subject, subject: III, head: free}  # bar 145, E♭ cut to an eighth
+    - {voice: 0, start: 579, form: subject, subject: II, head: free}  # bar 145, B
+    - {voice: 2, start: 581, form: subject, subject: I, form_by: opening}  # bar 146, E
+    - {voice: 0, start: 629, form: subject, subject: I, transform: inverted}  # bar 158, A
+    - {voice: 1, start: 629, form: subject, subject: I}  # bar 158, E
+    - {voice: 2, start: 653, form: subject, subject: I, form_by: opening}  # bar 164, G
+    - {voice: 3, start: 653, form: subject, subject: I, transform: inverted}  # bar 164, Bb
+    - {voice: 3, start: 695, form: subject, subject: II, head: free}  # bar 174, A
+    - {voice: 1, start: 697, form: subject, subject: I}  # bar 175, D
+    - {voice: 2, start: 715, form: subject, subject: II, head: free}  # bar 179, A
+    - {voice: 3, start: 715, form: subject, subject: III}  # bar 179, Eb
+    - {voice: 0, start: 717, form: subject, subject: I}  # bar 180, D
+captions:
+  - {at: 1, text: "☞ Subject I in the alto: the main subject, broken by rests."}
+  - {at: 17, text: "☞ The answer in the soprano, on A."}
+  - {at: 33, text: "☞ Subject I in the bass."}
+  - {at: 49, text: "☞ The answer in the tenor: all four voices are in."}
+  - {at: 106, text: "☞ Subject II in the alto: Contrapunctus VIII's first subject, upside down."}
+  - {at: 281, text: "☞ Subject I inverted in the tenor."}
+  - {at: 355, text: "☞ Subject III in the tenor: a chromatic line rising in repeated notes."}
+  - {at: 371, text: "☞ Subject III in the soprano, over subject II in the alto."}
+  - {at: 478, text: "☞ Stretto: subject III in the alto, then in the soprano."}
+  - {at: 578, text: "☞ All three subjects: III in the alto, II in the soprano, I in the tenor."}
+  - {at: 629, text: "☞ Subject I and its inversion at once: the alto, and the soprano upside down."}
+  - {at: 715, text: "☞ Subjects II and III together, in the tenor and the bass."}
+  - {at: 717, text: "☞ The last entry: subject I in the soprano."}

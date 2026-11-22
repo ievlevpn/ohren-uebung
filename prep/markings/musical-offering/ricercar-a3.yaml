@@ -1,0 +1,59 @@
+# Source: craigsapp/bach-musical-offering, kern/offering-001.krn (3 voices: soprano, alto,
+# bass; no spine splits, no chords; encoded by Craig Stuart Sapp from the Bach-Gesellschaft
+# edition, vol. 31.2, IMSLP10042 pp. 3-7). Alla breve (¢, four quarters a bar): a beat is
+# a half note (beats_per_quarter: 0.5), two a bar. The two grace notes of the last bar
+# (appoggiaturas, f' and b') play as secondary notes just before the final chord.
+# Tempo: editorial (60 half notes a minute: the file's *MM120, which names no source,
+# read as quarters).
+# Subject (checked against the score, p. 3): the royal theme, the soprano alone, bars 1-9:
+# c'' e♭'' g'' a♭'' b', g'' f♯'' f'' e'' e♭''~ d'' d♭'' c'' b' a' g' c'' f'' e♭'' d'' c'',
+# to the c'' on the downbeat of bar 9 (the alto enters with the answer in bar 10).
+# The answer is tonal: G B♭ C E♭ F♯ (the theme's G answered by C, not D).
+# A free, partly improvisatory fugue with long episodes (triplet runs, sequences): the
+# theme sounds ten times, each complete and in the subject's rhythm (bars 72 and 95 end a
+# semitone high, F♯ for F and C♯ for C, yet stay within find_entry's tolerance, as at BWV 853
+# bar 47), all marked: bars 1
+# (soprano, C), 10 (alto, the answer), 23 (bass, C), 46 (bass, on G: the theme itself, not
+# the answer), 59 (alto, C), 72 (soprano, F minor), 95 (bass, C), 141 (soprano, C), 153
+# (alto, the answer), 169 (bass, C). None overlap: no stretto. No regular countersubject.
+# Not marked: the bass's quarter-note arpeggios of bars 115-117 (A♭ C E♭ F G, G B♭ D E♭ F),
+# the theme's opening shape in a sequence, not a statement.
+# The bass at bar 46 is at the answer's pitch level but has the subject's intervals, so it
+# is marked subject (tests/test_pieces.py wtc_form).
+id: bwv1079-ricercar-a3
+title: Ricercar a 3
+catalogue: BWV 1079/1
+key: C minor
+tempo: 60
+beats_per_bar: 2
+ensemble: harpsichord
+listen_for: 3 voices; the royal theme ten times, between long free episodes
+techniques: [fugue, subject, answer, chromaticism]
+order: -1
+source: {kind: kern, path: bach-musical-offering/kern/offering-001.krn, beats_per_quarter: 0.5}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Bass, texture: stipple}
+fugue:
+  # the subject: soprano, bars 1-9, to the c'' on the downbeat of bar 9 (beat 16)
+  subject: {voice: 0, start: 0, length: 16.5}
+  entries:
+    - {voice: 0, start: 0, form: subject}     # bar 1, C minor
+    - {voice: 1, start: 18, form: answer}     # bar 10, on G
+    - {voice: 2, start: 44, form: subject}    # bar 23, C minor
+    - {voice: 2, start: 90, form: subject}    # bar 46, on G
+    - {voice: 1, start: 116, form: subject}   # bar 59, C minor
+    - {voice: 0, start: 142, form: subject}   # bar 72, F minor
+    - {voice: 2, start: 188, form: subject}   # bar 95, C minor
+    - {voice: 0, start: 280, form: subject}   # bar 141, C minor
+    - {voice: 1, start: 304, form: answer}    # bar 153, on G
+    - {voice: 2, start: 336, form: subject}   # bar 169, C minor
+captions:
+  - {at: 0, text: "☞ Dux: the royal theme alone, in the soprano, on C."}
+  - {at: 18, text: "☞ The answer in the alto, on G; the theme's G is answered by C."}
+  - {at: 44, text: "☞ Third voice: the theme in the bass, on C."}
+  - {at: 90, text: "☞ After a long episode, the theme in the bass, on G."}
+  - {at: 142, text: "☞ The theme in the soprano, on F, in F minor."}
+  - {at: 280, text: "☞ After the longest episode, the theme in the soprano, on C."}
+  - {at: 336, text: "☞ The last entry: the theme in the bass, on C."}

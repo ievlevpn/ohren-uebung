@@ -1,0 +1,63 @@
+# Source: Mutopia BachJS/BWV988/bwv-988-v12 (3/4, beats are quarter notes, 3 per bar).
+# Voices from the MIDI, top first: 0 = upper, 1 = middle, 2 = bass. Repeats are not
+# unfolded: 32 bars, 96 beats. The roles swap at the double bar (checked bar by bar):
+# in the first half the upper voice leads (from beat 0.5) and the middle voice answers
+# by contrary motion a fourth below, one bar later (g' -> d'); in the second half the
+# middle voice leads (from beat 48.5) and the upper voice answers by contrary motion a
+# fourth above (d' -> g'). Both halves are the same mirror: each scale step x answered by
+# 2*axis - x - 3, the fixed line lying between e' and f#'.
+id: goldberg-var12
+title: Variatio 12
+catalogue: BWV 988, 12
+key: G major
+tempo: 80
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: canon at the fourth, by contrary motion
+techniques: [canon, canon at the fourth, inversion]
+order: 12
+source: {kind: mutopia, path: BachJS/BWV988/bwv-988-v12}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Bass, texture: stipple}
+canon:
+  - span: [0, 48]       # first half: the upper voice leads
+    leader: 0
+    followers:
+      - voice: 1
+        rule:
+          delay: 3
+          interval: -3        # three scale steps down after the mirror: g' answered by d'
+          diatonic: true
+          key: G
+          invert_about: 67    # the mirror is taken about g'
+          pitch_tolerance: 1  # Bach's chromatic adjustments (c#'' answered by a, not g#)
+          # free: from beat 45.5 (bar 16) the images would fall past the double bar; the
+          # middle voice cadences.
+          free: [[45.5, 48]]
+          not_imitation:
+            - 46.75  # c#'': its image falls after the double bar, where the middle voice
+                     # leads; its b there is a semitone off the image by chance
+  - span: [48, 96]      # second half: the middle voice leads
+    leader: 1
+    followers:
+      - voice: 0
+        rule:
+          delay: 3
+          interval: 3         # three scale steps up after the mirror: d' answered by g'
+          diatonic: true
+          key: G
+          invert_about: 62    # the mirror is taken about d'
+          pitch_tolerance: 1
+          # free: the last bar and a half (from beat 91.5), whose images fall on the final
+          # cadence or past the end.
+          free: [[91.5, 96]]
+marks:
+  # the visual mirror line between the two voices: between e' and f#'
+  - {kind: mirror-axis, start: 0, end: 95, pitch: 65, label: axis}
+captions:
+  - {bar: 1, text: "☞ Dux: the upper voice leads, over a bass that opens in quarter notes."}
+  - {bar: 2, text: "☞ Comes: the tune upside down, a fourth lower, one bar later."}
+  - {bar: 17, text: "☞ Second half: the roles swap, and the middle voice leads."}
+  - {bar: 18, text: "☞ The upper voice answers it upside down, a fourth higher."}

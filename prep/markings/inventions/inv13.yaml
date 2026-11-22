@@ -1,0 +1,38 @@
+# Source: humdrum-tools/inventions, inven13.krn (2 voices: upper, lower; no spine splits).
+# Motive: the eight sixteenths after the opening rest, E-A-C-B-E-B-D-C (beats
+# 0.25-2.25), a broken A minor chord with turns. 11 statements, all marked. The
+# arpeggios of bars 9-17 are free figuration (no statement of the motive).
+id: invention13
+title: Invention 13
+catalogue: BWV 784
+key: A minor
+tempo: 76
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "a broken-chord motive, answered at the octave"
+techniques: [invention, motive, imitation]
+book: Inventions
+order: 13
+source: {kind: kern, path: inventions/kern/inven13.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0.25, length: 2}   # the motive
+  entries:
+    - {voice: 0, start: 0.25, form: motive}                           # bar 1, upper: E-A-C-B-E-B-D-C
+    - {voice: 1, start: 2.25, form: motive}                           # bar 1, lower: E-A-C-B-E-B-D-C
+    - {voice: 0, start: 4.25, form: motive}                           # bar 2, upper: E-A-C-B-E-B-D-C
+    - {voice: 1, start: 6.25, form: motive}                           # bar 2, lower: E-A-C-B-E-B-D-C
+    - {voice: 1, start: 22.25, form: motive}                          # bar 6, lower: G-C-E-D-G-D-F-E
+    - {voice: 0, start: 24.25, form: motive}                          # bar 7, upper: G-C-E-D-G-D-F-E
+    - {voice: 1, start: 26.25, form: motive}                          # bar 7, lower: G-C-E-D-G-D-F-E
+    - {voice: 0, start: 28.25, form: motive}                          # bar 8, upper: G-C-E-D-G-D-F-E
+    - {voice: 0, start: 68.25, form: motive}                          # bar 18, upper: E-A-C-B-E-B-D-C
+    - {voice: 1, start: 70.25, form: motive}                          # bar 18, lower: E-A-C-B-E-B-D-C
+    - {voice: 0, start: 86.25, form: motive}                          # bar 22, upper: E-A-C-B-E-B-D-C
+captions:
+  - {at: 0.25, text: "☞ The motive in the upper voice: a broken chord in sixteenths."}
+  - {at: 2.25, text: "☞ The lower voice imitates it an octave lower."}
+  - {at: 22.25, text: "☞ In C major the lower voice leads, the upper voice follows."}
+  - {at: 68.25, text: "☞ Back in A minor: the motive in the upper voice."}

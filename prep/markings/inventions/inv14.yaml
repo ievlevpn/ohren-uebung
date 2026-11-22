@@ -1,0 +1,52 @@
+# Source: humdrum-tools/inventions, inven14.krn (2 voices: upper, lower; no spine splits).
+# Motive: the first half bar after the rest, a turn in thirty-seconds (Bb-C-D-C) and
+# a leaping Bb chord (Bb-F-D-Bb-F), beats 0.25-2. The second half bar answers it
+# inverted (the turn falling, the chord descending: F-Eb-D-Eb-F-Bb-D-F-Ab), with the
+# last leap a third instead of a fourth every time; marked as inversions. 14 upright and
+# 9 inverted statements, all marked.
+id: invention14
+title: Invention 14
+catalogue: BWV 785
+key: B♭ major
+tempo: 60
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "the motive and its mirror image, each half bar"
+techniques: [invention, motive, imitation, inversion]
+book: Inventions
+order: 14
+source: {kind: kern, path: inventions/kern/inven14.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0.25, length: 1.75}   # the motive
+  entries:
+    - {voice: 0, start: 0.25, form: motive}                           # bar 1, upper: Bb-C-D-C-Bb-F-D-Bb
+    - {voice: 0, start: 2.25, form: motive, transform: inverted}      # bar 1, upper inverted: F-Eb-D-Eb-F-Bb-D-F
+    - {voice: 0, start: 4.25, form: motive}                           # bar 2, upper: Eb-F-G-F-Eb-Bb-G-Eb
+    - {voice: 0, start: 6.25, form: motive, transform: inverted}      # bar 2, upper inverted: Bb-Ab-G-Ab-Bb-Eb-G-C
+    - {voice: 0, start: 10.25, form: motive}                          # bar 3, upper: F-G-A-G-F-C-A-F
+    - {voice: 1, start: 20.25, form: motive}                          # bar 6, lower: F-G-A-G-F-C-A-F
+    - {voice: 1, start: 22.25, form: motive, transform: inverted}     # bar 6, lower inverted: C-Bb-A-Bb-C-F-A-C
+    - {voice: 1, start: 24.25, form: motive}                          # bar 7, lower: Bb-C-D-C-Bb-F-D-Bb
+    - {voice: 1, start: 26.25, form: motive, transform: inverted}     # bar 7, lower inverted: F-Eb-D-Eb-F-Bb-D-G
+    - {voice: 1, start: 30.25, form: motive}                          # bar 8, lower: C-D-E-D-C-G-E-C
+    - {voice: 0, start: 32.25, form: motive}                          # bar 9, upper: F-G-A-G-F-C-A-F
+    - {voice: 0, start: 34.25, form: motive, transform: inverted}     # bar 9, upper inverted: Eb-D-C-D-Eb-A-C-F#
+    - {voice: 1, start: 36.25, form: motive}                          # bar 10, lower: G-A-Bb-A-G-D-Bb-G
+    - {voice: 1, start: 38.25, form: motive, transform: inverted}     # bar 10, lower inverted: Ab-G-F-G-Ab-D-F-Bb
+    - {voice: 0, start: 40.25, form: motive}                          # bar 11, upper: C-D-Eb-D-C-G-Eb-C
+    - {voice: 1, start: 62.25, form: motive}                          # bar 16, lower: Bb-C-D-C-Bb-F-D-Bb
+    - {voice: 0, start: 63.25, form: motive}                          # bar 16, upper: Bb-C-D-C-Bb-F-D-Bb
+    - {voice: 1, start: 64.25, form: motive, transform: inverted}     # bar 17, lower inverted: F-Eb-D-Eb-F-Bb-D-F
+    - {voice: 1, start: 66.25, form: motive}                          # bar 17, lower: Eb-F-G-F-Eb-Bb-G-Eb
+    - {voice: 0, start: 67.25, form: motive}                          # bar 17, upper: Eb-F-G-F-Eb-Bb-G-Eb
+    - {voice: 1, start: 68.25, form: motive, transform: inverted}     # bar 18, lower inverted: Bb-Ab-G-Ab-Bb-Eb-G-Bb
+    - {voice: 1, start: 70.25, form: motive}                          # bar 18, lower: F-G-A-G-F-C-A-Eb
+    - {voice: 1, start: 72.25, form: motive, transform: inverted}     # bar 19, lower inverted: C-Bb-A-Bb-C-F-A-C
+captions:
+  - {at: 0.25, text: "☞ The motive: a turn in thirty-seconds, then a leaping B♭ chord."}
+  - {at: 2.25, text: "☞ Answered at once by its own mirror image, falling."}
+  - {at: 20.25, text: "☞ The lower voice takes over the motive, in F major."}
+  - {at: 62.25, text: "☞ Home in B♭: the lower voice leads, the upper voice echoes."}

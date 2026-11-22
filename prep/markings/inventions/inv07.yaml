@@ -1,0 +1,56 @@
+# Source: humdrum-tools/inventions, inven07.krn (2 voices: upper, lower; no spine splits).
+# Motive: the six sixteenths after the opening eighth, B-A-G-F#-G-E (beats 0.5-2).
+# The eighths after it change from statement to statement, so they are not part of it.
+# 25 statements, every one on the second eighth of a beat and complete (all intervals
+# the motive's sizes in scale steps); all marked. find_entry also accepts two rising
+# runs in bar 8 (C#-D-E-F#-E-F#) as inversions, but they end with a step where the
+# inversion leaps a third: not the motive, not marked.
+id: invention07
+title: Invention 7
+catalogue: BWV 778
+key: E minor
+tempo: 52
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "a short falling motive, answered back and forth"
+techniques: [invention, motive, imitation]
+book: Inventions
+order: 7
+source: {kind: kern, path: inventions/kern/inven07.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 1.5}   # the motive
+  entries:
+    - {voice: 0, start: 0.5, form: motive}                            # bar 1, upper: B-A-G-F#-G-E
+    - {voice: 1, start: 2.5, form: motive}                            # bar 1, lower: B-A-G-F#-G-E
+    - {voice: 0, start: 4.5, form: motive}                            # bar 2, upper: F#-E-D-C#-D-B
+    - {voice: 1, start: 6.5, form: motive}                            # bar 2, lower: F#-E-D#-C#-D#-B
+    - {voice: 0, start: 8.5, form: motive}                            # bar 3, upper: B-A-G-F#-G-E
+    - {voice: 1, start: 10.5, form: motive}                           # bar 3, lower: E-D-C-B-C-A
+    - {voice: 0, start: 12.5, form: motive}                           # bar 4, upper: A-G-F#-E-F#-D
+    - {voice: 1, start: 14.5, form: motive}                           # bar 4, lower: D-C-B-A-B-G
+    - {voice: 0, start: 24.5, form: motive}                           # bar 7, upper: D-C-B-A-B-G
+    - {voice: 0, start: 34.5, form: motive}                           # bar 9, upper: A-G-F#-E-F#-D
+    - {voice: 1, start: 36.5, form: motive}                           # bar 10, lower: A-G-F#-E-F#-D
+    - {voice: 1, start: 38.5, form: motive}                           # bar 10, lower: G-F#-E-D-E-C#
+    - {voice: 0, start: 40.5, form: motive}                           # bar 11, upper: F#-E-D-C#-D-B
+    - {voice: 0, start: 42.5, form: motive}                           # bar 11, upper: F#-E-D-C#-D-B
+    - {voice: 1, start: 43.5, form: motive}                           # bar 11, lower: B-A-G-F#-G-E
+    - {voice: 0, start: 44.5, form: motive}                           # bar 12, upper: B-A-G-F#-G-E
+    - {voice: 1, start: 46.5, form: motive}                           # bar 12, lower: G-F#-E-D-E-C#
+    - {voice: 1, start: 50.5, form: motive}                           # bar 13, lower: B-A-G#-F#-G#-E
+    - {voice: 1, start: 52.5, form: motive}                           # bar 14, lower: A-G-F#-E-F#-D
+    - {voice: 1, start: 54.5, form: motive}                           # bar 14, lower: G-F#-E-D-E-C#
+    - {voice: 1, start: 76.5, form: motive}                           # bar 20, lower: F#-E-D#-C#-D#-B
+    - {voice: 1, start: 78.5, form: motive}                           # bar 20, lower: C-B-A-G-A-F#
+    - {voice: 1, start: 80.5, form: motive}                           # bar 21, lower: G-F#-E-D-E-C
+    - {voice: 0, start: 84.5, form: motive}                           # bar 22, upper: C-B-A-G-A-F#
+    - {voice: 1, start: 86.5, form: motive}                           # bar 22, lower: B-A-G-F#-G-E
+captions:
+  - {at: 0.5, text: "☞ The motive in the upper voice: a falling run of six sixteenths."}
+  - {at: 2.5, text: "☞ The lower voice answers with the motive an octave lower."}
+  - {at: 24.5, text: "☞ The motive in G major, in the upper voice."}
+  - {at: 36.5, text: "☞ The lower voice leads a chain of motives in sequence."}
+  - {at: 86.5, text: "☞ The last statement: the lower voice, on the opening notes."}

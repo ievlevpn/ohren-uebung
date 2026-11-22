@@ -1,0 +1,40 @@
+# Source: humdrum-tools/inventions, sinfo04.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM80 names no source).
+# Motive (checked against the score): the upper voice after the opening sixteenth rest,
+# D-C#-D, the drop to A, F held, then E-D-E, A, G held (beats 0.25-4.25): a turn, a
+# fall, a leap up, twice. The middle voice answers on A (bar 2), the lower voice on D
+# (bar 4). Eight complete statements, all marked. Not marked: the middle voice in bar 17
+# (F-E-F-C-A-G-F-G, then a sixth down to Bb instead of the fifth): two intervals differ.
+id: sinfonia04
+title: Sinfonia 4
+catalogue: BWV 790
+key: D minor
+tempo: 60
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "a sighing motive, answered at the fifth"
+techniques: [sinfonia, motive, imitation]
+book: Sinfonias
+order: 4
+source: {kind: kern, path: inventions/kern/sinfo04.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0.25, length: 4}   # the motive
+  entries:
+    - {voice: 0, start: 0.25, form: motive}                         # bar 1, upper: D-C#-D-A-F-E-D-E-A-G
+    - {voice: 1, start: 4.25, form: motive}                         # bar 2, middle: A-G#-A-E-C-B-A-B-E-D
+    - {voice: 2, start: 12.25, form: motive}                        # bar 4, lower: D-C#-D-A-F-E-D-E-A-G
+    - {voice: 1, start: 30.25, form: motive}                        # bar 8, middle: F-E-F-C-A-G-F-G-C-Bb
+    - {voice: 0, start: 34.25, form: motive}                        # bar 9, upper: F-E-F-C-A-G-F-G-C-Bb
+    - {voice: 0, start: 50.25, form: motive}                        # bar 13, upper: A-G#-A-E-C-B-A-B-E-D
+    - {voice: 2, start: 58.25, form: motive}                        # bar 15, lower: G-F#-G-D-Bb-A-G-A-D-C
+    - {voice: 2, start: 76.25, form: motive}                        # bar 20, lower: D-C#-D-A-F-E-D-E-A-G
+captions:
+  - {at: 0.25, text: "☞ The motive in the upper voice: a turn, a fall, a leap up."}
+  - {at: 4.25, text: "☞ The middle voice answers on A, a fourth lower."}
+  - {at: 12.25, text: "☞ The lower voice brings the motive on D."}
+  - {at: 30.25, text: "☞ The motive in F major, first in the middle voice, then above."}
+  - {at: 76.25, text: "☞ The lower voice has the motive in D minor once more."}

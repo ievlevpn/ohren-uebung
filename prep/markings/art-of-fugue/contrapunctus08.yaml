@@ -1,0 +1,100 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-008.krn ("Contrapunctus 8, a 3."; three
+# spines; BGA vol. 25.1, p. 31). ¢ (2/2): beats are quarter notes, 4 per bar. A triple
+# fugue: three subjects, each with its own exposition, then combined. Two chord tones in
+# bar 38 are secondary notes.
+# Tempo: editorial (the file's *MM100 names no source).
+# Subject I (alto, bars 1-5): D C F B B♭ A D G F G A G A D, to the D of bar 5.
+# Subject II (alto, bar 39): B♭ A♭ A A A F♯ G G G E F F F E D C♯ D, a long note, then
+# falling steps in repeated eighths, to the D of bar 42.
+# Subject III (alto, bar 94): A D E . F G A . B♭ A G . F E F G A, the main subject of the
+# work inverted, broken by rests.
+# Entries: every place find_entry finds a subject (scans of all voices for each, checked
+# by hand). Subject II's figure also runs on in sequences longer than the subject; only
+# statements that begin with its long note are marked, plus the three where all subjects
+# sound together (bars 147, 152, 158), whose first note is short. Some statements of
+# subject I begin with a quarter for the half note (head: free); bars 22, 79, 113 and 125
+# are marked to where they leave the subject (part: head). Bar 67 (bass), a statement
+# on G whose second note is changed, is left unmarked. Forms: subject I as in the WTC
+# (wtc_form); subjects II and III are labelled subject throughout. Stretto groups:
+# statements of one subject beginning at least a half note before the previous one's last
+# note.
+# Instruments: the alto goes down to B♭2, below the viola: cello, as the bass.
+id: contrapunctus08
+title: Contrapunctus VIII
+catalogue: BWV 1080, 8
+key: D minor
+tempo: 76
+beats_per_bar: 4
+ensemble: strings
+listen_for: a triple fugue; three new subjects, then all three together
+techniques: [fugue, subject, answer, triple fugue, stretto]
+order: 8
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-008.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: cello}   # down to B♭2
+  - {name: Bass, texture: stipple}
+fugue:
+  # subject I: alto, bars 1-5; II: alto, bars 39-42; III: alto, bars 94-97
+  subjects:
+    - {id: I, voice: 1, start: 2, length: 15}
+    - {id: II, voice: 1, start: 155, length: 9.5}
+    - {id: III, voice: 1, start: 373, length: 16}
+  entries:
+    - {voice: 1, start: 2, form: subject, subject: I}  # bar 1, D
+    - {voice: 2, start: 22, form: answer, subject: I}  # bar 6, A
+    - {voice: 0, start: 42, form: subject, subject: I}  # bar 11, D
+    - {voice: 1, start: 82, form: answer, subject: I, stretto: 1}  # bar 21, A
+    - {voice: 2, start: 84, form: subject, subject: I, part: head, head_length: 8, form_by: opening, stretto: 1}  # bar 22, E
+    - {voice: 2, start: 138, form: subject, subject: I}  # bar 35, D
+    - {voice: 0, start: 154, form: subject, subject: I}  # bar 39, D
+    - {voice: 1, start: 155, form: subject, subject: II}  # bar 39, Bb
+    - {voice: 2, start: 170, form: subject, subject: I, form_by: opening}  # bar 43, G
+    - {voice: 0, start: 171, form: subject, subject: II}  # bar 43, Eb
+    - {voice: 1, start: 194, form: answer, subject: I}  # bar 49, A
+    - {voice: 2, start: 195, form: subject, subject: II}  # bar 49, F
+    - {voice: 0, start: 242, form: subject, subject: I, form_by: opening}  # bar 61, F
+    - {voice: 1, start: 243, form: subject, subject: II}  # bar 61, D
+    - {voice: 2, start: 303, form: subject, subject: II, part: head, head_length: 9}  # bar 76, G
+    - {voice: 1, start: 309, form: subject, subject: II, part: head, head_length: 9}  # bar 78, D
+    - {voice: 2, start: 313, form: subject, subject: II, part: head, head_length: 14}  # bar 79, G
+    - {voice: 1, start: 315, form: answer, subject: I, part: head, head_length: 8, head: free}  # bar 79, A
+    - {voice: 0, start: 323, form: subject, subject: I, head: free}  # bar 81, D
+    - {voice: 1, start: 323, form: subject, subject: II}  # bar 81, B
+    - {voice: 1, start: 373, form: subject, subject: III}  # bar 94, A
+    - {voice: 2, start: 393, form: subject, subject: III}  # bar 99, D
+    - {voice: 0, start: 417, form: subject, subject: III}  # bar 105, E
+    - {voice: 1, start: 451, form: subject, subject: I, part: head, head_length: 9, head: free, form_by: opening}  # bar 113, Bb
+    - {voice: 1, start: 498, form: subject, subject: I, stretto: 2}  # bar 125, D
+    - {voice: 2, start: 499, form: subject, subject: I, part: head, head_length: 8, head: free, form_by: opening, stretto: 2}  # bar 125, Bb
+    - {voice: 2, start: 522, form: answer, subject: I}  # bar 131, A
+    - {voice: 1, start: 523, form: subject, subject: II}  # bar 131, F
+    - {voice: 0, start: 586, form: subject, subject: I, form_by: opening}  # bar 147, F
+    - {voice: 1, start: 587, form: subject, subject: II}  # bar 147, B
+    - {voice: 2, start: 589, form: subject, subject: III}  # bar 148, C
+    - {voice: 1, start: 606, form: subject, subject: I, form_by: opening}  # bar 152, C
+    - {voice: 2, start: 607, form: subject, subject: II}  # bar 152, F#
+    - {voice: 0, start: 609, form: subject, subject: III}  # bar 153, G
+    - {voice: 0, start: 631, form: subject, subject: II}  # bar 158, Eb
+    - {voice: 2, start: 631.5, form: subject, subject: I, head: free, form_by: opening}  # bar 158, G
+    - {voice: 1, start: 633, form: subject, subject: III}  # bar 159, D
+    - {voice: 2, start: 678, form: subject, subject: I}  # bar 170, D
+    - {voice: 1, start: 679, form: subject, subject: II}  # bar 170, Bb
+    - {voice: 0, start: 681, form: subject, subject: III}  # bar 171, A
+    - {voice: 1, start: 727, form: subject, subject: II}  # bar 182, Bb
+    - {voice: 0, start: 727.5, form: subject, subject: I, head: free}  # bar 182, D
+    - {voice: 2, start: 729, form: subject, subject: III}  # bar 183, A
+captions:
+  - {at: 2, text: "☞ Subject I alone, in the alto."}
+  - {at: 22, text: "☞ The answer in the bass, on A."}
+  - {at: 42, text: "☞ Subject I in the soprano: all three voices are in."}
+  - {at: 82, text: "☞ Stretto: subject I in the alto, then in the bass two beats later."}
+  - {at: 155, text: "☞ Subject II in the alto, falling in repeated notes, under subject I."}
+  - {at: 171, text: "☞ Subject II in the soprano, on E♭."}
+  - {at: 195, text: "☞ Subject II in the bass, under subject I in the alto."}
+  - {at: 373, text: "☞ Subject III in the alto: the work's main subject, inverted, with rests."}
+  - {at: 393, text: "☞ Subject III in the bass."}
+  - {at: 417, text: "☞ Subject III in the soprano."}
+  - {at: 589, text: "☞ All three subjects at once: III in the bass, with I and II above it."}
+  - {at: 633, text: "☞ All three again: III in the alto, I in the bass, II in the soprano."}
+  - {at: 729, text: "☞ The last entries: all three subjects, III in the bass."}

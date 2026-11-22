@@ -1,0 +1,41 @@
+# Source: humdrum-tools/inventions, inven10.krn (2 voices: upper, lower; no spine splits).
+# 9/8: beats_per_quarter 2, a beat is an eighth, 9 per bar.
+# Motive: the G major chord broken up and down, G-B-D-B-G-D-B-G (beats 0-8). The ninth
+# eighth varies (G an octave up, or F, or C, a seventh), so it is left out. Ten
+# statements, all marked; in bars 27 and 28 the lower voice enters one eighth after the
+# upper (stretto). find_entry also accepts D-B-G-A-B-E-G-B in bar 22 as an inversion: a
+# chance match, not marked.
+id: invention10
+title: Invention 10
+catalogue: BWV 781
+key: G major
+tempo: 264
+beats_per_bar: 9
+ensemble: harpsichord
+listen_for: "a broken-chord motive, and two strettos near the end"
+techniques: [invention, motive, imitation, stretto]
+book: Inventions
+order: 10
+source: {kind: kern, path: inventions/kern/inven10.krn, beats_per_quarter: 2}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0, length: 8}   # the motive
+  entries:
+    - {voice: 0, start: 0, form: motive}                              # bar 1, upper: G-B-D-B-G-D-B-G
+    - {voice: 1, start: 9, form: motive}                              # bar 2, lower: D-F#-A-F#-D-A-F#-D
+    - {voice: 1, start: 117, form: motive}                            # bar 14, lower: D-F#-A-F#-D-A-F#-D
+    - {voice: 0, start: 126, form: motive}                            # bar 15, upper: A-C#-E-C#-A-E-C#-A
+    - {voice: 1, start: 135, form: motive}                            # bar 16, lower: D-F#-A-F#-D-A-F#-D
+    - {voice: 0, start: 144, form: motive}                            # bar 17, upper: G-B-D-B-G-D-B-G
+    - {voice: 0, start: 234, form: motive, stretto: s1}               # bar 27, upper: G-B-D-B-G-D-B-G
+    - {voice: 1, start: 235, form: motive, stretto: s1}               # bar 27, lower: G-B-D-B-G-D-B-G
+    - {voice: 0, start: 243, form: motive, stretto: s2}               # bar 28, upper: D-F#-A-F#-D-A-F#-D
+    - {voice: 1, start: 244, form: motive, stretto: s2}               # bar 28, lower: D-F#-A-F#-D-A-F#-D
+captions:
+  - {at: 0, text: "☞ The motive: a G major chord broken up and down in eighths."}
+  - {at: 9, text: "☞ The lower voice answers in D major, one bar later."}
+  - {at: 117, text: "☞ The motive returns in the lower voice, on D."}
+  - {at: 234, text: "☞ Stretto: the lower voice enters one eighth after the upper."}
+  - {at: 243, text: "☞ Stretto again on D, one eighth apart."}

@@ -1,0 +1,54 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f11.krn (3 voices: soprano, alto, bass; no
+# spine splits). 3/8: beats_per_quarter 2, a beat is an eighth, 3 per bar.
+# Tempo: editorial (the file's *MM87 names no source; 87 quarters = 174 eighths).
+# Subject (checked against the score): the alto, C D C Bb C, E F G A Bb, C Bb A G A, from
+# bar 1 to the A on the second eighth of bar 4. In the strettos Bach holds that A (bars
+# 31, 42) and the sixteenths after it vary, so the subject ends there. The answer is tonal:
+# F rises a third to A where the subject rose a step; statements opening so are marked
+# answer. In bar 51 the soprano's first eighth is split into two sixteenths (C, D); it is
+# marked from the D (head: free), so its opening step decides its form.
+# 13 complete statements, all marked; stretto groups are entries that begin at least a
+# beat before the previous entry's last note. Not marked: the soprano in bar 43, whose
+# head is changed.
+# Statements at neither the subject's nor the answer's pitch level (in another key) carry
+# form_by: opening: their opening interval decides the form (each entry's comment says so).
+id: bwv856
+title: Fugue in F major
+catalogue: BWV 856
+key: F major
+tempo: 174
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: 3 voices; a dance in 3/8, with strettos in three voices
+techniques: [fugue, subject, answer, stretto]
+book: Book I
+order: 11
+number: 11
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f11.krn, beats_per_quarter: 2}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Bass, texture: stipple}
+fugue:
+  subject: {voice: 1, start: 0, length: 10.5}
+  entries:
+    - {voice: 1, start: 0, form: subject}
+    - {voice: 0, start: 12, form: answer}
+    - {voice: 2, start: 27, form: subject}
+    - {voice: 0, start: 51, form: subject}
+    - {voice: 1, start: 63, form: answer}
+    - {voice: 2, start: 75, form: subject, stretto: s1}
+    - {voice: 1, start: 81, form: subject, stretto: s1}
+    - {voice: 0, start: 108, form: subject, stretto: s2, form_by: opening}  # neither level (notes 3..n a minor third down from the dux); opens with a semitone up, the subject's
+    - {voice: 1, start: 114, form: subject, stretto: s2, form_by: opening}  # neither level (notes 3..n a minor third down from the dux); opens with a semitone up, the subject's
+    - {voice: 2, start: 120, form: subject, stretto: s2, form_by: opening}  # neither level (notes 3..n a minor third down from the dux); opens with a semitone up, the subject's
+    - {voice: 2, start: 138, form: subject, stretto: s3, form_by: opening}  # neither level (notes 3..n a step up from the dux); opens with a semitone up, the subject's
+    - {voice: 1, start: 144, form: subject, stretto: s3, form_by: opening}  # neither level (notes 3..n a step up from the dux); opens with a semitone up, the subject's
+    - {voice: 0, start: 150.5, form: subject, head: free, stretto: s3, form_by: opening}  # neither level (notes 3..n a step up from the dux); opens with a semitone up, the subject's
+captions:
+  - {at: 0, text: "☞ Dux: the subject in the alto, a lively dance in 3/8."}
+  - {at: 12, text: "☞ The answer in the soprano: F up a third, where the subject rose a step."}
+  - {at: 27, text: "☞ The bass enters with the subject, on C."}
+  - {at: 75, text: "☞ Stretto: the alto follows the bass two bars later, an octave higher."}
+  - {at: 108, text: "☞ Stretto in three voices, two bars apart, each an octave lower."}
+  - {at: 138, text: "☞ Stretto again, in G minor, from the bass up to the soprano."}

@@ -1,0 +1,549 @@
+# The glossary of techniques: definitions and their illustrations.
+# Built into web/public/data/glossary.json by `uv run python -m fugue_prep.build`
+# (format: fugue_prep/glossary.py). Every technique named in the markings must be an
+# alias of exactly one entry. Notes: name + octave (C4 = middle C) + /beats; a duration
+# carries over to the next note. Followers are derived by the canon engine (rule fields
+# as in the markings), so each picture is the music it names.
+# ``unlinked``: aliases that are also ordinary words ("four times round", "a half
+# cadence"); captions never link them. ``ordinary``: phrases in the current captions where
+# a linkable alias is an ordinary word; the linker skips these.
+ordinary:
+  - will answer it
+  - answers it
+  - a running answer
+entries:
+  - id: answer
+    title: Answer
+    also: "also: real answer · tonal answer"
+    aliases: [answer, real answer, tonal answer]
+    short: The subject's second entry, a fifth higher, sometimes with a note changed to stay in the key.
+    text: >-
+      In a fugue, the second voice to enter plays the subject again a fifth higher (or a
+      fourth lower), in the key of the dominant: this is the answer. A real answer copies
+      every interval exactly. A tonal answer changes a note or two near the start, so that
+      the subject's tonic is answered by the dominant and its dominant by the tonic, and
+      the music stays anchored in the home key.
+    related: [subject, countersubject, fugue]
+    example:
+      key: C
+      tempo: 60
+      voices: [{name: Answer, texture: hatch}, {name: Subject, texture: solid}]
+      written:
+        - {voice: 1, at: 0, notes: "C4/1 G4 F4/.5 E4 D4 E4 C4/1"}
+      derived:
+        - {from: 1, voice: 0, rule: {delay: 5, interval: 4, exceptions: {1: 72}, pitch_tolerance: 2}}
+      marks:
+        - {kind: entry, start: 0, end: 5, voice: 1, label: subject}
+        - {kind: entry, start: 5, end: 10, voice: 0, label: answer}
+      caption: >-
+        The subject (solid), then the answer a fifth higher (hatched). The tick marks the
+        tonal change: the subject's C–G is answered G–C, not G–D.
+
+  - id: augmentation
+    title: Augmentation
+    also: "also: per augmentationem"
+    aliases: [augmentation, per augmentationem]
+    short: The line played in longer notes, usually twice as long, with its shape unchanged.
+    text: >-
+      The line is played in longer notes, usually each twice as long, so it moves at half
+      the speed but keeps its shape. In a canon by augmentation the follower falls further
+      and further behind the leader; in a fugue the subject may return augmented, often
+      in the bass, against itself at the normal speed.
+    related: [diminution, canon]
+    example:
+      key: C
+      tempo: 66
+      voices: [{name: Motif, texture: solid}, {name: Augmented, texture: hatch}]
+      written:
+        - {voice: 0, at: 0, notes: "C5/.5 D5 E5 F5 D5 E5 C5/1"}
+      derived:
+        - {from: 0, voice: 1, rule: {delay: 4, interval: -7, stretch: 2}}
+      marks:
+        - {kind: stretch, start: 4, end: 12, voice: 1, label: "×2"}
+      caption: >-
+        The motif (solid), then the same motif an octave lower in notes twice as long
+        (hatched).
+
+  - id: canon
+    title: Canon
+    also: "also: dux and comes · leader and follower"
+    aliases: [canon, dux, comes, dux and comes]
+    short: One voice, the dux, sings a melody, and another, the comes, sings it later, note for note.
+    text: >-
+      A strict imitation that lasts: one voice, the dux (leader), sings a melody, and
+      another, the comes (follower), sings the same melody a little later, note for note,
+      while the dux goes on. The rule that turns the dux into the comes (how long to wait,
+      at what interval, upright or mirrored) is the canon's whole secret. Bach often wrote
+      out only the dux, with a sign or a riddle for where the comes begins; in a fugue the
+      same two names mean the subject and its answer.
+    related: [canon-at-the-unison, canon-at-an-interval, perpetual-canon, imitation]
+    example:
+      key: C
+      tempo: 66
+      voices: [{name: Dux, texture: solid}, {name: Comes, texture: hatch}]
+      written:
+        - {voice: 0, at: 0, notes: "C5/1 D5 E5 D5 C5 A4 C5 E5 C5/2"}
+      derived:
+        - {from: 0, voice: 1, rule: {delay: 2, interval: -7}}
+      caption: >-
+        The dux (solid) and the comes (hatched) an octave lower, two beats behind; each
+        thread joins a note to its copy.
+
+  - id: canon-at-an-interval
+    title: Canon at an interval
+    also: "also: at the second, the third … the ninth, the tenth, the twelfth"
+    aliases: [canon at the second, canon at the third, canon at the fourth, canon at the fifth,
+              canon at the sixth, canon at the seventh, canon at the octave, canon at the ninth,
+              canon at the tenth, canon at the twelfth]
+    hear_note:
+      canon at the second: at the second
+      canon at the third: at the third
+      canon at the fourth: at the fourth
+      canon at the fifth: at the fifth
+      canon at the sixth: at the sixth
+      canon at the seventh: at the seventh
+      canon at the octave: at the octave
+      canon at the ninth: at the ninth
+      canon at the tenth: at the tenth
+      canon at the twelfth: at the twelfth
+    short: The comes sings the dux's melody moved up or down by a fixed interval.
+    text: >-
+      The comes sings the dux's melody transposed by a fixed interval: in a canon at the
+      fifth it starts a fifth higher (or lower), in a canon at the octave an octave apart.
+      The interval is usually counted on the scale, so the comes stays in the key, and a
+      whole step in the dux may be answered by a half step. Every third Goldberg Variation
+      is a canon, at each interval in turn from the unison to the ninth.
+    related: [canon, canon-at-the-unison]
+    example:
+      key: C
+      tempo: 66
+      voices: [{name: Comes, texture: hatch}, {name: Dux, texture: solid}]
+      written:
+        - {voice: 1, at: 0, notes: "C5/1 B4 G4 A4 B4 A4 F4 A4 C5/2"}
+      derived:
+        - {from: 1, voice: 0, rule: {delay: 2, interval: 4}}
+      caption: >-
+        A canon at the fifth: the comes (hatched) sings the dux (solid) a fifth higher, two
+        beats later. Steps are counted in C major, so the dux's whole step A–B is answered
+        by the half step E–F.
+
+  - id: canon-at-the-unison
+    title: Canon at the unison
+    also: "also: round"
+    aliases: [canon at the unison, round]
+    unlinked: [round]
+    short: The comes sings exactly the dux's notes, at the same pitch, only later.
+    text: >-
+      The comes sings exactly the same notes as the dux, at the same pitch, only later.
+      Because the two voices share one register they cross and tangle; on the roll their
+      notes sit on the same rows. A round such as Frère Jacques is a canon at the unison.
+    related: [canon, canon-at-an-interval, perpetual-canon]
+    example:
+      key: C
+      tempo: 92
+      voices: [{name: Dux, texture: solid}, {name: Comes, texture: hatch}]
+      written:
+        - {voice: 0, at: 0, notes: "C5/1 D5 E5 C5 C5 D5 E5 C5 E5 F5 G5/2 E5/1 F5 G5/2"}
+      derived:
+        - {from: 0, voice: 1, rule: {delay: 8}}
+      caption: >-
+        Frère Jacques as a round: the comes (hatched) sings the dux's notes at the same
+        pitch, two bars later.
+
+  - id: chromaticism
+    title: Chromaticism
+    also: "also: chromatic fourth"
+    aliases: [chromaticism, chromatic, chromatic fourth]
+    short: Melody or harmony that moves by semitones, using notes from outside the key.
+    text: >-
+      Melody or harmony that moves by semitones, borrowing the notes that lie outside the
+      key. A line creeping down a fourth through every semitone, the chromatic fourth, is
+      the Baroque figure of lament. Bach uses it to darken a subject or to make a bass
+      ache under a slow cadence.
+    related: [motive]
+    example:
+      key: d
+      tempo: 60
+      voices: [{name: Line, texture: solid}]
+      written:
+        - {voice: 0, at: 0, notes: "D5/1 C#5 C5 B4 Bb4 A4/2"}
+      caption: The chromatic fourth, D down to A through every semitone.
+
+  - id: countersubject
+    title: Countersubject
+    also: ""
+    aliases: [countersubject]
+    short: The melody that accompanies the subject each time it returns, made to contrast with it.
+    text: >-
+      In a fugue, once the first voice has finished the subject it goes on to play a new
+      melody against the answer. When that melody comes back with later entries, as the
+      subject's regular partner, it is called a countersubject. It is written to contrast
+      with the subject, often moving where the subject holds still.
+    related: [subject, answer, invertible-counterpoint]
+    example:
+      key: C
+      tempo: 60
+      voices: [{name: Answer, texture: hatch}, {name: Subject, texture: solid}]
+      written:
+        - {voice: 1, at: 0, notes: "C4/1 G4 F4/.5 E4 D4 E4 C4/1"}
+        - {voice: 1, at: 5, notes: "E4/.5 D4 C4/1 E4/.5 D4 C4 D4 B3/1"}
+      derived:
+        - {from: 1, voice: 0, span: [0, 5], rule: {delay: 5, interval: 4, exceptions: {1: 72}, pitch_tolerance: 2}}
+      marks:
+        - {kind: entry, start: 0, end: 5, voice: 1, label: subject}
+        - {kind: entry, start: 5, end: 10, voice: 0, label: answer}
+        - {kind: entry, start: 5, end: 10, voice: 1, label: countersubject}
+      caption: >-
+        The subject (solid) finishes, and the same voice goes on with the countersubject
+        under the answer (hatched).
+
+  - id: diminution
+    title: Diminution
+    also: "also: per diminutionem"
+    aliases: [diminution, per diminutionem]
+    short: The line played in shorter notes, usually half as long, with its shape unchanged.
+    text: >-
+      The line is played in shorter notes, usually each half as long, so it hurries past
+      with the same shape. Fugues use it to fit the subject into a tighter space,
+      sometimes against itself at the normal speed.
+    related: [augmentation]
+    example:
+      key: C
+      tempo: 66
+      voices: [{name: Motif, texture: solid}, {name: Diminished, texture: hatch}]
+      written:
+        - {voice: 0, at: 0, notes: "C5/1 D5 E5 F5 D5 E5 C5/2"}
+      derived:
+        - {from: 0, voice: 1, rule: {delay: 8, interval: -7, stretch: 0.5}}
+      marks:
+        - {kind: stretch, start: 8, end: 12, voice: 1, label: "×½"}
+      caption: >-
+        The motif (solid), then the same motif an octave lower in notes half as long
+        (hatched).
+
+  - id: double-fugue
+    title: Double and triple fugue
+    also: "also: fugue on two (three) subjects"
+    aliases: [double fugue, double fugues, triple fugue, triple fugues]
+    short: A fugue on two subjects (double) or three (triple), heard in turn and then together.
+    text: >-
+      A double fugue is built on two subjects instead of one, a triple fugue on three.
+      Often each new subject is introduced and worked through in turn, against the ones
+      already heard, until they sound at once in different voices, each above and below
+      the others; sometimes two enter together from the start. Each subject keeps its own
+      answers and entries, labelled subject I, subject II, subject III.
+    related: [fugue, subject, invertible-counterpoint]
+
+  - id: free-passage
+    title: Free passage
+    also: "also: episode · cadence · coda"
+    aliases: [free passage, episode, cadence, coda]
+    unlinked: [free passage, episode, cadence, coda]
+    pieces_from: free
+    short: Music outside the imitation, such as a fugue's episodes or a canon's closing cadence.
+    text: >-
+      Not every bar is imitation. Between a fugue's entries come episodes, which spin out
+      fragments of the subject and lead to a new key; a canon may let its voices go free
+      for a closing cadence, the formula that brings the music to rest. On the roll, notes
+      outside the imitation carry no threads.
+    related: [canon, fugue]
+    example:
+      key: C
+      tempo: 66
+      voices: [{name: Dux, texture: solid}, {name: Comes, texture: hatch}]
+      written:
+        - {voice: 0, at: 0, notes: "C5/1 D5 E5 D5 C5 A4 E5 C5 B4 C5/2"}
+        - {voice: 1, at: 8, notes: "G3/1 C4/2"}
+      derived:
+        - {from: 0, voice: 1, span: [0, 6], rule: {delay: 2, interval: -7}}
+      caption: >-
+        A canon at the octave; where the threads stop, both voices go free and close with
+        a cadence.
+
+  - id: fugue
+    title: Fugue
+    also: "also: fuga"
+    aliases: [fugue, fuga, exposition]
+    short: A piece built on one subject, which each voice enters with in turn.
+    text: >-
+      A piece built on one subject, which each voice takes up in turn: subject, answer,
+      subject again, until all the voices are in; this opening is the exposition. After that the subject
+      returns in other keys, between free episodes, and may be combined with itself in
+      stretto, inversion or augmentation. A fugue is a way of writing more than a fixed
+      form: no two of Bach's are built alike.
+    related: [subject, answer, countersubject, stretto, free-passage]
+    example:
+      key: C
+      tempo: 60
+      voices:
+        - {name: Soprano, texture: hatch}
+        - {name: Alto, texture: solid}
+        - {name: Bass, texture: stipple}
+      written:
+        - {voice: 1, at: 0, notes: "C4/1 G4 F4/.5 E4 D4 E4 C4/1"}
+        - {voice: 1, at: 5, notes: "E4/.5 D4 C4/1 E4/.5 D4 C4 D4 B3/1"}
+        - {voice: 1, at: 10, notes: "E4/1 D4 A3/2 C4/1"}
+        - {voice: 0, at: 10, notes: "G4/1 B4 A4 F4 E4"}
+      derived:
+        - {from: 1, voice: 0, span: [0, 5], rule: {delay: 5, interval: 4, exceptions: {1: 72}, pitch_tolerance: 2}}
+        - {from: 1, voice: 2, span: [0, 5], rule: {delay: 10, interval: -7}}
+      marks:
+        - {kind: entry, start: 0, end: 5, voice: 1, label: subject}
+        - {kind: entry, start: 5, end: 10, voice: 0, label: answer}
+        - {kind: entry, start: 10, end: 15, voice: 2, label: subject}
+      caption: >-
+        An exposition in three voices: subject, answer, subject in the bass. The rail
+        above joins every entry to the first.
+
+  - id: imitation
+    title: Imitation
+    also: ""
+    aliases: [imitation, imitative]
+    short: One voice repeats a figure another has just played, then goes its own way.
+    text: >-
+      One voice repeats a figure that another has just played, at the same or another
+      pitch, and then goes its own way. Imitation is looser than canon, where the copying
+      never stops; it is the everyday glue of inventions and fugues.
+    related: [canon, motive, invention]
+    example:
+      key: C
+      tempo: 66
+      voices: [{name: Upper, texture: hatch}, {name: Lower, texture: solid}]
+      written:
+        - {voice: 1, at: 0, notes: "C4/.5 D4 E4 F4 D4 E4 C4/1 E4/1 D4 C4 B3 D4 C4/1"}
+        - {voice: 0, at: 8, notes: "F4/1 E4/1"}
+      derived:
+        - {from: 1, voice: 0, span: [0, 4], rule: {delay: 4, interval: 4}}
+      marks:
+        - {kind: entry, start: 0, end: 4, voice: 1, label: motive}
+        - {kind: entry, start: 4, end: 8, voice: 0, label: motive}
+      caption: >-
+        The upper voice (hatched) imitates the motive a fifth higher, while the lower voice
+        goes on freely; then both close.
+
+  - id: invention
+    title: Invention and sinfonia
+    also: "also: inventio · sinfonia"
+    aliases: [invention, inventions, sinfonia, sinfonias]
+    short: Bach's two-part (inventions) and three-part (sinfonias) keyboard pieces, each grown from one motive.
+    text: >-
+      Bach's names for his fifteen two-part and fifteen three-part keyboard pieces, written
+      to teach playing cleanly in two and three voices and, in his words, to get good
+      ideas and develop them well. Each piece grows from one short motive, imitated between
+      the voices and carried through related keys.
+    related: [motive, imitation, invertible-counterpoint]
+
+  - id: inversion
+    title: Inversion
+    also: "also: contrary motion · per motum contrarium · mirror"
+    aliases: [inversion, inverted, contrary motion, per motum contrarium, contrario motu, mirror]
+    short: The line turned upside down; every step up becomes a matching step down.
+    text: >-
+      The line is turned upside down: every step up becomes a step down, as if the
+      melody were reflected in a mirror held level across the staff. Usually the steps
+      are counted on the scale, so the mirrored line stays in the key; a strict mirror
+      keeps every interval exact, as in the Canone perpetuo. In a canon by inversion the
+      comes sings the dux mirrored; in a fugue the subject may return inverted.
+    related: [retrograde, canon]
+    example:
+      key: C
+      tempo: 66
+      voices: [{name: Motif, texture: solid}, {name: Mirror, texture: hatch}]
+      written:
+        - {voice: 0, at: 0, notes: "E5/.5 F5 G5 A5 F5 G5 E5/1"}
+      derived:
+        - {from: 0, voice: 1, rule: {delay: 4, invert_about: 74}}
+      marks:
+        - {kind: mirror-axis, start: 0, end: 8, pitch: 73.5}
+      caption: >-
+        The motif (solid) and its mirror image (hatched), reflected about the dashed line
+        through D.
+
+  - id: invertible-counterpoint
+    title: Invertible counterpoint
+    also: "also: double counterpoint"
+    aliases: [invertible counterpoint, double counterpoint]
+    short: Two lines written so that either can be on top.
+    text: >-
+      Two lines written so that either can be on top: swap them, moving one up or down an
+      octave, and they still sound right. It means avoiding the intervals that turn bad
+      when the parts change places (a fifth becomes a fourth). Inventions and fugues use it
+      to bring the same pair back with the parts exchanged.
+    related: [countersubject, motive]
+    example:
+      key: C
+      tempo: 60
+      voices: [{name: Upper, texture: solid}, {name: Lower, texture: hatch}]
+      written:
+        - {voice: 0, at: 0, notes: "E5/1 F5 G5 E5"}
+        - {voice: 1, at: 0, notes: "C5/1 A4 B4 C5"}
+      derived:
+        - {from: 1, voice: 0, span: [0, 4], rule: {delay: 4}}
+        - {from: 0, voice: 1, span: [0, 4], rule: {delay: 4, interval: -7}}
+      caption: >-
+        Two lines, then the same pair exchanged: the upper voice (solid) takes the lower
+        line, and the lower voice (hatched) the upper line an octave down.
+
+  - id: mirror-fugue
+    title: Mirror fugue
+    also: "also: rectus and inversus"
+    aliases: [mirror fugue, mirror fugues, rectus, inversus]
+    short: A fugue written so that the whole of it, every voice, also works upside down.
+    text: >-
+      A fugue composed so that it can be turned upside down as a whole: every voice is
+      inverted, as if the page were held to a mirror, and the result is a second correct
+      fugue. Bach prints both, the rectus and the inversus; in the inversus the voices also
+      change places, a low line, inverted, becoming a high one. In The Art of Fugue
+      Contrapunctus XII (four voices) and XIII (three) are mirror fugues.
+    related: [inversion, fugue]
+
+  - id: motive
+    title: Motive and countermotive
+    also: "also: motif"
+    aliases: [motive, motif, countermotive]
+    short: A short, recognisable figure from which a piece grows, and the figure that answers it.
+    text: >-
+      A motive is a short, recognisable figure, often only a bar long, from which a piece
+      is spun. The countermotive is the figure that accompanies it, the other voice's
+      reply, and it keeps returning with it. In the inventions the motive passes from voice
+      to voice as a subject does in a fugue.
+    related: [imitation, invention, subject]
+    example:
+      key: C
+      tempo: 60
+      voices: [{name: Upper, texture: solid}, {name: Lower, texture: hatch}]
+      written:
+        - {voice: 0, at: 0, notes: "C5/.5 D5 E5 F5 D5 E5 C5/1"}
+        - {voice: 0, at: 4, notes: "G5/1 C5/.5 A4 B4 C5 E5/1"}
+      derived:
+        - {from: 0, voice: 1, span: [0, 4], rule: {delay: 4, interval: -7}}
+      marks:
+        - {kind: entry, start: 0, end: 4, voice: 0, label: motive}
+        - {kind: entry, start: 4, end: 8, voice: 0, label: countermotive}
+        - {kind: entry, start: 4, end: 8, voice: 1, label: motive}
+      caption: >-
+        The motive in the upper voice, then in the lower voice an octave down, while the
+        upper voice plays the countermotive.
+
+  - id: per-tonos
+    title: Per tonos
+    also: "also: rising canon"
+    aliases: [per tonos, rising canon, modulating canon]
+    short: A canon that modulates up a step each time round.
+    text: >-
+      Latin for "through the tones": the canon modulates as it goes, so that it ends a
+      step higher than it began, and starts again there. Bach's canon per tonos rises a
+      whole tone each time round, six times, and arrives back in C minor an octave higher.
+    related: [perpetual-canon, canon]
+    example:
+      key: C
+      tempo: 72
+      voices: [{name: Line, texture: solid}]
+      written:
+        - {voice: 0, at: 0, notes: "C5/.5 D5 E5 F5 G5/1 C5/1", repeat: {times: 3, step: 2}}
+      marks:
+        - {kind: rise, start: 0, end: 4, label: C major}
+        - {kind: rise, start: 4, end: 8, label: D major}
+        - {kind: rise, start: 8, end: 12, label: E major}
+      caption: >-
+        One phrase played three times, each a whole tone higher. In Bach's canon all three
+        voices rise together.
+
+  - id: perpetual-canon
+    title: Perpetual canon
+    also: "also: canon perpetuus"
+    aliases: [perpetual canon, canon perpetuus, canone perpetuo]
+    short: A canon whose end leads back to its beginning, so it can go round without stopping.
+    text: >-
+      A canon whose end leads back into its beginning, so that the voices can go round and
+      round without stopping. The players decide when to finish, usually at a marked
+      cadence. A round is a perpetual canon at the unison.
+    related: [canon, canon-at-the-unison, per-tonos]
+    example:
+      key: C
+      tempo: 72
+      voices: [{name: Dux, texture: solid}, {name: Comes, texture: hatch}]
+      written:
+        - {voice: 0, at: 0, notes: "E5/1 D5 C5 D5 C5 B4 A4 B4"}
+      derived:
+        - {from: 0, voice: 1, rule: {delay: 4, repeats: 2}}
+      caption: >-
+        The dux's last note leads back to its first, so the canon goes round again; the
+        comes (hatched) follows one bar behind.
+
+  - id: retrograde
+    title: Retrograde
+    also: "also: crab · cancrizans"
+    aliases: [retrograde, crab, cancrizans, crab canon]
+    short: The line played backwards, from its last note to its first.
+    text: >-
+      The line is played backwards, from its last note to its first, like a sentence read
+      from the end. In a crab canon (cancrizans) one voice plays the melody forwards while
+      the other plays it backwards at the same time. On the roll the two meet at a
+      vertical mirror in the middle.
+    related: [inversion, canon]
+    example:
+      key: C
+      tempo: 66
+      voices: [{name: Forwards, texture: solid}, {name: Backwards, texture: hatch}]
+      written:
+        - {voice: 0, at: 0, notes: "C5/.5 D5 E5 F5 D5 E5 C5/1"}
+      derived:
+        - {from: 0, voice: 1, rule: {delay: 4, retrograde: true}}
+      marks:
+        - {kind: crab-axis, start: 4, end: 4, label: crab}
+      caption: >-
+        The motif (solid), then the same notes from the last to the first (hatched),
+        mirrored about the vertical line.
+
+  - id: stretto
+    title: Stretto
+    also: Italian, “tightened”
+    aliases: [stretto, strettos, stretti]
+    short: Entries of the subject that overlap, each beginning before the last has finished.
+    text: >-
+      A voice begins the subject before the previous voice has finished it, so the entries
+      overlap and crowd together. Unlike a canon, where one voice copies another all the
+      way through, a stretto compresses entries of a fugue's subject. Fugues often save their strettos for the end, where the
+      tightening gives a sense of arrival.
+    related: [fugue, subject]
+    example:
+      key: C
+      tempo: 60
+      voices:
+        - {name: Soprano, texture: solid}
+        - {name: Alto, texture: hatch}
+        - {name: Bass, texture: stipple}
+      written:
+        - {voice: 0, at: 0, notes: "G5/1 E5 F5 D5 E5/.5 D5 C5/1"}
+      derived:
+        - {from: 0, voice: 1, rule: {delay: 1, interval: -4}}
+        - {from: 0, voice: 2, span: [0, 6], rule: {delay: 3, interval: -7}}
+      marks:
+        - {kind: entry, start: 0, end: 6, voice: 0, label: subject}
+        - {kind: entry, start: 1, end: 7, voice: 1, label: subject}
+        - {kind: entry, start: 3, end: 9, voice: 2, label: subject}
+        - {kind: stretto, start: 0, end: 9}
+      caption: >-
+        The subject entering three times, each before the last has ended: a fifth lower
+        after one beat, an octave lower after three.
+
+  - id: subject
+    title: Subject
+    also: "also: theme"
+    aliases: [subject]
+    short: The theme of a fugue, stated alone by the first voice.
+    text: >-
+      The theme of a fugue: the melody the first voice states alone at the start, from
+      which nearly everything else grows. Every later entry is the subject again, perhaps
+      transposed, inverted or stretched.
+    related: [answer, countersubject, fugue]
+    example:
+      key: C
+      tempo: 60
+      voices: [{name: Subject, texture: solid}]
+      written:
+        - {voice: 0, at: 0, notes: "C4/1 G4 F4/.5 E4 D4 E4 C4/1"}
+      marks:
+        - {kind: entry, start: 0, end: 5, voice: 0, label: subject}
+      caption: A subject alone, as a fugue begins.

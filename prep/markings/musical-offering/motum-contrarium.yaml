@@ -1,0 +1,44 @@
+# Source: transcriptions/bwv1079-motum-contrarium.yaml (Thema and dux written, IMSLP10042 (BGA 31.2)
+# page 9; resolution page 42). The comes is computed: the dux mirrored diatonically about
+# e♭' (c'' answered by g, every step up a step down), two beats later. The perpetual
+# 4-bar canon plays four times, then a closing cadence (the transcription's end/coda).
+id: bwv1079-motum-contrarium
+title: Canon a 2 per motum contrarium
+catalogue: BWV 1079, Canon 3
+key: C minor
+tempo: 60
+beats_per_bar: 4
+ensemble: chamber
+listen_for: canon by contrary motion, under the royal theme
+techniques: [canon, inversion, perpetual canon]
+order: 3
+source: {kind: transcription, path: transcriptions/bwv1079-motum-contrarium.yaml}
+voices:
+  - {name: Thema, texture: solid}
+  - {name: Dux, texture: hatch}
+  - {name: Comes, texture: stipple}
+canon:
+  leader: 1
+  followers:
+    - voice: 2
+      rule:
+        delay: 2
+        diatonic: true
+        key: c
+        invert_about: 63    # e♭'
+        repeats: 4          # four passes of the perpetual canon
+        pitch_tolerance: 1
+        # exceptions: the comes's raised and lowered 6th and 7th (A♮/B♮ rising, A♭/B♭
+        # falling) where the strict mirror gives the other one; the resolution's notes
+        # (IMSLP10042, page 42), one semitone from the rule each, drawn as adjusted threads.
+        # Indices into the comes (all four passes), from scripts/musical_offering.py.
+        exceptions: {1: 57, 2: 59, 8: 68, 18: 58, 19: 70, 21: 70, 22: 68, 25: 70, 26: 68, 38: 68, 40: 63, 43: 68, 46: 57, 47: 59, 53: 68, 63: 58, 64: 70, 66: 70, 67: 68, 70: 70, 71: 68, 83: 68, 85: 63, 88: 68, 91: 57, 92: 59, 98: 68, 108: 58, 109: 70, 111: 70, 112: 68, 115: 70, 116: 68, 128: 68, 130: 63, 133: 68, 136: 57, 137: 59, 143: 68, 153: 58, 154: 70, 156: 70, 157: 68, 160: 70, 161: 68}
+marks:
+  - {kind: mirror-axis, start: 0, end: 63, pitch: 63, label: e♭'}
+captions:
+  - {bar: 1, text: "☞ The royal theme above; below it the dux runs down from c''."}
+  - {at: 2.25, text: "☞ Comes: by contrary motion, two beats later: each fall becomes a rise."}
+  - {bar: 5, text: "☞ The canon is perpetual: it begins again, four times in all."}
+# "In this piece" on a definition card; tests/test_glossary_notes.py checks each claim
+glossary_notes:
+  inversion: "The comes mirrors the dux about E♭ — watch the dashed line."

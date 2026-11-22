@@ -1,0 +1,49 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-018b.krn ("Contrapunctus 18 (XII), a 4.
+# (inversus)"; BGA vol. 25.1, p. 55; no splits, no chords). 3/2: the beat is a half note
+# (beats_per_quarter: 0.5), 3 per bar.
+# Tempo: editorial, as the rectus.
+# The mirror of contrapunctus12-rectus: every voice turned upside down (a diatonic mirror
+# in D minor; a raised or lowered note sometimes answered a semitone off) and the voices
+# exchanged: the rectus soprano is now the bass, alto the tenor, tenor the alto, bass the
+# soprano (tests/test_pieces.py checks it note against note).
+# The subject: the soprano alone, bars 1-4: the rectus subject upside down, A D F A B♭ A
+# G F E F G. Entries: every place find_entry finds it (scan, checked by hand): exactly
+# the rectus's, mirrored; forms follow the notes (wtc_form). From bar 21 ornamented, the
+# first six notes marked (part: head). No stretto.
+# Instruments: the tenor goes down to G2 (the mirror of the rectus alto's E5): cello.
+id: contrapunctus12-inversus
+title: Contrapunctus XII (inversus)
+catalogue: BWV 1080, 12
+key: D minor
+tempo: 56
+beats_per_bar: 3
+ensemble: strings
+listen_for: the rectus played upside down, its bass now on top
+techniques: [fugue, subject, answer, inversion, mirror fugue]
+order: 12.5
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-018b.krn, beats_per_quarter: 0.5}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple, instrument: cello}   # down to G2
+  - {name: Bass, texture: dashed}
+fugue:
+  # the subject: soprano, A D F A B♭ A G F E F G, bars 1-4
+  subject: {voice: 0, start: 0, length: 12}
+  entries:
+    - {voice: 0, start: 0, form: subject}  # bar 1, A
+    - {voice: 1, start: 12, form: answer}  # bar 5, D
+    - {voice: 2, start: 27, form: subject}  # bar 10, A
+    - {voice: 3, start: 39, form: answer}  # bar 14, D
+    - {voice: 3, start: 60, form: subject, part: head, head_length: 6}  # bar 21, A
+    - {voice: 2, start: 75, form: subject, part: head, head_length: 6}  # bar 26, E
+    - {voice: 1, start: 93, form: subject, part: head, head_length: 6}  # bar 32, C
+    - {voice: 0, start: 123, form: subject, part: head, head_length: 6}  # bar 42, A
+    - {voice: 2, start: 147, form: subject, part: head, head_length: 6}  # bar 50, A
+captions:
+  - {at: 0, text: "☞ The subject in the soprano: the rectus's bass, upside down."}
+  - {at: 12, text: "☞ The answer in the alto: the rectus's tenor, upside down."}
+  - {at: 27, text: "☞ The subject in the tenor."}
+  - {at: 39, text: "☞ The answer in the bass: all four voices are in."}
+  - {at: 60, text: "☞ The subject in the bass, ornamented: the rectus's soprano, inverted."}
+  - {at: 147, text: "☞ The last entry: the subject in the tenor, ornamented."}

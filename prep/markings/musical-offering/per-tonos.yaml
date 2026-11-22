@@ -1,0 +1,45 @@
+# Source: transcriptions/bwv1079-per-tonos.yaml (Thema and dux written, IMSLP10042 (BGA 31.2) page 9;
+# resolution page 43). The comes is computed: the dux a fifth higher, one bar later. Each
+# 8-bar pass modulates up a whole tone and the next pass starts there; six passes come
+# back to C minor (an octave up), then a closing chord (end/coda). The dux's first note
+# follows a semiquaver rest and its last falls on the next pass's downbeat, so its span
+# is exactly the 32-beat period.
+id: bwv1079-per-tonos
+title: Canon a 2 per tonos
+catalogue: BWV 1079, Canon 5
+key: C minor
+tempo: 84
+beats_per_bar: 4
+ensemble: chamber
+listen_for: each pass a whole tone higher, six times round
+techniques: [canon, canon at the fifth, per tonos, perpetual canon]
+order: 5
+source: {kind: transcription, path: transcriptions/bwv1079-per-tonos.yaml}
+voices:
+  - {name: Thema, texture: solid, instrument: violin}   # 57-78: below the flute
+  - {name: Comes, texture: hatch, instrument: viola}    # 50-77: below the violin
+  - {name: Dux, texture: stipple}
+canon:
+  leader: 2
+  followers:
+    - voice: 1
+      rule: {delay: 4, interval: 7, per_tonos_step: 2, repeats: 6}
+marks:
+  - {kind: rise, start: 0, end: 32, label: C minor}
+  - {kind: rise, start: 32, end: 64, label: D minor}
+  - {kind: rise, start: 64, end: 96, label: E minor}
+  - {kind: rise, start: 96, end: 128, label: F♯ minor}
+  - {kind: rise, start: 128, end: 160, label: G♯ minor}
+  - {kind: rise, start: 160, end: 192, label: B♭ minor}
+captions:
+  - {bar: 1, text: "☞ The royal theme above; the dux begins the canon in the bass."}
+  - {bar: 2, text: "☞ Comes: the dux a fifth higher, one bar later."}
+  - {bar: 9, text: "☞ The whole canon again, a whole tone higher: D minor."}
+  - {bar: 17, text: "☞ And again: E minor."}
+  - {bar: 25, text: "☞ F♯ minor."}
+  - {bar: 33, text: "☞ G♯ minor."}
+  - {bar: 41, text: "☞ B♭ minor: one more rise and the circle closes."}
+  - {bar: 49, text: "☞ Six rises of a tone: home in C, an octave higher."}
+# "In this piece" on a definition card; tests/test_glossary_notes.py checks each claim
+glossary_notes:
+  per-tonos: "Six passes, each a whole tone higher than the last: C, D, E, F♯, G♯ and B♭ minor."

@@ -1,0 +1,50 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-018a.krn ("Contrapunctus 18 (XII), a 4.
+# (rectus)"; the 1878 BGA's no. 12, vol. 25.1, p. 55; no splits, no chords). 3/2: the
+# beat is a half note (beats_per_quarter: 0.5), 3 per bar.
+# Tempo: editorial (the file's *MM200 names no source).
+# A mirror fugue: this whole piece, every voice, is printed again upside down as the
+# inversus (contrapunctus12-inversus), the soprano becoming the bass and the alto the
+# tenor (tests/test_pieces.py checks the mirror note against note).
+# The subject: the bass alone, bars 1-4: the main subject in triple time, D A F D C♯ D E F
+# G F E, to the E before the tenor's answer in bar 5.
+# Entries: every place find_entry finds the subject (scan of all voices, checked by
+# hand); forms follow the notes (wtc_form). From bar 21 the subject comes ornamented: a
+# run up to its first note, then from its seventh note dotted figures, so its first six
+# notes are marked (part: head). None overlap: no stretto.
+# Instruments: strings; the tenor stays above C3, within the viola.
+id: contrapunctus12-rectus
+title: Contrapunctus XII (rectus)
+catalogue: BWV 1080, 12
+key: D minor
+tempo: 56
+beats_per_bar: 3
+ensemble: strings
+listen_for: a mirror fugue; the subject in triple time, to be heard again upside down
+techniques: [fugue, subject, answer, mirror fugue]
+order: 12
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-018a.krn, beats_per_quarter: 0.5}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  # the subject: bass, D A F D C♯ D E F G F E, bars 1-4
+  subject: {voice: 3, start: 0, length: 12}
+  entries:
+    - {voice: 3, start: 0, form: subject}  # bar 1, D
+    - {voice: 2, start: 12, form: answer}  # bar 5, A
+    - {voice: 1, start: 27, form: subject}  # bar 10, D
+    - {voice: 0, start: 39, form: answer}  # bar 14, A
+    - {voice: 0, start: 60, form: subject, part: head, head_length: 6}  # bar 21, D
+    - {voice: 1, start: 75, form: subject, part: head, head_length: 6}  # bar 26, G
+    - {voice: 2, start: 93, form: subject, part: head, head_length: 6}  # bar 32, Bb
+    - {voice: 3, start: 123, form: subject, part: head, head_length: 6}  # bar 42, D
+    - {voice: 1, start: 147, form: subject, part: head, head_length: 6}  # bar 50, D
+captions:
+  - {at: 0, text: "☞ Dux: the subject in triple time, in the bass."}
+  - {at: 12, text: "☞ The answer in the tenor, on A."}
+  - {at: 27, text: "☞ The subject in the alto."}
+  - {at: 39, text: "☞ The answer in the soprano: all four voices are in."}
+  - {at: 60, text: "☞ The subject in the soprano, ornamented: a run up to its first note."}
+  - {at: 147, text: "☞ The last entry: the subject in the alto, ornamented."}

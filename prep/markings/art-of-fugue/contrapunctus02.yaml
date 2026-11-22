@@ -1,0 +1,58 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-002.krn ("Contrapunctus 2, a 4."; four
+# spines, no splits, no chords; encoded by Craig Stuart Sapp from the Bach-Gesellschaft
+# edition, vol. 25.1, 1878, p. 6). ¢ (2/2): beats are quarter notes, 4 per bar.
+# Tempo: editorial (the file's *MM100 names no source).
+# The subject: the bass alone, bars 1-4: the plain subject of Contrapunctus 1 (D A F D C♯ D
+# E F G F E), its last bar now in a dotted rhythm (F. G F. E), to the E before the D of
+# bar 5, where the tenor enters with the answer.
+# Entries: every place find_entry finds the subject (scan of all voices and onsets, then
+# checked by hand); forms follow the notes (tests/test_pieces.py wtc_form). Bar 23, alto:
+# the subject's first D is replaced by a run up to its A (the G sixteenth before it is
+# the statement's place, head: free) and its tail turns chromatic (A A♭ F♯ for G F E), so
+# only its first eight notes, to the F, are marked (part: head). Bar 52, bass: on C, its
+# first note held a whole bar (head: free). No statement overlaps another by more than a
+# half note: no stretto.
+# Instruments: the tenor goes down to A2 (bar 7), below the viola: cello.
+id: contrapunctus02
+title: Contrapunctus II
+catalogue: BWV 1080, 2
+key: D minor
+tempo: 72
+beats_per_bar: 4
+ensemble: strings
+listen_for: the subject of Contrapunctus I, its tail now dotted
+techniques: [fugue, subject, answer]
+order: 2
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-002.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple, instrument: cello}   # down to A2
+  - {name: Bass, texture: dashed}
+fugue:
+  # the subject: bass, D A F D C♯ D E F G F E, bars 1-4
+  subject: {voice: 3, start: 0, length: 16}
+  entries:
+    - {voice: 3, start: 0, form: subject}  # bar 1, D
+    - {voice: 2, start: 16, form: answer}  # bar 5, A
+    - {voice: 1, start: 32, form: subject}  # bar 9, D
+    - {voice: 0, start: 48, form: answer}  # bar 13, A
+    - {voice: 1, start: 89.75, form: subject, part: head, head_length: 8, head: free}  # bar 23, D
+    - {voice: 0, start: 100, form: answer}  # bar 26, A
+    - {voice: 3, start: 120, form: subject}  # bar 31, D
+    - {voice: 2, start: 148, form: answer}  # bar 38, A
+    - {voice: 0, start: 176, form: subject}  # bar 45, F
+    - {voice: 1, start: 192, form: subject}  # bar 49, A, G minor
+    - {voice: 3, start: 206, form: subject, head: free}  # bar 52, C
+    - {voice: 3, start: 240, form: subject}  # bar 61, D
+    - {voice: 0, start: 312, form: subject}  # bar 79, D
+captions:
+  - {at: 0, text: "☞ Dux: the subject in the bass, its last bar now dotted."}
+  - {at: 16, text: "☞ Comes: the answer in the tenor, on A."}
+  - {at: 32, text: "☞ The subject in the alto."}
+  - {at: 48, text: "☞ The answer in the soprano: all four voices are in."}
+  - {at: 89.75, text: "☞ The subject in the alto, its first D turned into a run up to the A."}
+  - {at: 120, text: "☞ The subject in the bass, back in D minor."}
+  - {at: 176, text: "☞ The subject in the soprano, on F."}
+  - {at: 206, text: "☞ The subject in the bass, on C, its first note held a whole bar."}
+  - {at: 312, text: "☞ The last entry: the subject in the soprano."}

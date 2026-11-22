@@ -1,0 +1,34 @@
+# Source: humdrum-tools/inventions, sinfo10.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM88 names no source).
+# Motive (checked against the score): the upper voice from beat 0.5, a dotted G, then
+# sixteenths F#-G-A-B-C-D-B and a falling run E-D-...-A (beats 0.5-6). The middle voice
+# answers on D (bar 3), the lower voice on G (bar 7). Only these three statements keep
+# the dotted first note; all are marked. Not marked: the later statements that start in
+# sixteenths (bar 11 middle, bar 26 middle, bar 31 upper), where the dotted note is
+# replaced, so find_entry cannot place the motive's first note.
+id: sinfonia10
+title: Sinfonia 10
+catalogue: BWV 796
+key: G major
+tempo: 88
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: "a running motive in three voices, like a fugue"
+techniques: [sinfonia, motive, imitation]
+book: Sinfonias
+order: 10
+source: {kind: kern, path: inventions/kern/sinfo10.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 5.5}   # the motive
+  entries:
+    - {voice: 0, start: 0.5, form: motive}                          # bar 1, upper: G-F#-G-A-B-C-D-B-E-D-C-B-A-G-F#-E-D-C-B-A
+    - {voice: 1, start: 6.5, form: motive}                          # bar 3, middle: D-C#-D-E-F#-G-A-F#-B-A-G-F#-E-D-C#-B-A-G-F#-E
+    - {voice: 2, start: 18.5, form: motive}                         # bar 7, lower: G-F#-G-A-B-C-D-B-E-D-C-B-A-G-F#-E-D-C-B-A
+captions:
+  - {at: 0.5, text: "☞ The motive in the upper voice: a dotted note, then running sixteenths."}
+  - {at: 6.5, text: "☞ The middle voice answers, on D."}
+  - {at: 18.5, text: "☞ The lower voice enters with the motive, in G major."}

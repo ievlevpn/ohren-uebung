@@ -1,0 +1,50 @@
+# Source: humdrum-tools/inventions, sinfo14.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM92 names no source).
+# Motive (checked against the score): after a held note, sixteenths Bb-A-G falling to
+# F, G, then D-Eb-F (middle voice, beats 1.25-4). The held note before it changes length
+# (the middle voice holds Bb for a beat and a quarter, then repeats it; the upper voice
+# holds F for three quarters of a beat, then steps down), so the marked motive starts with
+# the sixteenths. In the upper voice's answers the fourth interval is a third (Bb-D)
+# instead of a step. The middle voice leads (Bb), the upper voice answers (bar 2, on F),
+# the lower voice enters on Bb (bar 4). In bar 12 the middle voice follows the upper one
+# beat later (stretto).
+# 13 statements with at most one interval changed, all marked. Not marked: bar 14 upper,
+# bars 15 and 20 middle, which change two intervals.
+id: sinfonia14
+title: Sinfonia 14
+catalogue: BWV 800
+key: B♭ major
+tempo: 60
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "an ornate motive, answered and overlapped"
+techniques: [sinfonia, motive, imitation, stretto]
+book: Sinfonias
+order: 14
+source: {kind: kern, path: inventions/kern/sinfo14.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 1, start: 1.25, length: 2.75}   # the motive
+  entries:
+    - {voice: 1, start: 1.25, form: motive}                         # bar 1, middle: Bb-A-G-F-G-D-Eb-F
+    - {voice: 0, start: 5.25, form: motive}                         # bar 2, upper: Eb-D-C-Bb-D-A-Bb-C
+    - {voice: 2, start: 13.25, form: motive}                        # bar 4, lower: Bb-A-G-F-G-D-Eb-F
+    - {voice: 1, start: 25.25, form: motive}                        # bar 7, middle: Bb-A-G-F#-G-D-Eb-F
+    - {voice: 0, start: 29.25, form: motive}                        # bar 8, upper: G-F-Eb-D-F-B-C-D
+    - {voice: 1, start: 33.25, form: motive}                        # bar 9, middle: Bb-Ab-G-F-Ab-D-Eb-F
+    - {voice: 2, start: 37.25, form: motive}                        # bar 10, lower: Bb-A-G-F-A-E-F-G
+    - {voice: 0, start: 45.25, form: motive, stretto: s1}           # bar 12, upper: A-G-F-E-G-C#-D-E
+    - {voice: 1, start: 46.25, form: motive, stretto: s1}           # bar 12, middle: A-G-F-E-G-C#-D-E
+    - {voice: 2, start: 63.25, form: motive}                        # bar 16, lower: Eb-D-C-Bb-C-G-Ab-Bb
+    - {voice: 1, start: 72.25, form: motive}                        # bar 19, middle: Eb-D-C-Bb-D-A-Bb-C
+    - {voice: 0, start: 79.25, form: motive}                        # bar 20, upper: Eb-D-C-Bb-D-A-Bb-C
+    - {voice: 2, start: 81.25, form: motive}                        # bar 21, lower: Eb-D-C-Bb-D-A-Bb-C
+captions:
+  - {at: 1.25, text: "☞ After a held B♭, the motive in the middle voice: falling sixteenths."}
+  - {at: 5.25, text: "☞ The upper voice answers it, after a held F."}
+  - {at: 13.25, text: "☞ The lower voice enters with the motive, in B♭ major."}
+  - {at: 45.25, text: "☞ Stretto: the middle voice follows the upper voice a beat behind."}
+  - {at: 79.25, text: "☞ Home in B♭ major: the motive in the upper voice, then below."}

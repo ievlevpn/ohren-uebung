@@ -1,0 +1,45 @@
+# Source: transcriptions/bwv1079-canon-a4.yaml (the one written line: Bach's riddle,
+# IMSLP10042 (BGA 31.2) page 20, one staff with a G clef on its bottom line and an F
+# clef, so it reads as g' in a treble and as G two octaves lower in a bass). The other
+# three voices are computed, as the BGA's resolution (pages 50-51) places them: the
+# first bass enters seven bars after the top voice, two octaves lower; the second treble
+# fourteen bars after it, at the same pitch; the second bass 21 bars after it, two
+# octaves lower. Every interval is exact. The 28-bar line is perpetual (the plate ends
+# on a repeat sign): three passes of the top voice, then every voice holds the note it
+# reaches at beat 336 (end/coda, dardel.info's ending, editorial). The BGA names no
+# instruments; tempo editorial.
+id: bwv1079-canon-a4
+title: Canon a 4
+catalogue: BWV 1079/7
+key: G minor
+tempo: 76
+beats_per_bar: 4
+ensemble: chamber
+listen_for: "one line, four voices: canon at the unison and two octaves apart"
+techniques: [canon, canon at the unison, canon at the octave, perpetual canon]
+order: 8
+source: {kind: transcription, path: transcriptions/bwv1079-canon-a4.yaml}
+voices:
+  - {name: Treble I, texture: solid, instrument: flute}          # the written line, g'
+  - {name: Treble II, texture: hatch, instrument: violin}        # BGA staff 2, treble clef
+  - {name: Bass I, texture: stipple, instrument: cello}          # BGA staff 3, bass clef
+  - {name: Bass II, texture: dashed, instrument: harpsichord}    # BGA staff 4, bass clef
+canon:
+  leader: 0
+  followers:
+    - voice: 2
+      rule: {delay: 28, interval: -24, repeats: 3}
+    - voice: 1
+      rule: {delay: 56, interval: 0, repeats: 3}
+    - voice: 3
+      rule: {delay: 84, interval: -24, repeats: 3}
+captions:
+  - {bar: 1, text: "☞ Bach wrote one line in two clefs; the flute begins it alone."}
+  - {at: 29, text: "☞ The cello: the same line two octaves lower, seven bars later."}
+  - {at: 57, text: "☞ The violin: the flute's line at the same pitch, fourteen bars later."}
+  - {at: 85, text: "☞ The harpsichord: two octaves below the flute, like the cello."}
+  - {at: 113, text: "☞ Perpetual: the flute is back at its first note; the line goes round."}
+  - {at: 336, text: "☞ The third time round every voice holds its note: an editorial end."}
+# "In this piece" on a definition card; tests/test_glossary_notes.py checks each claim
+glossary_notes:
+  canon-at-the-unison: "Four voices, one line: the two trebles sing it at the same pitch, the two basses two octaves lower; the four entries come seven bars apart."

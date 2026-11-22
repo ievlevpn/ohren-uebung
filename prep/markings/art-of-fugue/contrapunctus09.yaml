@@ -1,0 +1,64 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-009.krn ("Contrapunctus 9, a 4, alla
+# Duodecima"; no splits, no chords; BGA vol. 25.1, p. 37; the file notes "two subjects
+# occurring dependently and in invertible counterpoint at the twelfth"). C (4/4): beats
+# are quarter notes, 4 per bar.
+# Tempo: editorial (the file's *MM180 names no source).
+# Subject I (alto, bars 1-5): D, the octave leap to D, then a running line, to the A of
+# bar 5. Subject II (soprano, bars 35-42): the work's main subject, D A F D C♯ D E F G F E,
+# in whole and half notes; from bar 35 every statement of it sounds with one of subject I
+# (a beat later), the two exchanging places at the twelfth: subject I above or below,
+# a fifth plus an octave from where it stood.
+# Entries: every place find_entry finds either subject (scans of all voices, checked by
+# hand). Forms: subject I as in the WTC (wtc_form); subject II is labelled subject
+# throughout. No statement of one subject overlaps another of the same: no stretto.
+# Instruments: strings; the tenor stays above C3, within the viola.
+id: contrapunctus09
+title: Contrapunctus IX
+catalogue: BWV 1080, 9
+key: D minor
+tempo: 92
+beats_per_bar: 4
+ensemble: strings
+listen_for: a fast new subject, then the main subject in long notes against it
+techniques: [fugue, subject, answer, double fugue, invertible counterpoint]
+order: 9
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-009.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  # subject I: alto, bars 1-5; subject II: soprano, bars 35-42
+  subjects:
+    - {id: I, voice: 1, start: 1, length: 17}
+    - {id: II, voice: 0, start: 136, length: 32}
+  entries:
+    - {voice: 1, start: 1, form: subject, subject: I}  # bar 1, D
+    - {voice: 0, start: 29, form: answer, subject: I}  # bar 8, A
+    - {voice: 3, start: 57, form: subject, subject: I}  # bar 15, D
+    - {voice: 2, start: 85, form: answer, subject: I}  # bar 22, A
+    - {voice: 0, start: 136, form: subject, subject: II}  # bar 35, D
+    - {voice: 2, start: 137, form: subject, subject: I}  # bar 35, D
+    - {voice: 2, start: 176, form: subject, subject: II}  # bar 45, F
+    - {voice: 1, start: 177, form: subject, subject: I, form_by: opening}  # bar 45, C
+    - {voice: 1, start: 232, form: subject, subject: II}  # bar 59, D
+    - {voice: 3, start: 233, form: subject, subject: I}  # bar 59, D
+    - {voice: 2, start: 288, form: subject, subject: II}  # bar 73, A
+    - {voice: 1, start: 289, form: subject, subject: I, form_by: opening}  # bar 73, E
+    - {voice: 3, start: 352, form: subject, subject: II}  # bar 89, D
+    - {voice: 0, start: 353, form: answer, subject: I}  # bar 89, A
+    - {voice: 2, start: 392, form: subject, subject: II}  # bar 99, G
+    - {voice: 1, start: 393, form: subject, subject: I}  # bar 99, D
+    - {voice: 1, start: 472, form: subject, subject: II}  # bar 119, D
+    - {voice: 2, start: 473, form: subject, subject: I}  # bar 119, D
+captions:
+  - {at: 1, text: "☞ Subject I alone, in the alto: an octave leap, then a running line."}
+  - {at: 29, text: "☞ The answer in the soprano, on A."}
+  - {at: 57, text: "☞ Subject I in the bass."}
+  - {at: 85, text: "☞ The answer in the tenor: all four voices are in."}
+  - {at: 136, text: "☞ Subject II in the soprano: the main subject in long notes, over I."}
+  - {at: 176, text: "☞ Subject II in the tenor, now below subject I: the pair turned over."}
+  - {at: 232, text: "☞ Subject II in the alto, over subject I in the bass."}
+  - {at: 352, text: "☞ Subject II in the bass, under subject I in the soprano."}
+  - {at: 472, text: "☞ The last entries: subject II in the alto, subject I in the tenor."}

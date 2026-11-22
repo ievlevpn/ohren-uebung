@@ -1,0 +1,36 @@
+# Source: humdrum-tools/inventions, inven09.krn (2 voices: upper, lower; no spine splits).
+# Motive: the upper voice's first four bars (C-Bb-Ab-G-Ab-F-Db..., beats 0-12).
+# Countermotive: the bass's line from beat 0.5 through bar 3 (F-G-Ab-G-F-Eb-Db-C...).
+# Both swap voices in bar 5. Complete statements of the motive: bars 1, 5, 29, marked.
+# Bar 17 (bass, C minor) states it whole except its first note (Eb4 for G3, beyond
+# find_entry's two-semitone limit): not marked. The countermotive returns whole only in
+# bar 5; elsewhere Bach varies it.
+id: invention09
+title: Invention 9
+catalogue: BWV 780
+key: F minor
+tempo: 56
+beats_per_bar: 3
+ensemble: harpsichord
+listen_for: "a sighing motive and a running countermotive, trading voices"
+techniques: [invention, motive, countermotive, invertible counterpoint]
+book: Inventions
+order: 9
+source: {kind: kern, path: inventions/kern/inven09.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0, length: 12}   # the motive
+  countersubject: {voice: 1, start: 0.5, length: 8.5}   # the countermotive
+  entries:
+    - {voice: 0, start: 0, form: motive}                              # bar 1, upper: C-Bb-Ab-G-Ab-F-Db-C
+    - {voice: 1, start: 0.5, form: countermotive}                     # bar 1, lower countermotive: F-G-Ab-G-F-Eb-Db-C
+    - {voice: 1, start: 12, form: motive}                             # bar 5, lower: C-Bb-Ab-G-Ab-F-Db-C
+    - {voice: 0, start: 12.5, form: countermotive}                    # bar 5, upper countermotive: F-G-Ab-G-F-Eb-Db-C
+    - {voice: 0, start: 84, form: motive}                             # bar 29, upper: C-Bb-Ab-G-Ab-F-Db-C
+captions:
+  - {at: 0, text: "☞ The motive in the upper voice: four bars of sighs and leaps."}
+  - {at: 0.5, text: "☞ The lower voice runs beneath it: the countermotive."}
+  - {at: 12, text: "☞ The voices trade lines: the motive below, the countermotive above."}
+  - {at: 84, text: "☞ The motive returns in the upper voice, in F minor."}

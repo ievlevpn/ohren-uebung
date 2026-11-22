@@ -1,0 +1,37 @@
+# Source: humdrum-tools/inventions, sinfo12.krn (3 voices: upper, middle, lower; no spine splits).
+# Tempo: editorial (the file's *MM92 names no source).
+# Motive (checked against the score): the upper voice's first bar and a half, a turn
+# around A (A, G#-A, B, A-G#, A held, B-G#-A), then B, C#, D and E over a repeated low E
+# (B-E-C#-E-D-E-E; beats 0-6). The middle voice answers on E (bar 3), the lower voice on A (bar 5). Six complete
+# statements, all marked; the one in bar 15 is in F# minor.
+id: sinfonia12
+title: Sinfonia 12
+catalogue: BWV 798
+key: A major
+tempo: 80
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "a motive turning around one note, entering voice by voice"
+techniques: [sinfonia, motive, imitation]
+book: Sinfonias
+order: 12
+source: {kind: kern, path: inventions/kern/sinfo12.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Middle, texture: hatch}
+  - {name: Lower, texture: stipple}
+fugue:
+  subject: {voice: 0, start: 0, length: 6}   # the motive
+  entries:
+    - {voice: 0, start: 0, form: motive}                            # bar 1, upper: A-G#-A-B-A-G#-A-B-G#-A-B-E-C#-E-D-E-E
+    - {voice: 1, start: 8, form: motive}                            # bar 3, middle: E-D#-E-F#-E-D#-E-F#-D#-E-F#-B-G#-B-A-B-B
+    - {voice: 2, start: 16, form: motive}                           # bar 5, lower: A-G#-A-B-A-G#-A-B-G#-A-B-E-C#-E-D-E-E
+    - {voice: 2, start: 56, form: motive}                           # bar 15, lower: F#-E#-F#-G#-F#-E#-F#-G#-E#-F#-G#-C#-A-C#-B-C#-C#
+    - {voice: 2, start: 92, form: motive}                           # bar 24, lower: A-G#-A-B-A-G#-A-B-G#-A-B-E-C#-E-D-E-E
+    - {voice: 0, start: 98, form: motive}                           # bar 25, upper: A-G#-A-B-A-G#-A-B-G#-A-B-E-C#-E-D-E-E
+captions:
+  - {at: 0, text: "☞ The motive in the upper voice: a turn around A."}
+  - {at: 8, text: "☞ The middle voice answers it, on E."}
+  - {at: 16, text: "☞ The lower voice enters with the motive, in A major."}
+  - {at: 56, text: "☞ The motive in the lower voice, in F♯ minor."}
+  - {at: 92, text: "☞ Back in A major: the motive in the lower voice, then above."}

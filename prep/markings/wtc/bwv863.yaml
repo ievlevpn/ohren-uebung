@@ -1,0 +1,65 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f18.krn (4 voices: soprano, alto, tenor, bass).
+# Tempo: editorial (the file's *MM64 names no source).
+# Spine split (source.alternatives): bar 32, tenor, a sic/ossia pair; the main text (B#3
+# eighth, marked sic) is kept and the alternative reading (B3) dropped. No sounding note of
+# the main text is lost.
+# Subject (checked against the score): the tenor from beat 2 of bar 1, G# F## G# A# B A#
+# G#, C## D# F#, G# G# A# A#, to the D# on the downbeat of bar 3; the answer enters a beat later
+# (15 notes). The answer is tonal: D# falls a third to B# where the subject fell a
+# semitone. Forms follow the pitch level of notes 3..n. The soprano in bar 37 enters an
+# eighth late, after a rest, with an eighth C# for the answer's D# quarter (head:
+# free).
+# Countersubject: the tenor against the answer, from the E# on the second eighth of bar 3,
+# to the G# on the downbeat of bar 5 (15 notes); whole again in bars 7 and 11 (soprano)
+# and 19 (tenor); in bar 5 the alto holds a G# over for its first note (head: free). In
+# bars 15 and 32 (alto) its long F# is broken into running notes (not marked).
+# 12 complete statements marked; none overlap. Not marked: fragments of the head in
+# episodes.
+# Statements at neither the subject's nor the answer's pitch level (in another key) carry
+# form_by: opening: their opening interval decides the form (each entry's comment says so).
+id: bwv863
+title: Fugue in G♯ minor
+catalogue: BWV 863
+key: G♯ minor
+tempo: 64
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 4 voices; a winding subject and a steady countersubject
+techniques: [fugue, subject, answer, countersubject]
+book: Book I
+order: 18
+number: 18
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f18.krn, alternatives: [32]}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  subject: {voice: 2, start: 1, length: 7.5}
+  countersubject: {voice: 2, start: 8.5, length: 8}
+  entries:
+    - {voice: 2, start: 1, form: subject}
+    - {voice: 1, start: 9, form: answer}
+    - {voice: 2, start: 8.5, form: countersubject}
+    - {voice: 0, start: 17, form: subject}
+    - {voice: 1, start: 16, form: countersubject, head: free}
+    - {voice: 3, start: 25, form: answer}
+    - {voice: 0, start: 24.5, form: countersubject}
+    - {voice: 2, start: 41, form: answer}
+    - {voice: 0, start: 40.5, form: countersubject}
+    - {voice: 3, start: 57, form: answer}
+    - {voice: 2, start: 65, form: subject}
+    - {voice: 1, start: 73, form: answer}
+    - {voice: 2, start: 72.5, form: countersubject}
+    - {voice: 0, start: 93, form: subject, form_by: opening}  # neither level (notes 3..n a fourth down from the dux); opens with a semitone down, the subject's
+    - {voice: 3, start: 101, form: answer, form_by: opening}  # neither level (notes 3..n a major third down from the dux); opens with a minor third down, the answer's
+    - {voice: 2, start: 125, form: subject}
+    - {voice: 0, start: 145.5, form: answer, head: free}
+captions:
+  - {at: 1, text: "☞ Dux: the subject in the tenor, winding up from G♯."}
+  - {at: 9, text: "☞ The answer in the alto: D♯ falls a third; below, the countersubject."}
+  - {at: 17, text: "☞ The soprano enters with the subject; the alto has the countersubject."}
+  - {at: 25, text: "☞ The bass completes the exposition with the answer."}
+  - {at: 93, text: "☞ The subject in the soprano, in D♯ minor."}
+  - {at: 145.5, text: "☞ The last entry, in the soprano: an eighth late, C♯ in place of D♯."}

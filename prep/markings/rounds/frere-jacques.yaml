@@ -1,0 +1,26 @@
+id: frere-jacques
+title: Frère Jacques
+catalogue: traditional
+key: C major
+tempo: 100
+beats_per_bar: 4
+ensemble: strings
+listen_for: one tune, four voices, two bars apart
+techniques: [canon, canon at the unison, perpetual canon]
+source: {kind: generated, path: transcriptions/frere-jacques.yaml}
+voices:
+  - {name: First voice, texture: solid}
+  - {name: Second voice, texture: hatch}
+  - {name: Third voice, texture: stipple}
+  - {name: Fourth voice, texture: dashed}
+canon:
+  leader: 0
+  followers:
+    - {voice: 1, rule: {delay: 8}}
+    - {voice: 2, rule: {delay: 16}}
+    - {voice: 3, rule: {delay: 24}}
+captions:
+  - {bar: 1, text: "☞ The tune alone."}
+  - {bar: 3, text: "☞ The second voice enters with the same tune, two bars later."}
+  - {bar: 5, text: "☞ The third voice enters, two bars after the second."}
+  - {bar: 7, text: "☞ The fourth voice: all four now sing the round at once."}

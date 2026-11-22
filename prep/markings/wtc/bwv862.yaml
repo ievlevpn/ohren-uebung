@@ -1,0 +1,56 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f17.krn (4 voices: soprano, alto, tenor, bass;
+# no chords, no spine splits).
+# Tempo: editorial (the file's *MM54 names no source).
+# Subject (checked against the score): the tenor from beat 2 of bar 1, a broken chord in
+# eighths, Ab Eb C Ab F Db, to the Eb on the downbeat of bar 2 (7 notes; a one-bar subject).
+# The answer is tonal: Eb rises a fourth to Ab, then falls a step to G (Eb Ab G Eb...),
+# where the subject rose a fifth and fell a third. With only six intervals, two of them
+# changed is more than find_entry tolerates, so the two answers of the exposition (bass bar
+# 2, alto bar 6) are marked with a free head (the answer's first interval not compared).
+# Forms follow the pitch level of notes 3..n.
+# 15 complete statements marked; none overlap (from bar 27 the voices enter a bar apart,
+# each after the last note of the one before). Not marked: the head alone (four notes) in
+# bars 21-22 (alto, soprano) and 31-32 (soprano).
+id: bwv862
+title: Fugue in A♭ major
+catalogue: BWV 862
+key: A♭ major
+tempo: 54
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 4 voices; a short subject, a broken chord, heard again and again
+techniques: [fugue, subject, answer]
+book: Book I
+order: 17
+number: 17
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f17.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  subject: {voice: 2, start: 1, length: 3.5}
+  entries:
+    - {voice: 2, start: 1, form: subject}
+    - {voice: 3, start: 5, form: answer, head: free}
+    - {voice: 0, start: 17, form: subject}
+    - {voice: 1, start: 21, form: answer, head: free}
+    - {voice: 2, start: 37, form: subject}
+    - {voice: 1, start: 49, form: subject}
+    - {voice: 2, start: 65, form: subject}
+    - {voice: 1, start: 69, form: subject}
+    - {voice: 1, start: 89, form: subject}
+    - {voice: 0, start: 93, form: subject}
+    - {voice: 3, start: 105, form: subject}
+    - {voice: 2, start: 109, form: subject}
+    - {voice: 1, start: 113, form: subject}
+    - {voice: 0, start: 117, form: subject}
+    - {voice: 0, start: 131, form: subject}
+captions:
+  - {at: 1, text: "☞ Dux: the subject in the tenor, a broken chord, one bar long."}
+  - {at: 5, text: "☞ The answer in the bass: E♭ up a fourth to A♭, for the fifth."}
+  - {at: 17, text: "☞ The soprano enters with the subject, on A♭."}
+  - {at: 21, text: "☞ The alto completes the exposition with the answer."}
+  - {at: 105, text: "☞ Bass, tenor, alto and soprano enter one after another, a bar apart."}
+  - {at: 131, text: "☞ The last entry, in the soprano."}

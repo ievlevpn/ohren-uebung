@@ -1,0 +1,33 @@
+# Source: Mutopia BachJS/BWV988/bwv-988-v18 (2/2). beats_per_quarter: 0.5, so a beat is a
+# half note and a bar has 2. Voices from the MIDI, top first: 0 = comes (upper, from beat
+# 1), 1 = dux (from beat 0), 2 = bass. Repeats are not unfolded: 32 bars, 64 beats.
+# Checked bar by bar: the middle voice leads in both halves, and the upper voice answers
+# a sixth higher half a bar (one minim) later; every leader note is answered.
+id: goldberg-var18
+title: Variatio 18
+catalogue: BWV 988, 18
+key: G major
+tempo: 72
+beats_per_bar: 2
+ensemble: harpsichord
+listen_for: canon at the sixth, half a bar apart
+techniques: [canon, canon at the sixth]
+order: 18
+source: {kind: mutopia, path: BachJS/BWV988/bwv-988-v18, beats_per_quarter: 0.5}
+voices:
+  - {name: Comes, texture: solid}
+  - {name: Dux, texture: hatch}
+  - {name: Bass, texture: stipple}
+canon:
+  leader: 1
+  followers:
+    - voice: 0
+      rule:
+        delay: 1
+        interval: 5         # five scale steps up: b' answered by g''
+        diatonic: true
+        key: G
+        pitch_tolerance: 1  # Bach's chromatic adjustments (e' answered by c#'', not c'')
+captions:
+  - {bar: 1, text: "☞ Dux: the middle voice; many bars hold a long note, then two eighths."}
+  - {at: 1, text: "☞ Comes: the dux a sixth higher, half a bar later."}

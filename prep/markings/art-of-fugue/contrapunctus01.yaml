@@ -1,0 +1,45 @@
+# Source: Mutopia BachJS/BWV1080/contrapunctusI (multi-file, contrapunctusI-lys.zip;
+# 2/2, beats are quarter notes, 4 per bar). Voices from the MIDI, top first.
+# Entries: every place the subject sounds whole, found by scanning all voices for it
+# (fugue.find_entry); an entry whose first leap is a fourth (A-D, E-A) is the tonal
+# answer, one whose first leap is a fifth (D-A, A-E) the subject.
+id: contrapunctus01
+title: Contrapunctus I
+catalogue: BWV 1080, 1
+key: D minor
+tempo: 72
+beats_per_bar: 4
+ensemble: strings
+listen_for: 4 voices; the plain subject, ten times
+techniques: [fugue, subject, answer]
+order: 1
+source: {kind: mutopia, path: BachJS/BWV1080/contrapunctusI}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}    # 53-79: below the violin
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  # the subject: alto, D A F D C♯ D E F G F E, bars 1-4
+  subject: {voice: 1, start: 0, length: 16}
+  entries:
+    - {voice: 1, start: 0, form: subject}      # bar 1, D minor
+    - {voice: 0, start: 16, form: answer}      # bar 5
+    - {voice: 3, start: 32, form: subject}     # bar 9
+    - {voice: 2, start: 48, form: answer}      # bar 13
+    - {voice: 1, start: 88, form: subject}     # bar 23
+    - {voice: 0, start: 112, form: subject}    # bar 29, on A
+    - {voice: 2, start: 156, form: answer}     # bar 40, on E
+    - {voice: 0, start: 192, form: answer}     # bar 49, on E
+    - {voice: 3, start: 220, form: subject}    # bar 56, D minor
+    - {voice: 2, start: 292, form: answer}     # bar 74
+captions:
+  - {at: 0, text: "☞ Dux: the subject alone, in the alto."}
+  - {at: 16, text: "☞ Comes: the answer in the soprano, a fifth higher."}
+  - {at: 32, text: "☞ The subject in the bass."}
+  - {at: 48, text: "☞ The answer in the tenor: all four voices are in."}
+  - {at: 88, text: "☞ The subject returns, in the alto."}
+  - {at: 112, text: "☞ The subject in the soprano, a fifth higher, on A."}
+  - {at: 156, text: "☞ The answer in the tenor, now on E."}
+  - {at: 220, text: "☞ The subject in the bass, back in D minor."}
+  - {at: 292, text: "☞ The last entry: the answer in the tenor."}

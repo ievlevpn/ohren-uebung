@@ -1,0 +1,86 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-010.krn ("Contrapunctus 10, a 4, alla
+# Decima"; no splits, no chords; BGA vol. 25.1, p. 43; the file notes "two subjects
+# occurring dependently and in invertible counterpoint at the tenth"). C (4/4): beats are
+# quarter notes, 4 per bar.
+# Tempo: editorial (the file's *MM144 names no source).
+# Subject I (alto, bars 1-3): C♯ D A, F E A, then a run up to B♭, to the tenor's entry in
+# bar 3 (a stretto from the start; the bass and soprano bring it inverted).
+# Subject II (bar 23 on): the subject of Contrapunctus 5, A D (E) F (G) A B♭ A (G) F; the
+# reference is the bass's statement in bar 31, the first plain one (the soprano's of bar
+# 23 changes its first note, head: free; the alto's of bar 24 turns away after six notes,
+# part: head).
+# Entries: every place find_entry finds either subject (scans of all voices, checked by
+# hand). Late in the piece both subjects are doubled in thirds or tenths, two voices
+# stating one subject together (bars 75, 85, 103, 115): both are marked, not as stretto.
+# Bar 75, bass: subject I complete (A B♭ F, D C F, B♭ ... as the soprano's of bar 66),
+# its fourth to sixth notes an octave down: those two intervals are compared up to the
+# octave (octave: [3, 6]). Bar 14, alto (A♭ A F, B♭ A D, then a run): subject I with its
+# third interval changed (a fourth for the sixth) against the tenor's inversion; find_entry
+# does not accept it, so it is not marked.
+# Forms: subject I as in the WTC (wtc_form; the upper voice of a doubled pair changes its
+# first interval, bars 52 and 85, and stays labelled subject); subject II is labelled
+# subject throughout. Stretto groups: statements of one subject beginning at least a
+# half note before the previous one's last note, not counting the doubled pairs.
+# Instruments: the tenor goes down to B♭2, below the viola: cello.
+id: contrapunctus10
+title: Contrapunctus X
+catalogue: BWV 1080, 10
+key: D minor
+tempo: 80
+beats_per_bar: 4
+ensemble: strings
+listen_for: a new subject and the dotted subject of V, combined and doubled in tenths
+techniques: [fugue, subject, answer, double fugue, inversion, stretto, invertible counterpoint]
+order: 10
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-010.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple, instrument: cello}   # down to B♭2
+  - {name: Bass, texture: dashed}
+fugue:
+  # subject I: alto, bars 1-3; subject II: bass, bars 31-34
+  subjects:
+    - {id: I, voice: 1, start: 1, length: 10}
+    - {id: II, voice: 3, start: 120, length: 14.5}
+  entries:
+    - {voice: 1, start: 1, form: subject, subject: I}  # bar 1, C#
+    - {voice: 2, start: 11, form: answer, subject: I}  # bar 3, F#
+    - {voice: 3, start: 25, form: subject, subject: I, transform: inverted, stretto: 1}  # bar 7, F
+    - {voice: 0, start: 31, form: subject, subject: I, transform: inverted, stretto: 1}  # bar 8, C
+    - {voice: 2, start: 55, form: subject, subject: I, transform: inverted}  # bar 14, Bb
+    - {voice: 0, start: 88, form: subject, subject: II, head: free, stretto: 2}  # bar 23, F
+    - {voice: 1, start: 92, form: subject, subject: II, part: head, head_length: 6, stretto: 2}  # bar 24, D
+    - {voice: 2, start: 100, form: subject, subject: II}  # bar 26, D
+    - {voice: 3, start: 120, form: subject, subject: II}  # bar 31, A
+    - {voice: 1, start: 132, form: subject, subject: II}  # bar 34, D
+    - {voice: 1, start: 172, form: subject, subject: II}  # bar 44, A
+    - {voice: 2, start: 173, form: answer, subject: I}  # bar 44, F#
+    - {voice: 3, start: 204, form: subject, subject: II}  # bar 52, D
+    - {voice: 1, start: 205, form: subject, subject: I}  # bar 52, D
+    - {voice: 2, start: 260, form: subject, subject: II}  # bar 66, A
+    - {voice: 0, start: 261, form: subject, subject: I, form_by: opening}  # bar 66, A
+    - {voice: 0, start: 296, form: subject, subject: II}  # bar 75, A
+    - {voice: 1, start: 296, form: subject, subject: II}  # bar 75, C
+    - {voice: 3, start: 297, form: subject, subject: I, form_by: opening, octave: [3, 6]}  # bar 75, A, notes 4-6 an octave down
+    - {voice: 3, start: 336, form: subject, subject: II}  # bar 85, G
+    - {voice: 1, start: 337, form: subject, subject: I}  # bar 85, G
+    - {voice: 0, start: 337.5, form: subject, subject: I, head: free}  # bar 85, C#
+    - {voice: 0, start: 409, form: subject, subject: II, head: free}  # bar 103, F
+    - {voice: 2, start: 409, form: answer, subject: I}  # bar 103, F
+    - {voice: 3, start: 409, form: subject, subject: I, form_by: opening}  # bar 103, D
+    - {voice: 3, start: 456, form: subject, subject: II}  # bar 115, A
+    - {voice: 1, start: 457, form: subject, subject: I}  # bar 115, C#
+    - {voice: 2, start: 457, form: subject, subject: I, form_by: opening}  # bar 115, A
+captions:
+  - {at: 1, text: "☞ Subject I in the alto: a turn round D, then a run upwards."}
+  - {at: 11, text: "☞ The answer in the tenor, as the alto's run reaches its top."}
+  - {at: 25, text: "☞ Subject I inverted in the bass."}
+  - {at: 31, text: "☞ Subject I inverted in the soprano: all four voices are in."}
+  - {at: 88, text: "☞ Subject II in the soprano: the dotted subject of Contrapunctus V."}
+  - {at: 92, text: "☞ Stretto: subject II in the alto, a bar behind the soprano."}
+  - {at: 172, text: "☞ Subject II in the alto, with subject I in the tenor."}
+  - {at: 296, text: "☞ Subject II in soprano and alto, a sixth apart; subject I in the bass."}
+  - {at: 337, text: "☞ Subject I in alto and soprano together, a third apart."}
+  - {at: 409, text: "☞ Subject I in tenor and bass a third apart, II in the soprano."}
+  - {at: 457, text: "☞ The last entries: subject I in alto and tenor together, a third apart."}

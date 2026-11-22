@@ -1,0 +1,58 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f23.krn (4 voices: soprano, alto, tenor, bass;
+# no chords, no spine splits).
+# Tempo: editorial (the file's *MM58 names no source).
+# Subject (checked against the score): the tenor from the second eighth of bar 1, B A# B C#,
+# F# G# A# B C# D# E D# C#, to the B on the downbeat of bar 3; the answer enters half a beat later (14
+# notes). The answer is tonal: F# falls a third to D# where the subject fell a semitone.
+# Forms follow the pitch level of notes 3..n. Free tails: the soprano in bar 5 holds its C#
+# half a beat longer; the alto in bar 16 (the subject in F# major) rises to A# at the end;
+# the alto in bar 29 holds its C# longer.
+# Inversion: the soprano in bar 18 and the alto in bar 20 (whose first note, B, comes after
+# a held C#: head free) turn the subject upside down; both end on a turned last note (tail:
+# free).
+# 12 complete statements marked; one stretto group (an entry beginning at least a beat
+# before the previous entry's last note): bars 20-21, the alto's inversion, then the bass's
+# subject. Not marked: the head in longer notes, broken
+# off (alto bars 9-10, soprano 14, tenor 26-27).
+id: bwv868
+title: Fugue in B major
+catalogue: BWV 868
+key: B major
+tempo: 58
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 4 voices; a gentle subject, upright and inverted
+techniques: [fugue, subject, answer, inversion, stretto]
+book: Book I
+order: 23
+number: 23
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f23.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  subject: {voice: 2, start: 0.5, length: 8}
+  entries:
+    - {voice: 2, start: 0.5, form: subject}
+    - {voice: 1, start: 8.5, form: answer}
+    - {voice: 0, start: 16.5, form: subject, tail: free}
+    - {voice: 3, start: 24.5, form: answer}
+    - {voice: 2, start: 42.5, form: subject}
+    - {voice: 1, start: 60.5, form: subject, tail: free}
+    - {voice: 0, start: 68.5, form: subject, transform: inverted, tail: free}
+    - {voice: 1, start: 76.5, form: subject, transform: inverted, head: free, tail: free,
+       stretto: s1}
+    - {voice: 3, start: 82.5, form: subject, stretto: s1}
+    - {voice: 2, start: 92.5, form: subject}
+    - {voice: 1, start: 112.5, form: subject, tail: free}
+    - {voice: 0, start: 120.5, form: answer}
+captions:
+  - {at: 0.5, text: "☞ Dux: the subject in the tenor, B A♯ B C♯, then a leap down."}
+  - {at: 8.5, text: "☞ The answer in the alto: F♯ falls a third to D♯."}
+  - {at: 16.5, text: "☞ The soprano enters with the subject, on B."}
+  - {at: 24.5, text: "☞ The bass completes the exposition with the answer."}
+  - {at: 68.5, text: "☞ The subject upside down, in the soprano: the leap now rises."}
+  - {at: 76.5, text: "☞ Stretto: the alto's inversion, then the bass's subject."}
+  - {at: 120.5, text: "☞ The last entry, in the soprano."}

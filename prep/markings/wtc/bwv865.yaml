@@ -1,0 +1,95 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f20.krn (4 voices: soprano, alto, tenor,
+# bass; a fifth from bar 80). 4/4, beats are quarter notes.
+# Tempo: editorial (the file's *MM84 names no source).
+# The file comments out its last eight bars (bars 80-87, "!! Five-voice material until
+# the end", after a `*+` that adds a fifth spine at bar 80); source.commented_from reads
+# them again (kern.restore_commented): the added spine is a voice of its own, the "fifth
+# voice", silent before bar 80 and above the soprano from there, so nothing sounding is
+# dropped (205 notes from bar 80: the 206 the file writes, less the tenor's unison E in
+# the last chord). The bass's A held from bar 83 to the end carries its tie into the last
+# bar, where the file writes the tie's end on the octave A above it. Checked note for
+# note against the Bach-Gesellschaft plate (reference-edition/wtc1f20.pdf, p. 73).
+# Bar 69: a sic/ossia pair in the soprano (the edition's "Oder"), the alternative dropped.
+# Subject (checked against the score): the alto from the second eighth of bar 1, A G# A B
+# C, C B C D, E D C D E F, G# E (17 notes, to the E on the third beat of bar 2). The
+# answer is real (the soprano, bar 4, on E).
+# Every complete statement is marked: 32 (15 of them inverted), the last the fifth
+# voice's on D in bar 84, and four that keep all but the last notes (part: head): the
+# bass inverted in bar 62 and the tenor inverted in bar 83 (15 notes), the soprano in
+# bar 77 (15) and in bar 85 (16, its E cut off by the cadence). Stretto groups are
+# entries that begin at least a beat before the previous entry's last note: twelve
+# groups, entries two beats apart (the subject against itself or its inversion); the
+# last two, bars 76-77 and 83-85, have three entries each.
+# Statements at neither the subject's nor the answer's level (on C, bars 43-44; on D,
+# bars 64 and 84) carry form_by: opening; inverted statements are subjects (the answer
+# is real).
+# Not marked: heads of 9-11 notes (soprano bars 32, 78; alto 17 and 84; tenor 62).
+id: bwv865
+title: Fugue in A minor
+catalogue: BWV 865
+key: A minor
+tempo: 84
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 4 voices, five at the close; the subject upright and inverted, in stretto
+techniques: [fugue, subject, answer, inversion, stretto]
+book: Book I
+order: 20
+number: 20
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f20.krn, alternatives: [69], commented_from: 80}
+voices:
+  - {name: Fifth voice, texture: solid}
+  - {name: Soprano, texture: hatch}
+  - {name: Alto, texture: stipple}
+  - {name: Tenor, texture: dashed}
+  - {name: Bass, texture: open}
+fugue:
+  subject: {voice: 2, start: 0.5, length: 6.5}
+  entries:
+    - {voice: 2, start: 0.5, form: subject}
+    - {voice: 1, start: 12.5, form: answer}
+    - {voice: 4, start: 28.5, form: subject}
+    - {voice: 3, start: 40.5, form: answer}
+    - {voice: 1, start: 54.5, form: subject, transform: inverted}
+    - {voice: 3, start: 68.5, form: subject, transform: inverted}
+    - {voice: 4, start: 80.5, form: subject, transform: inverted}
+    - {voice: 2, start: 92.5, form: subject, transform: inverted}
+    - {voice: 1, start: 106.5, form: subject, stretto: s1}
+    - {voice: 3, start: 108.5, form: subject, stretto: s1}
+    - {voice: 2, start: 122.5, form: answer, stretto: s2}
+    - {voice: 4, start: 124.5, form: answer, stretto: s2}
+    - {voice: 3, start: 142.5, form: subject, stretto: s3}
+    - {voice: 2, start: 144.5, form: subject, stretto: s3}
+    - {voice: 1, start: 168.5, form: subject, form_by: opening, stretto: s4}
+    - {voice: 4, start: 170.5, form: subject, form_by: opening, stretto: s4}
+    - {voice: 2, start: 190.5, form: subject, transform: inverted, stretto: s5}
+    - {voice: 3, start: 192.5, form: subject, transform: inverted, stretto: s5}
+    - {voice: 4, start: 208.5, form: subject, transform: inverted, stretto: s6}
+    - {voice: 1, start: 210.5, form: subject, transform: inverted, stretto: s6}
+    - {voice: 1, start: 226.5, form: subject, transform: inverted, stretto: s7}
+    - {voice: 2, start: 228.5, form: subject, transform: inverted, stretto: s7}
+    - {voice: 4, start: 244.5, form: subject, transform: inverted, part: head, head_length: 15}
+    - {voice: 4, start: 254.5, form: subject, form_by: opening, stretto: s8}
+    - {voice: 3, start: 256.5, form: subject, stretto: s8}
+    - {voice: 1, start: 266.5, form: subject, transform: inverted, stretto: s9}
+    - {voice: 2, start: 268.5, form: subject, transform: inverted, stretto: s9}
+    - {voice: 4, start: 288.5, form: subject, transform: inverted, stretto: s10}
+    - {voice: 2, start: 290.5, form: subject, transform: inverted, stretto: s10}
+    - {voice: 3, start: 300.5, form: subject, transform: inverted, stretto: s11}
+    - {voice: 2, start: 304.5, form: subject, stretto: s11}
+    - {voice: 1, start: 306.5, form: answer, part: head, head_length: 15, stretto: s11}
+    - {voice: 1, start: 318.5, form: subject}
+    - {voice: 3, start: 330.5, form: subject, transform: inverted, part: head, head_length: 15, stretto: s12}
+    - {voice: 0, start: 334.5, form: subject, form_by: opening, stretto: s12}
+    - {voice: 1, start: 336.5, form: subject, part: head, head_length: 16, stretto: s12}
+captions:
+  - {at: 0.5, text: "☞ Dux: the subject in the alto, on A."}
+  - {at: 12.5, text: "☞ The answer in the soprano, on E."}
+  - {at: 28.5, text: "☞ The bass enters with the subject, on A."}
+  - {at: 40.5, text: "☞ The tenor answers last, on E: all four voices are in."}
+  - {at: 54.5, text: "☞ The soprano turns the subject upside down, from E."}
+  - {at: 106.5, text: "☞ Stretto: the soprano on A, then the tenor two beats later."}
+  - {at: 168.5, text: "☞ Stretto on C: the soprano, then the bass two beats later."}
+  - {at: 318.5, text: "☞ The subject in the soprano, on A, as the texture grows to five voices."}
+  - {at: 330.5, text: "☞ The tenor inverts the subject over the bass's held A."}
+  - {at: 334.5, text: "☞ Stretto: after the tenor, the fifth voice on D, then the soprano on A."}

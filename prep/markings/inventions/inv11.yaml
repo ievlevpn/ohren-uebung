@@ -1,0 +1,44 @@
+# Source: humdrum-tools/inventions, inven11.krn (2 voices: upper, lower; no spine splits).
+# Motive: the upper voice's first bar of sixteenths, D up to Bb and back down to A
+# (beats 0.25-4). Countermotive: the bass's chromatic descent G-F#-(G-A-G)-F#-F-E-
+# (F-G-F)-E-Eb (beats 1.5-6); Bach also turns it upside down (bar 3 upper, bar 13
+# lower: it creeps up). 9 statements of the motive and 3 of the countermotive, all
+# marked; in bar 19 the bass has the countermotive without its first note (not marked).
+id: invention11
+title: Invention 11
+catalogue: BWV 782
+key: G minor
+tempo: 88
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "a running motive over a creeping chromatic line"
+techniques: [invention, motive, countermotive, inversion]
+book: Inventions
+order: 11
+source: {kind: kern, path: inventions/kern/inven11.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0.25, length: 3.75}   # the motive
+  countersubject: {voice: 1, start: 1.5, length: 4.5}   # the countermotive
+  entries:
+    - {voice: 0, start: 0.25, form: motive}                           # bar 1, upper: D-E-F#-G-A-Bb-G-A
+    - {voice: 1, start: 1.5, form: countermotive}                     # bar 1, lower countermotive: G-F#-G-A-G-F#-F-E
+    - {voice: 1, start: 8.25, form: motive}                           # bar 3, lower: D-E-F#-G-A-Bb-G-A
+    - {voice: 0, start: 11.5, form: countermotive, transform: inverted}# bar 3, upper inverted countermotive: D-Eb-D-C-D-Eb-E-F
+    - {voice: 0, start: 20.25, form: motive}                          # bar 6, upper: C-D-E-F-G-A-F-G
+    - {voice: 1, start: 24.25, form: motive}                          # bar 7, lower: A-B-C#-D-E-F-D-E
+    - {voice: 0, start: 48.25, form: motive}                          # bar 13, upper: G-A-B-C-D-Eb-C-D
+    - {voice: 1, start: 51.5, form: countermotive, transform: inverted}# bar 13, lower inverted countermotive: G-Ab-G-F-G-Ab-A-Bb
+    - {voice: 1, start: 56.25, form: motive}                          # bar 15, lower: G-A-B-C-D-Eb-C-D
+    - {voice: 1, start: 62.25, form: motive}                          # bar 16, lower: D-Eb-F-G-Ab-Bb-G-Ab
+    - {voice: 1, start: 66.25, form: motive}                          # bar 17, lower: F-G-A-Bb-C-D-Bb-C
+    - {voice: 0, start: 70.25, form: motive}                          # bar 18, upper: D-E-F#-G-A-Bb-G-A
+captions:
+  - {at: 0.25, text: "☞ The motive in the upper voice: a run up to B♭ and back down."}
+  - {at: 1.5, text: "☞ Below it the countermotive creeps down by half steps."}
+  - {at: 8.25, text: "☞ The lower voice takes the motive, an octave lower."}
+  - {at: 11.5, text: "☞ Above, the countermotive upside down: now it creeps up."}
+  - {at: 51.5, text: "☞ The countermotive inverted again, now in the lower voice."}
+  - {at: 70.25, text: "☞ The motive's last statement, back in G minor."}

@@ -1,0 +1,77 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-005.krn ("Contrapunctus 5, a 4."; BGA
+# vol. 25.1, p. 18). C (4/4): beats are quarter notes, 4 per bar. The file splits a spine
+# twice (the closing chords of bars 86-90); read_kern keeps the extra notes as secondary
+# notes (12), so nothing sounding is dropped.
+# Tempo: editorial (the file's *MM112 names no source).
+# The subject: the alto alone, bars 1-4: the inverted subject with passing notes, A D (E) F
+# (G) A B♭ A (G) F, to the F of bar 4, where the bass enters with the subject the right
+# way up (in the shape of Contrapunctus 6's subject).
+# Entries: every place find_entry finds the subject, in either direction (scan of all
+# voices and onsets, then checked by hand); forms follow the notes (wtc_form; inverted
+# statements are subjects; form_by: opening where a statement stands at neither level).
+# Bars 53-54: the head (six notes) in all four voices a quarter apart, each first note
+# cut to a quarter (head: free); bars 65-66 the same with the head inverted. In both the
+# voices then repeat the head a step lower (a sequence), unmarked. Bar 86: the alto
+# enters inverted a quarter after the bass, its first note an F♯ (head: free).
+# Stretto groups: entries that begin at least a half note before the previous entry's
+# last note.
+# Instruments: strings; the tenor stays above C3, within the viola.
+id: contrapunctus05
+title: Contrapunctus V
+catalogue: BWV 1080, 5
+key: D minor
+tempo: 60
+beats_per_bar: 4
+ensemble: strings
+listen_for: the subject and its inversion, ever closer in stretto
+techniques: [fugue, subject, answer, inversion, stretto]
+order: 5
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-005.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  # the subject: alto, A D (E) F (G) A B♭ A (G) F, bars 1-4
+  subject: {voice: 1, start: 0, length: 14.5}
+  entries:
+    - {voice: 1, start: 0, form: subject}  # bar 1, A
+    - {voice: 3, start: 12, form: subject, transform: inverted}  # bar 4, D
+    - {voice: 0, start: 24, form: subject, transform: inverted}  # bar 7, D
+    - {voice: 2, start: 36, form: answer}  # bar 10, D
+    - {voice: 0, start: 64, form: answer}  # bar 17, D
+    - {voice: 2, start: 76, form: subject, transform: inverted}  # bar 20, A
+    - {voice: 3, start: 88, form: subject}  # bar 23, A
+    - {voice: 1, start: 100, form: subject, transform: inverted}  # bar 26, D
+    - {voice: 3, start: 128, form: subject, transform: inverted, stretto: 1}  # bar 33, F
+    - {voice: 0, start: 130, form: subject, form_by: opening, stretto: 1}  # bar 33, C
+    - {voice: 2, start: 160, form: answer, form_by: opening, stretto: 2}  # bar 41, C
+    - {voice: 1, start: 162, form: subject, transform: inverted, stretto: 2}  # bar 41, G
+    - {voice: 3, start: 184, form: subject, form_by: opening, stretto: 3}  # bar 47, F
+    - {voice: 2, start: 190, form: subject, form_by: opening, stretto: 3}  # bar 48, F
+    - {voice: 0, start: 209, form: answer, part: head, head_length: 6, head: free, form_by: opening, stretto: 4}  # bar 53, F
+    - {voice: 2, start: 210, form: answer, part: head, head_length: 6, head: free, form_by: opening, stretto: 4}  # bar 53, F
+    - {voice: 1, start: 211, form: answer, part: head, head_length: 6, head: free, form_by: opening, stretto: 4}  # bar 53, C
+    - {voice: 3, start: 212, form: answer, part: head, head_length: 6, head: free, form_by: opening, stretto: 4}  # bar 54, C
+    - {voice: 0, start: 224, form: subject, transform: inverted, stretto: 5}  # bar 57, E
+    - {voice: 1, start: 230, form: subject, transform: inverted, stretto: 5}  # bar 58, D
+    - {voice: 0, start: 257, form: subject, transform: inverted, part: head, head_length: 6, head: free, stretto: 6}  # bar 65, E
+    - {voice: 3, start: 258, form: subject, transform: inverted, part: head, head_length: 6, head: free, stretto: 6}  # bar 65, A
+    - {voice: 1, start: 259, form: subject, transform: inverted, part: head, head_length: 6, head: free, stretto: 6}  # bar 65, A
+    - {voice: 2, start: 260, form: subject, transform: inverted, part: head, head_length: 6, head: free, stretto: 6}  # bar 66, D
+    - {voice: 0, start: 272, form: subject, stretto: 7}  # bar 69, A
+    - {voice: 2, start: 276, form: subject, stretto: 7}  # bar 70, A
+    - {voice: 2, start: 304, form: subject, transform: inverted, stretto: 8}  # bar 77, E
+    - {voice: 1, start: 308, form: subject, transform: inverted, stretto: 8}  # bar 78, D
+    - {voice: 3, start: 340, form: subject, stretto: 9}  # bar 86, A, D major
+    - {voice: 1, start: 341, form: subject, transform: inverted, head: free, stretto: 9}  # bar 86, F♯
+captions:
+  - {at: 0, text: "☞ Dux: the subject in the alto, falling a fifth, then rising with passing notes."}
+  - {at: 12, text: "☞ The subject inverted in the bass: it rises a fifth where the alto fell."}
+  - {at: 24, text: "☞ The subject inverted in the soprano, two octaves above the bass."}
+  - {at: 36, text: "☞ The answer in the tenor: all four voices are in."}
+  - {at: 128, text: "☞ Stretto: the subject inverted in the bass, then upright in the soprano."}
+  - {at: 209, text: "☞ Stretto: the subject's head in all four voices, a quarter apart."}
+  - {at: 257, text: "☞ The head inverted in all four: soprano, bass, alto, tenor, a quarter apart."}
+  - {at: 340, text: "☞ The last stretto, in D major: the bass, then the alto inverted."}

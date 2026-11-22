@@ -1,0 +1,36 @@
+# Source: Mutopia BachJS/BWV988/bwv-988-v21 (4/4, beats are quarter notes, 4 per bar).
+# Voices from the MIDI, top first: 0 = comes (upper, from beat 2.25), 1 = dux (from beat
+# 0.25), 2 = bass. Repeats are not unfolded: 16 bars, 64 beats. Checked bar by bar: the
+# middle voice leads in both halves, the upper voice answers a seventh higher half a bar
+# later.
+id: goldberg-var21
+title: Variatio 21
+catalogue: BWV 988, 21
+key: G minor
+tempo: 44
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: canon at the seventh, half a bar apart
+techniques: [canon, canon at the seventh]
+order: 21
+source: {kind: mutopia, path: BachJS/BWV988/bwv-988-v21}
+voices:
+  - {name: Comes, texture: solid}
+  - {name: Dux, texture: hatch}
+  - {name: Bass, texture: stipple}
+canon:
+  leader: 1
+  followers:
+    - voice: 0
+      rule:
+        delay: 2
+        interval: 6         # six scale steps up: b-flat answered by a'
+        diatonic: true
+        key: g
+        pitch_tolerance: 1  # Bach's raised 6th and 7th answered a semitone off
+        # free: the comes cadences instead of imitating: the leader's last two beats of
+        # the first half (30-32) and from beat 61.25 to the end.
+        free: [[30, 32], [61.25, 64]]
+captions:
+  - {bar: 1, text: "☞ Dux: the middle voice, in G minor, over a bass falling by semitones."}
+  - {at: 2, text: "☞ Comes: the dux a seventh higher, half a bar later."}

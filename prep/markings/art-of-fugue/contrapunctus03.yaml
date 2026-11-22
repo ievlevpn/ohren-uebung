@@ -1,0 +1,54 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-003.krn ("Contrapunctus 3, a 4."; no
+# splits, no chords; BGA vol. 25.1, p. 10). ¢ (2/2): beats are quarter notes, 4 per bar.
+# Tempo: editorial (the file's *MM100 names no source).
+# The subject: the tenor alone, bars 1-4: the subject of Contrapunctus 1 upside down, D A
+# C E F E D C♯, to the C♯ of bar 4 (its run A B C♯ leads into the answer and is not
+# repeated by it: the answer runs F E F G instead, so the subject ends on the C♯).
+# Entries: every place find_entry finds the subject (scan of all voices, then checked by
+# hand); forms follow the notes (wtc_form; form_by: opening where the statement stands
+# at neither the subject's nor the answer's pitch level). In bars 23, 29, 35, 55 and 58
+# the statement is filled in with dotted passing notes from its fifth or sixth note on,
+# so only its first notes, those on the subject's beats, are marked (part: head).
+# None overlap: no stretto.
+# Instruments: the tenor goes down to B♭2, below the viola: cello.
+id: contrapunctus03
+title: Contrapunctus III
+catalogue: BWV 1080, 3
+key: D minor
+tempo: 66
+beats_per_bar: 4
+ensemble: strings
+listen_for: the subject upside down, against chromatic lines
+techniques: [fugue, subject, answer, inversion, chromaticism]
+order: 3
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-003.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple, instrument: cello}   # down to B♭2
+  - {name: Bass, texture: dashed}
+fugue:
+  # the subject: tenor, D A C E F E D C♯, bars 1-4
+  subject: {voice: 2, start: 0, length: 14.5}
+  entries:
+    - {voice: 2, start: 0, form: subject}  # bar 1, D
+    - {voice: 1, start: 16, form: answer}  # bar 5, A
+    - {voice: 0, start: 32, form: subject}  # bar 9, D
+    - {voice: 3, start: 56, form: answer}  # bar 15, A
+    - {voice: 0, start: 89, form: answer, part: head, head_length: 6}  # bar 23, A, dotted
+    - {voice: 2, start: 113, form: subject, part: head, head_length: 6}  # bar 29, E, dotted
+    - {voice: 2, start: 137, form: answer, part: head, head_length: 6, form_by: opening}  # bar 35, C, dotted
+    - {voice: 0, start: 168, form: subject}  # bar 43, E
+    - {voice: 3, start: 200, form: subject, form_by: opening}  # bar 51, C
+    - {voice: 1, start: 216, form: answer, part: head, head_length: 5}  # bar 55, A, dotted
+    - {voice: 0, start: 228, form: subject, part: head, head_length: 5}  # bar 58, D, dotted
+    - {voice: 2, start: 248, form: answer}  # bar 63, A
+captions:
+  - {at: 0, text: "☞ Dux: the subject of Contrapunctus I inverted, in the tenor."}
+  - {at: 16, text: "☞ The answer in the alto, on A, over a chromatic descent below it."}
+  - {at: 32, text: "☞ The subject in the soprano."}
+  - {at: 56, text: "☞ The answer in the bass: all four voices are in."}
+  - {at: 89, text: "☞ The answer in the soprano, its steps filled in with dotted notes."}
+  - {at: 168, text: "☞ The subject in the soprano, on E."}
+  - {at: 200, text: "☞ The subject in the bass, on C."}
+  - {at: 248, text: "☞ The last entry: the answer in the tenor."}

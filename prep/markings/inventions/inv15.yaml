@@ -1,0 +1,36 @@
+# Source: humdrum-tools/inventions, inven15.krn (2 voices: upper, lower; no spine splits).
+# Motive: from the sixteenth after the opening rest, B-A#-B-F#-G-F#-B-F#-F#-E-C#-E
+# (beats 0.5-6); after it the voices continue freely. The lower voice answers it on F#
+# in bar 3, as a fugue would. 7 statements, all marked.
+id: invention15
+title: Invention 15
+catalogue: BWV 786
+key: B minor
+tempo: 72
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "a motive answered as in a fugue"
+techniques: [invention, motive, imitation]
+book: Inventions
+order: 15
+source: {kind: kern, path: inventions/kern/inven15.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0.5, length: 5.5}   # the motive
+  entries:
+    - {voice: 0, start: 0.5, form: motive}                            # bar 1, upper: B-A#-B-F#-G-F#-B-F#
+    - {voice: 1, start: 8.5, form: motive}                            # bar 3, lower: F#-E#-F#-C#-D-C#-F#-C#
+    - {voice: 0, start: 18.5, form: motive}                           # bar 5, upper: F#-E#-F#-C#-D-C#-F#-C#
+    - {voice: 1, start: 44.5, form: motive}                           # bar 12, lower: D-C#-D-A-B-A-D-A
+    - {voice: 0, start: 52.5, form: motive}                           # bar 14, upper: A-G#-A-E-F#-E-A-E
+    - {voice: 1, start: 68.5, form: motive}                           # bar 18, lower: B-A#-B-F#-G-F#-B-F#
+    - {voice: 0, start: 74.5, form: motive}                           # bar 19, upper: B-A#-B-F#-G-F#-B-F#
+captions:
+  - {at: 0.5, text: "☞ The motive in the upper voice, over a bass in detached eighths."}
+  - {at: 8.5, text: "☞ The lower voice answers on F♯, as in a fugue."}
+  - {at: 18.5, text: "☞ The upper voice has the motive on F♯."}
+  - {at: 44.5, text: "☞ The motive in D major, in the lower voice."}
+  - {at: 68.5, text: "☞ Back in B minor: the motive in the lower voice."}
+  - {at: 74.5, text: "☞ The last statement, in the upper voice."}

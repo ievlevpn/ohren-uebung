@@ -1,0 +1,68 @@
+# Source: humdrum-tools/inventions, inven01.krn (2 voices: upper, lower; no spine splits).
+# Motive (checked against the score): the seven sixteenths after the opening rest,
+# C-D-E-F-D-E-C (beats 0.25-2). Its inversion falls from A (bar 3, A-G-F-E-G-F-A).
+# The scan with find_entry over every onset found 18 upright and 19 inverted statements;
+# every one is a complete statement (all intervals the motive's sizes in scale steps,
+# rhythm exact), and all are marked. The eighth-note figures (bar 1 beat 3 on) are
+# accompaniment, not the motive.
+id: invention01
+title: Invention 1
+catalogue: BWV 772
+key: C major
+tempo: 60
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: "the motive and its inversion, tossed between the voices"
+techniques: [invention, motive, imitation, inversion]
+book: Inventions
+order: 1
+source: {kind: kern, path: inventions/kern/inven01.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+fugue:
+  subject: {voice: 0, start: 0.25, length: 1.75}   # the motive
+  entries:
+    - {voice: 0, start: 0.25, form: motive}                           # bar 1, upper: C-D-E-F-D-E-C
+    - {voice: 1, start: 2.25, form: motive}                           # bar 1, lower: C-D-E-F-D-E-C
+    - {voice: 0, start: 4.25, form: motive}                           # bar 2, upper: G-A-B-C-A-B-G
+    - {voice: 1, start: 6.25, form: motive}                           # bar 2, lower: G-A-B-C-A-B-G
+    - {voice: 0, start: 8.25, form: motive, transform: inverted}      # bar 3, upper inverted: A-G-F-E-G-F-A
+    - {voice: 0, start: 10.25, form: motive, transform: inverted}     # bar 3, upper inverted: F-E-D-C-E-D-F
+    - {voice: 0, start: 12.25, form: motive, transform: inverted}     # bar 4, upper inverted: D-C-B-A-C-B-D
+    - {voice: 0, start: 14.25, form: motive, transform: inverted}     # bar 4, upper inverted: B-A-G-F#-A-G-B
+    - {voice: 1, start: 16.25, form: motive}                          # bar 5, lower: D-E-F#-G-E-F#-D
+    - {voice: 0, start: 18.25, form: motive, transform: inverted}     # bar 5, upper inverted: A-G-F#-E-G-F#-A
+    - {voice: 1, start: 24.25, form: motive}                          # bar 7, lower: G-A-B-C-A-B-G
+    - {voice: 0, start: 26.25, form: motive}                          # bar 7, upper: G-A-B-C-A-B-G
+    - {voice: 1, start: 28.25, form: motive}                          # bar 8, lower: D-E-F#-G-E-F#-D
+    - {voice: 0, start: 30.25, form: motive}                          # bar 8, upper: A-B-C-D-B-C-A
+    - {voice: 1, start: 32.25, form: motive, transform: inverted}     # bar 9, lower inverted: G-F-E-D-F-E-G
+    - {voice: 0, start: 34.25, form: motive, transform: inverted}     # bar 9, upper inverted: D-C-B-A-C-B-D
+    - {voice: 1, start: 36.25, form: motive, transform: inverted}     # bar 10, lower inverted: A-G-F-E-G-F-A
+    - {voice: 0, start: 38.25, form: motive, transform: inverted}     # bar 10, upper inverted: E-D-C-B-D-C#-E
+    - {voice: 1, start: 40.25, form: motive, transform: inverted}     # bar 11, lower inverted: Bb-A-G-F-A-G-Bb
+    - {voice: 1, start: 42.25, form: motive, transform: inverted}     # bar 11, lower inverted: G-F-E-D-F-E-G
+    - {voice: 1, start: 44.25, form: motive, transform: inverted}     # bar 12, lower inverted: E-D-C-B-D-C-E
+    - {voice: 1, start: 46.25, form: motive, transform: inverted}     # bar 12, lower inverted: C-B-A-G#-B-A-C
+    - {voice: 0, start: 48.25, form: motive}                          # bar 13, upper: E-F#-G#-A-F#-G#-E
+    - {voice: 1, start: 50.25, form: motive, transform: inverted}     # bar 13, lower inverted: B-A-G-F#-A-G#-B
+    - {voice: 0, start: 56.25, form: motive, transform: inverted}     # bar 15, upper inverted: A-G-F-E-G-F-A
+    - {voice: 1, start: 58.25, form: motive, transform: inverted}     # bar 15, lower inverted: E-D-C-B-D-C#-E
+    - {voice: 0, start: 60.25, form: motive}                          # bar 16, upper: E-F-G-A-F-G-E
+    - {voice: 1, start: 62.25, form: motive}                          # bar 16, lower: A-B-C-D-B-C-A
+    - {voice: 0, start: 64.25, form: motive, transform: inverted}     # bar 17, upper inverted: G-F-E-D-F-E-G
+    - {voice: 1, start: 66.25, form: motive, transform: inverted}     # bar 17, lower inverted: D-C-B-A-C-B-D
+    - {voice: 0, start: 68.25, form: motive}                          # bar 18, upper: D-E-F-G-E-F-D
+    - {voice: 1, start: 70.25, form: motive}                          # bar 18, lower: G-A-Bb-C-A-Bb-G
+    - {voice: 0, start: 72.25, form: motive}                          # bar 19, upper: C-D-E-F-D-E-C
+    - {voice: 0, start: 74.25, form: motive}                          # bar 19, upper: E-F-G-A-F-G-E
+    - {voice: 0, start: 76.25, form: motive}                          # bar 20, upper: G-A-B-C-A-B-G
+    - {voice: 1, start: 78.25, form: motive}                          # bar 20, lower: D-E-F-G-E-F-D
+    - {voice: 0, start: 80.25, form: motive, transform: inverted}     # bar 21, upper inverted: Bb-A-G-F-A-G-Bb
+captions:
+  - {at: 0.25, text: "☞ The motive in the upper voice: C–D–E–F, then a turn back down to C."}
+  - {at: 2.25, text: "☞ The lower voice takes up the motive an octave below."}
+  - {at: 8.25, text: "☞ Bar 3: the motive upside down in the upper voice, falling from A."}
+  - {at: 32.25, text: "☞ Now the lower voice carries the inverted motive, bar after bar."}
+  - {at: 72.25, text: "☞ Home in C major: the motive upright again, in the upper voice."}

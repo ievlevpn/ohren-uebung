@@ -1,0 +1,51 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f05.krn (4 voices: soprano, alto, tenor,
+# bass; no spine splits). The bass's octave G2/G3 on the downbeat of bar 22: G3 is the
+# voice's note, G2 a secondary note (it sounds, but is no part of an entry).
+# Tempo: editorial (the file's *MM60 names no source).
+# Subject (checked against the score): the bass from beat 2 of bar 1, the run of 32nds
+# D E F# G F# E F# D, then B B A G F# in dotted rhythm (to the F# on the downbeat of
+# bar 2). The answer is real (on A); the statements on A are marked answer.
+# Exposition: bass (D), tenor (A), alto (D), soprano (A). No regular countersubject.
+# 11 complete statements, all marked; none overlap. Not marked: the head (the 32nd run)
+# alone, in sequence and in stretto in bars 6, 9-13 and 17-24 (bar 20-21: all four
+# voices one beat apart), and the soprano in bar 20, whose dotted tail turns upward.
+# Statements at neither the subject's nor the answer's pitch level (in another key) carry
+# form_by: opening: their opening interval decides the form (each entry's comment says so).
+id: bwv850
+title: Fugue in D major
+catalogue: BWV 850
+key: D major
+tempo: 60
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 4 voices; a rushing run, then dotted rhythms
+techniques: [fugue, subject, answer]
+book: Book I
+order: 5
+number: 5
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f05.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  subject: {voice: 3, start: 1, length: 3.75}
+  entries:
+    - {voice: 3, start: 1, form: subject}
+    - {voice: 2, start: 5, form: answer}
+    - {voice: 1, start: 13, form: subject}
+    - {voice: 0, start: 17, form: answer}
+    - {voice: 3, start: 25, form: subject}
+    - {voice: 0, start: 29, form: subject, form_by: opening}  # neither level (notes 3..n a major third down from the dux); opens with a step up, the subject's
+    - {voice: 0, start: 41, form: subject, form_by: opening}  # neither level (notes 3..n a fourth up from the dux); opens with a step up, the subject's
+    - {voice: 1, start: 45, form: subject}
+    - {voice: 0, start: 49, form: subject}
+    - {voice: 2, start: 53, form: subject, form_by: opening}  # neither level (notes 3..n a fourth up from the dux); opens with a step up, the subject's
+    - {voice: 3, start: 57, form: subject, form_by: opening}  # neither level (notes 3..n a semitone up from the dux); opens with a step up, the subject's
+captions:
+  - {at: 1, text: "☞ Dux: the subject in the bass, a run of 32nds, then dotted notes."}
+  - {at: 5, text: "☞ The answer in the tenor, on A."}
+  - {at: 13, text: "☞ The alto enters with the subject, on D."}
+  - {at: 17, text: "☞ The soprano completes the exposition with the answer, on A."}
+  - {at: 29, text: "☞ The subject in the soprano, on B."}

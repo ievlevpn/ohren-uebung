@@ -1,0 +1,325 @@
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('./fonts/EBGaramond-Variable.woff2') format('woff2');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('./fonts/EBGaramond-Italic-Variable.woff2') format('woff2');
+  font-weight: 400 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ♩ ♭ ♮ ♯, which EB Garamond lacks: a subset of Garamond Libre (fonts/GaramondLibre-COPYING.txt) */
+@font-face {
+  font-family: 'Garamond Libre Accidentals';
+  src: url('./fonts/GaramondLibre-Accidentals-Regular.woff2') format('woff2');
+  font-style: normal;
+  unicode-range: U+2669-266A, U+266D-266F;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Garamond Libre Accidentals';
+  src: url('./fonts/GaramondLibre-Accidentals-Italic.woff2') format('woff2');
+  font-style: italic;
+  unicode-range: U+2669-266A, U+266D-266F;
+  font-display: swap;
+}
+/* the half note (U+1D15E), which Garamond Libre lacks: Noto Music's, scaled to its ♩
+   (prep/scripts/font_subsets.py); one file for both styles, so no faux italic */
+@font-face {
+  font-family: 'Noto Music Notes';
+  src: url('./fonts/NotoMusic-HalfNote.woff2') format('woff2');
+  font-style: normal;
+  unicode-range: U+1D15E;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Music Notes';
+  src: url('./fonts/NotoMusic-HalfNote.woff2') format('woff2');
+  font-style: italic;
+  unicode-range: U+1D15E;
+  font-display: swap;
+}
+
+:root {
+  --paper: #f1ead9;
+  --ink: #1c1916;
+  --faint: rgba(28, 25, 22, 0.55);
+  --serif: 'EB Garamond', 'Garamond Libre Accidentals', 'Noto Music Notes', Garamond, Georgia, serif;
+  --pad: 44px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: inherit; text-decoration: none; }
+button, select, input { font: inherit; color: inherit; }
+
+/* ---------- the sheet: paper with a double hairline frame ---------- */
+.sheet {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: max(var(--pad), env(safe-area-inset-top)) max(var(--pad), env(safe-area-inset-right))
+           max(var(--pad), env(safe-area-inset-bottom)) max(var(--pad), env(safe-area-inset-left));
+  background: var(--paper);
+}
+.sheet::before, .sheet::after { content: ''; position: absolute; pointer-events: none; }
+.sheet::before { inset: 12px; border: 1.2px solid var(--ink); }
+.sheet::after { inset: 17px; border: 0.5px solid var(--ink); }
+.sheet > * { max-width: 1120px; margin-left: auto; margin-right: auto; }
+
+.rule { display: flex; align-items: center; gap: 12px; justify-content: center; margin: 14px auto 24px; font-size: 18px; }
+.rule span { height: 0.6px; background: var(--ink); flex: 1; }
+
+.empty { font-style: italic; color: var(--faint); text-align: center; margin: 32px 0; }
+
+/* ---------- shelf header ---------- */
+.top { display: flex; justify-content: space-between; align-items: center; gap: 20px 28px; flex-wrap: wrap; }
+.brand { font-style: italic; font-size: 32px; line-height: 1.1; }
+.brand small {
+  display: block; font-style: normal; font-size: 12px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 2px;
+}
+.brand .subtitle { display: block; max-width: 34em; font-size: 14px; line-height: 1.35; color: var(--faint); margin-top: 4px; }
+.tabs { display: flex; gap: 4px 22px; flex-wrap: wrap; }
+.tabs a { display: inline-flex; align-items: center; min-height: 44px; border-bottom: 1px solid transparent; }
+.tabs a.on { border-bottom-color: var(--ink); }
+.tabs a:hover { border-bottom-color: var(--faint); }
+.search {
+  min-width: 240px; min-height: 44px; padding: 4px 4px; border: 0; border-bottom: 1px solid var(--ink);
+  background: transparent; font-style: italic; border-radius: 0; -webkit-appearance: none; appearance: none;
+}
+.search::placeholder { color: var(--faint); }
+.search:focus { outline: none; border-bottom-width: 2px; }
+
+/* ---------- title plates ---------- */
+.shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.plate {
+  position: relative; border: 1px solid var(--ink); padding: 18px 16px 14px; text-align: center;
+  min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 6px;
+}
+.plate::after { content: ''; position: absolute; inset: 4px; border: 0.5px solid var(--ink); pointer-events: none; }
+.plate:hover, .plate:focus-visible {
+  outline: none;
+  background: repeating-linear-gradient(60deg, transparent 0 4px, rgba(28, 25, 22, 0.08) 4px 5px);
+}
+.plate-k { font-size: 11.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--faint); }
+.plate-n { font-style: italic; font-size: 23px; line-height: 1.15; }
+.plate-c { font-size: 13.5px; color: var(--faint); }
+
+/* ---------- dotted-leader lists ---------- */
+.sheet .list, .sheet .gloss { max-width: 900px; margin-left: 0; }
+.list.cols { max-width: none; }
+.row { display: flex; gap: 10px; align-items: baseline; min-height: 44px; padding: 10px 0 6px; break-inside: avoid; }
+.row .dots { flex: 1; min-width: 24px; border-bottom: 1px dotted var(--faint); transform: translateY(-4px); }
+.row .row-note { color: var(--faint); font-size: 15.5px; text-align: right; }
+.row:hover .row-title { text-decoration: underline; text-decoration-thickness: 0.5px; text-underline-offset: 3px; }
+.bookhead {
+  font-weight: 400; font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase;
+  margin: 10px 0 2px; column-span: all;
+}
+@media (min-width: 900px) { .list.cols { columns: 2; column-gap: 48px; } }
+
+/* ---------- collection page ---------- */
+.crumb { font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--faint); }
+.crumb a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); }
+.brand-title { font-style: italic; font-weight: 400; font-size: 34px; line-height: 1.1; margin: 0 auto 6px; }
+.cnote { font-style: italic; color: var(--faint); margin-top: 0; }
+
+/* ---------- the glossary (index of techniques) ---------- */
+.gloss .letter { font-style: italic; font-size: 28px; border-bottom: 0.6px solid var(--ink); margin: 18px 0 12px; scroll-margin-top: 20px; }
+.gloss .entry { margin-bottom: 30px; scroll-margin-top: 24px; }
+.gloss h2 { font-style: italic; font-weight: 400; font-size: 23px; line-height: 1.2; margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+.gloss h2 small { font-style: normal; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--faint); }
+.gloss .entry > p { margin: 6px 0 10px; }
+.fig { border: 0.6px solid var(--ink); padding: 8px 10px 6px; margin: 0; }
+.figroll { position: relative; height: 150px; }
+.figroll canvas { position: absolute; inset: 0; display: block; }
+.figroll .cursor { position: absolute; top: 0; bottom: 0; width: 0; border-left: 0.8px solid var(--ink); display: none; pointer-events: none; }
+.fig figcaption { display: flex; justify-content: space-between; align-items: center; gap: 4px 16px; font-size: 14.5px; color: var(--faint); font-style: italic; margin-top: 4px; }
+.hear {
+  flex: none; min-height: 44px; min-width: 96px; padding: 0 14px; border: 1px solid var(--ink); background: transparent;
+  color: var(--ink); font-style: normal; font-size: 15px; cursor: pointer; border-radius: 0; touch-action: manipulation;
+}
+.hear.on { font-style: italic; }
+.hear:focus-visible { outline: 1px dotted var(--ink); outline-offset: 2px; }
+.where { font-size: 15px; margin-top: 8px; line-height: 1.9; }
+.where b { font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; font-size: 11.5px; color: var(--faint); margin-right: 8px; }
+.where a { border-bottom: 0.5px dotted var(--ink); }
+.where a:hover { border-bottom-style: solid; }
+.where i, .where .sep { color: var(--faint); }
+.where .more {
+  border: 0; background: transparent; padding: 0; color: var(--ink); font-style: italic; cursor: pointer;
+  border-bottom: 0.5px dotted var(--ink); min-height: 30px;
+}
+@media (pointer: coarse) { .where .more { min-height: 44px; } }
+@media (pointer: coarse) { .where a { display: inline-flex; align-items: center; min-height: 44px; border-bottom: 0; text-decoration: underline dotted 0.5px; text-underline-offset: 3px; } }
+
+/* ---------- player ---------- */
+.player {
+  display: flex; flex-direction: column;
+  height: 100vh; height: 100dvh; min-height: 0;
+  padding-top: max(28px, env(safe-area-inset-top)); padding-bottom: max(30px, env(safe-area-inset-bottom));
+}
+.player > * { width: 100%; max-width: none; }
+.phead { display: flex; justify-content: space-between; align-items: center; font-size: 15px; color: var(--faint); }
+.phead a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); }
+.ptitle { font-style: italic; font-weight: 400; font-size: 32px; line-height: 1.1; text-align: center; margin: 0; }
+.pmeta { text-align: center; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--faint); margin-top: 4px; }
+.roll { flex: 1 1 auto; min-height: 200px; margin: 10px 0 0; position: relative; }
+.roll canvas { touch-action: pan-y; position: absolute; inset: 0; display: block; }
+.caption { text-align: center; font-style: italic; font-size: 18px; min-height: 2.9em; margin: 6px auto 4px; max-width: 760px; }
+.controls { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4px 18px; }
+.ctl {
+  min-height: 44px; min-width: 44px; padding: 0 8px; background: transparent; border: 0;
+  cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: 2px;
+  white-space: nowrap;
+}
+.ctl.btn.failed { white-space: normal; font-style: italic; }
+.ctl:focus-visible { outline: 1px dotted var(--ink); outline-offset: 2px; }
+.ctl.btn { border: 1px solid var(--ink); padding: 0 20px; min-width: 120px; }
+.ctl:disabled { color: var(--faint); cursor: default; font-style: italic; }
+.tempo { display: inline-flex; align-items: center; }
+.tempo .step { font-size: 20px; }
+.ctl .g { font-size: 1.35em; line-height: 1; }
+.ens { gap: 2px; cursor: pointer; }
+.ens select {
+  min-height: 44px; border: 0; background: transparent; border-radius: 0;
+  font-style: italic; padding: 0 2px; cursor: pointer; -webkit-appearance: none; appearance: none;
+}
+.ens .caret { font-size: 0.8em; color: var(--faint); pointer-events: none; }
+.voices { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 22px; margin-top: 10px; font-size: 15px; }
+.voice {
+  position: relative; display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 4px;
+  border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; touch-action: manipulation;
+}
+.voice[aria-pressed="false"] .sw, .voice[aria-pressed="false"] .nm { opacity: 0.35; }
+.voice[aria-pressed="false"]::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; border-top: 0.6px solid var(--ink); }
+.voice, .roll canvas { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+/* press and hold: the held voice sounds alone, the others recede */
+.voice.solo .nm { text-decoration: underline; text-decoration-thickness: 0.6px; text-underline-offset: 3px; }
+.voice.hushed .sw, .voice.hushed .nm { opacity: 0.35; }
+.voices-hint { text-align: center; font-style: italic; font-size: 12.5px; color: var(--faint); margin-top: 2px; }
+.sw { display: inline-block; width: 24px; height: 9px; border: 0.8px solid var(--ink); }
+.sw.solid { background: var(--ink); }
+.sw.hatch { background: repeating-linear-gradient(-60deg, transparent 0 2.2px, var(--ink) 2.2px 2.8px); }
+.sw.stipple { background: radial-gradient(circle, var(--ink) 0.7px, transparent 0.9px) 0 0 / 4px 4px; }
+.sw.dashed { border-style: dashed; }
+.sw.cross { background: repeating-linear-gradient(-45deg, transparent 0 2.6px, var(--ink) 2.6px 3.2px), repeating-linear-gradient(45deg, transparent 0 2.6px, var(--ink) 2.6px 3.2px); }
+
+/* ---------- technique words and their definition cards ---------- */
+.listen { text-align: center; font-size: 15px; margin: 4px auto 0; max-width: 760px; }
+.listen b { font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; font-size: 11.5px; color: var(--faint); margin-right: 6px; }
+.term {
+  display: inline; position: relative; font: inherit; color: inherit; background: none; border: 0; border-radius: 0;
+  padding: 0; margin: 0; line-height: inherit; cursor: pointer; touch-action: manipulation;
+  border-bottom: 1px dotted var(--ink);
+}
+/* a 44 px tap target around the word, without moving the line */
+.term::after { content: ''; position: absolute; left: 50%; top: 50%; width: max(100% + 8px, 44px); height: 44px; transform: translate(-50%, -50%); }
+.term:hover { border-bottom-style: solid; }
+.term:focus-visible { outline: 1px dotted var(--ink); outline-offset: 2px; }
+.gcard {
+  position: absolute; z-index: 5; left: auto; right: max(var(--pad), env(safe-area-inset-right)); top: var(--card-top, auto);
+  width: min(560px, max(46%, 380px)); max-height: var(--card-max, none); overflow-y: auto; overscroll-behavior: contain;
+  background: var(--paper); border: 1px solid var(--ink); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  padding: 12px 18px 10px; text-align: left; font-size: 16px; line-height: 1.4;
+}
+.gcard[hidden] { display: none; }
+.gcard::after { content: ''; position: absolute; inset: 4px; border: 0.5px solid var(--ink); pointer-events: none; }
+.gcard:focus { outline: none; }
+.gcard-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.gcard h3 { font-style: italic; font-weight: 400; font-size: 21px; line-height: 1.25; margin: 0; padding-top: 8px; }
+.gcard h3 .term-used { font-style: normal; font-size: 15px; color: var(--faint); }
+.gcard .close {
+  flex: none; min-width: 44px; min-height: 44px; margin: -4px -12px 0 0; border: 0; background: none;
+  color: var(--faint); font-size: 16px; cursor: pointer; touch-action: manipulation;
+}
+.gcard .close:focus-visible, .gcard .other:focus-visible, .gcard .full:focus-visible { outline: 1px dotted var(--ink); outline-offset: 2px; }
+.gcard .def { margin: 2px 0 8px; }
+.gcard .where { font-size: 14.5px; line-height: 1.5; margin-top: 8px; }
+.gcard .other {
+  min-height: 44px; border: 0; background: none; padding: 0; font: inherit; font-style: italic; cursor: pointer;
+  border-bottom: 0.5px dotted var(--ink); border-radius: 0;
+}
+.gcard .full { display: inline-flex; align-items: center; min-height: 44px; font-style: italic; font-size: 15px; }
+.gcard .full:hover { text-decoration: underline dotted 0.5px; text-underline-offset: 3px; }
+
+/* ---------- phones: one column ---------- */
+@media (max-width: 600px) {
+  :root { --pad: 30px; }
+  html, body { font-size: 16px; }
+  .top { flex-direction: column; align-items: stretch; gap: 8px; }
+  .brand { font-size: 28px; text-align: center; }
+  .tabs { justify-content: center; gap: 0 16px; font-size: 15px; }
+  .search { min-width: 0; width: 100%; }
+  .shelf { grid-template-columns: 1fr; gap: 14px; }
+  .plate { min-height: 120px; }
+  .row { flex-direction: column; align-items: stretch; gap: 0; padding: 10px 0; border-bottom: 0.5px dotted var(--faint); }
+  .row .dots { display: none; }
+  .row .row-note { text-align: left; font-size: 14.5px; }
+  .gloss h2 { font-size: 21px; }
+  .fig { padding: 6px 6px 4px; }
+  .fig figcaption { flex-direction: column; align-items: stretch; }
+  .hear { align-self: flex-end; }
+  .brand-title { font-size: 28px; }
+  .player { padding-left: max(26px, env(safe-area-inset-left)); padding-right: max(26px, env(safe-area-inset-right)); }
+  .ptitle { font-size: 25px; }
+  .pmeta { font-size: 11.5px; letter-spacing: 1.5px; }
+  .caption { font-size: 16px; min-height: 4.4em; }
+  .controls { gap: 0 8px; font-size: 15px; }
+  .ctl.btn { min-width: 108px; }
+  .voices { gap: 4px 16px; font-size: 14px; }
+  .listen { font-size: 14px; }
+  /* the card is a sheet from the bottom edge: the roll and its playhead stay in view above it */
+  .gcard {
+    position: fixed; left: 0; right: 0; top: auto; bottom: 0; width: auto;
+    max-height: 48dvh; border-width: 1px 0 0; box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.2);
+    padding: 8px max(18px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+  }
+  .gcard::after { inset: 4px 4px auto; height: 0; border-width: 0.5px 0 0; }
+  .gcard-head { position: sticky; top: -8px; z-index: 1; background: var(--paper); }
+}
+
+.search::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.ens select { field-sizing: content; }
+
+.credits { text-align: center; font-size: 12.5px; font-style: italic; margin: 22px 0 0; }
+.credits a { color: var(--faint); }
+.barnav { display: inline-flex; align-items: center; gap: 2px; }
+.barnav .bar-step { min-width: 32px; justify-content: center; font-size: 1.25em; }
+.barno { font-style: italic; min-width: 4.2em; text-align: center; font-variant-numeric: tabular-nums; }
+.ctl.loop[aria-pressed="true"] { font-style: italic; text-decoration: underline; text-decoration-thickness: 0.6px; text-underline-offset: 3px; }
+.offline-btn { border: 0; background: none; padding: 0; font: inherit; font-style: italic; color: var(--faint); cursor: pointer; text-decoration: underline; text-decoration-thickness: 0.5px; }
+.offline-btn:disabled { text-decoration: none; cursor: default; }
+.phead .pos { display: inline-flex; align-items: center; gap: 2px; }
+.phead .nb { min-width: 36px; justify-content: center; font-size: 1.35em; color: var(--ink); }
+.phead .nb.off { display: inline-flex; color: var(--faint); opacity: 0.35; }
+.ctl.tune-help { min-width: 28px; padding: 0 4px; font-style: italic; }
+.ctl.tune-help[aria-expanded="true"] { text-decoration: underline; text-decoration-thickness: 0.6px; text-underline-offset: 3px; }
+.tune-note { position: absolute; z-index: 6; left: 50%; transform: translateX(-50%); top: 110px; width: min(640px, 90%);
+  max-height: calc(100% - 220px); overflow: auto; padding: 12px 18px; background: var(--paper); border: 0.8px solid var(--ink);
+  box-shadow: 0 0 0 4px var(--paper), 0 0 0 4.6px var(--ink), 0 10px 30px rgba(0,0,0,.18); font-size: 14px; line-height: 1.45; }
+.tune-note[hidden] { display: none; }
+@media (max-width: 600px) { .tune-note { top: 70px; width: 94%; max-height: calc(100% - 140px); font-size: 13.5px; } }
+.tune-note .tn-head { font-style: italic; margin: 0 0 6px; text-align: center; }
+.tune-note dl { margin: 0; }
+.tune-note dt { font-style: italic; margin-top: 6px; }
+.tune-note dd { margin: 0 0 0 14px; color: var(--faint); }
+.tune-note dt.on, .tune-note dd.on { color: var(--ink); }
+.tune-note dt.on::before { content: '☞ '; }
+.tune-note p { margin: 8px 0 0; }

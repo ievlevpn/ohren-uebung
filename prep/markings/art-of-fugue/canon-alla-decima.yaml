@@ -1,0 +1,44 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-014.krn ("14 (XVII). Canon alla Decima.
+# Contrapunto alla Terza"; two spines, one per staff; BGA vol. 25.1, p. 79; no splits;
+# 5 grace notes kept as secondary notes). C (4/4): beats are quarter notes, 4 per bar.
+# The file notes that a G♮ in the top voice (bar 75) is "probably supposed to be g#"; it is
+# kept: the kern writes an explicit natural (12gn, as the BGA prints it), bars 40ff restate
+# bars 1ff with the voices swapped, the chord there is C♯ E G B♭, and a G♯ would make an
+# augmented octave with the equivalent note of bar 36.
+# Tempo: editorial (the file's *MM100 names no source).
+# The canon, read from the score and matched against the rule (two sections, the voices
+# swapping roles, the counterpoint inverted at the tenth):
+#   bars 1-35: the bass leads, the soprano follows a tenth higher (9 steps of D minor,
+#   15 or 16 semitones), four bars later (16 beats);
+#   bars 40-74: the soprano leads, the bass follows an octave lower, four bars later.
+# Free: the bass's bars 36-39, the soprano's from bar 75, the closing bars (the edition's
+# "Cadenza" included).
+# Instruments: harpsichord, like the other canons (two staves, keyboard music).
+id: canon-alla-decima
+title: Canon alla Decima
+catalogue: BWV 1080, 16
+key: D minor
+tempo: 76
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: canon at the tenth, four bars apart; then the parts change places
+techniques: [canon, canon at the tenth, invertible counterpoint]
+order: 16
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-014.krn}
+voices:
+  - {name: Upper, texture: solid}
+  - {name: Lower, texture: hatch}
+canon:
+  - span: [0, 140]      # bars 1-35: the bass leads
+    leader: 1
+    followers:
+      - {voice: 0, rule: {delay: 16, interval: 9, diatonic: true, key: d, pitch_tolerance: 1}}
+  - span: [156, 296]    # bars 40-74: the soprano leads
+    leader: 0
+    followers:
+      - {voice: 1, rule: {delay: 16, interval: -7, diatonic: true, key: d, pitch_tolerance: 1}}
+captions:
+  - {bar: 1, text: "☞ Dux: the lower voice leads, alone."}
+  - {at: 17, text: "☞ Comes: the upper voice, a tenth higher, four bars later."}
+  - {bar: 40, text: "☞ The roles change: now the upper voice leads."}
+  - {at: 172, text: "☞ The lower voice follows an octave down, four bars later."}

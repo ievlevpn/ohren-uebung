@@ -1,0 +1,71 @@
+# Source: humdrum-tools/bach-wtc-fugues, wtc1f16.krn (4 voices: soprano, alto, tenor, bass).
+# Tempo: editorial (the file's *MM60 names no source).
+# Spine split: the last two bars (33-34) split the alto for a fifth voice (6 notes), kept
+# as secondary notes of the alto.
+# Subject (checked against the score): the alto from the second eighth of bar 1, D Eb G F#
+# G, then A Bb C Bb A, to the Bb on beat 3 of bar 2; the answer enters half a beat later (11 notes). The
+# answer is tonal: G rises a minor third to Bb where the subject rose a semitone. Forms
+# follow the pitch level of notes 3..n; in other keys the opening interval decides: the bass
+# in bar 13 (B-flat major) opens with the answer's third (Bb D, more than find_entry
+# tolerates against the subject's step, so its head is free) and is marked answer. In bar 23 the alto splits its first eighth into C and D (marked from the
+# C). The soprano in bar 28 turns its last note away (tail: free).
+# Countersubject: the alto against the answer, from the G on beat 4 of bar 2, a sixteenth
+# turn, to the D on the downbeat of bar 4 (11 notes); whole again in bars 5 (soprano), 6, 15
+# and 21 (bass).
+# 16 complete statements marked; stretto groups are entries that begin at least a beat
+# before the previous entry's last note: bars 17 (bass, alto) and 28 (soprano, tenor). Not
+# marked: the alto's head in bar 21 and the inverted heads in bars 14 (tenor) and 32
+# (bass), which break off.
+# Statements at neither the subject's nor the answer's pitch level (in another key) carry
+# form_by: opening: their opening interval decides the form (each entry's comment says so).
+id: bwv861
+title: Fugue in G minor
+catalogue: BWV 861
+key: G minor
+tempo: 60
+beats_per_bar: 4
+ensemble: harpsichord
+listen_for: 4 voices; a short, sighing subject, in stretto
+techniques: [fugue, subject, answer, countersubject, stretto]
+book: Book I
+order: 16
+number: 16
+source: {kind: kern, path: bach-wtc-fugues/kern/wtc1f16.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch}
+  - {name: Tenor, texture: stipple}
+  - {name: Bass, texture: dashed}
+fugue:
+  subject: {voice: 1, start: 0.5, length: 6}
+  countersubject: {voice: 1, start: 7, length: 5.5}
+  entries:
+    - {voice: 1, start: 0.5, form: subject}
+    - {voice: 0, start: 6.5, form: answer}
+    - {voice: 1, start: 7, form: countersubject}
+    - {voice: 3, start: 16.5, form: subject}
+    - {voice: 0, start: 17, form: countersubject}
+    - {voice: 2, start: 22.5, form: answer}
+    - {voice: 3, start: 23, form: countersubject}
+    - {voice: 1, start: 44.5, form: subject, form_by: opening}  # neither level (notes 3..n a minor third up from the dux); opens with a step up, the subject's
+    - {voice: 3, start: 50.5, form: answer, head: free, form_by: opening}  # neither level (notes 3..n a step down from the dux); opens with a major third up, the answer's
+    - {voice: 0, start: 56.5, form: subject, form_by: opening}  # neither level (notes 3..n a step down from the dux); opens with a step up, the subject's
+    - {voice: 3, start: 57, form: countersubject}
+    - {voice: 3, start: 64.5, form: subject, stretto: s1, form_by: opening}  # neither level (notes 3..n a minor third up from the dux); opens with a step up, the subject's
+    - {voice: 1, start: 66.5, form: subject, stretto: s1, form_by: opening}  # neither level (notes 3..n a minor third down from the dux); opens with a step up, the subject's
+    - {voice: 3, start: 76.5, form: subject, form_by: opening}  # neither level (notes 3..n a fourth up from the dux); opens with a semitone up, the subject's
+    - {voice: 0, start: 82.5, form: subject, form_by: opening}  # neither level (notes 3..n a fourth up from the dux); opens with a semitone up, the subject's
+    - {voice: 3, start: 83, form: countersubject}
+    - {voice: 1, start: 88.5, form: subject}
+    - {voice: 0, start: 108.5, form: subject, tail: free, stretto: s2}
+    - {voice: 2, start: 110.5, form: subject, stretto: s2}
+    - {voice: 1, start: 122.5, form: subject}
+    - {voice: 2, start: 128.5, form: subject}
+captions:
+  - {at: 0.5, text: "☞ Dux: the subject in the alto, D E♭, a leap down, then a sigh."}
+  - {at: 6.5, text: "☞ The answer in the soprano: G up a third to B♭; below, the countersubject."}
+  - {at: 16.5, text: "☞ The bass enters with the subject, on D."}
+  - {at: 22.5, text: "☞ The tenor completes the exposition with the answer, on G."}
+  - {at: 64.5, text: "☞ Stretto: the bass, then the alto two beats later."}
+  - {at: 108.5, text: "☞ Stretto: the soprano, then the tenor two beats later."}
+  - {at: 128.5, text: "☞ The last entry, in the tenor."}

@@ -1,0 +1,64 @@
+# Source: craigsapp/art-of-the-fugue, kern/artfugue-004.krn ("Contrapunctus 4, a 4."; no
+# splits, no chords; BGA vol. 25.1, p. 13). ¢ (2/2): beats are quarter notes, 4 per bar.
+# Tempo: editorial (the file's *MM100 names no source).
+# The subject: the soprano alone, bars 1-4: the inverted subject (as in Contrapunctus 3)
+# on A, A D F A B♭ A G F, to the F of bar 4; the answer (alto, bar 5) is D A C E F E D C♯,
+# and the two go on differently after it (E F G / C♯ A B C♯).
+# Entries: every place find_entry finds the subject (scan, then checked by hand); forms
+# follow the notes (wtc_form; form_by: opening where a statement stands at neither the
+# subject's nor the answer's pitch level). Bars 61-80: four statements whose fifth note
+# leaps a third (F C E G B♭, ...), matched within find_entry's tolerance. Bar 107: the
+# bass enters a quarter after the tenor, its sixth note early, so only its first five
+# notes are marked (part: head). Bar 111: the soprano a quarter ahead of the alto, its
+# first D cut to a quarter (head: free), and from its seventh note varied (part: head).
+# Stretto groups: entries that begin at least a half note before the previous entry's
+# last note.
+# Instruments: the tenor goes down to B2, below the viola: cello.
+id: contrapunctus04
+title: Contrapunctus IV
+catalogue: BWV 1080, 4
+key: D minor
+tempo: 80
+beats_per_bar: 4
+ensemble: strings
+listen_for: the inverted subject; near the end, two strettos a quarter note apart
+techniques: [fugue, subject, answer, inversion, stretto]
+order: 4
+source: {kind: kern, path: art-of-the-fugue/kern/artfugue-004.krn}
+voices:
+  - {name: Soprano, texture: solid}
+  - {name: Alto, texture: hatch, instrument: viola}
+  - {name: Tenor, texture: stipple, instrument: cello}   # down to B2
+  - {name: Bass, texture: dashed}
+fugue:
+  # the subject: soprano, A D F A B♭ A G F, bars 1-4
+  subject: {voice: 0, start: 0, length: 14.5}
+  entries:
+    - {voice: 0, start: 0, form: subject}  # bar 1, A
+    - {voice: 1, start: 16, form: answer}  # bar 5, D
+    - {voice: 2, start: 40, form: subject}  # bar 11, A
+    - {voice: 3, start: 56, form: answer}  # bar 15, D
+    - {voice: 0, start: 104, form: subject, form_by: opening}  # bar 27, C
+    - {voice: 1, start: 120, form: subject, form_by: opening}  # bar 31, G
+    - {voice: 2, start: 136, form: subject, form_by: opening}  # bar 35, D, G minor
+    - {voice: 3, start: 152, form: subject}  # bar 39, G
+    - {voice: 3, start: 240, form: subject}  # bar 61, F
+    - {voice: 2, start: 256, form: answer}  # bar 65, D
+    - {voice: 1, start: 288, form: subject, form_by: opening}  # bar 73, A
+    - {voice: 0, start: 304, form: subject, form_by: opening}  # bar 77, E
+    - {voice: 2, start: 424, form: subject, stretto: 1}  # bar 107, A
+    - {voice: 3, start: 425, form: subject, part: head, head_length: 5, form_by: opening, stretto: 1}  # bar 107, F
+    - {voice: 0, start: 440, form: answer, part: head, head_length: 6, head: free, stretto: 2}  # bar 111, D
+    - {voice: 1, start: 440, form: answer, form_by: opening, stretto: 2}  # bar 111, F
+    - {voice: 2, start: 512, form: answer}  # bar 129, D
+    - {voice: 1, start: 528, form: subject}  # bar 133, A
+captions:
+  - {at: 0, text: "☞ Dux: the inverted subject in the soprano, on A."}
+  - {at: 16, text: "☞ The answer in the alto, on D."}
+  - {at: 40, text: "☞ The subject in the tenor."}
+  - {at: 56, text: "☞ The answer in the bass: all four voices are in."}
+  - {at: 104, text: "☞ The subject in the soprano, on C."}
+  - {at: 240, text: "☞ The subject in the bass, on F, its fifth note now leaping a third."}
+  - {at: 424, text: "☞ Stretto: the tenor, then the bass a quarter note later."}
+  - {at: 440, text: "☞ Stretto: the soprano a quarter note ahead of the alto."}
+  - {at: 528, text: "☞ The last entry: the subject in the alto."}
